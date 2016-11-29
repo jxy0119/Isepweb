@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+.loginpage{
+	display: inline-block;
+	margin-top:5%;
+	margin-left:30%;
+	text-align:right;
+	width:10%;
+}	
+.login{
+	background-color:#FFF3F3;
+	border-radius:5px;
+	width:160px;
+	margin-left:2%;
+	border-color:#FFF3F3;
+	
+}
+
+.login:focus{
+	background-color: white;
+}
+
+#mdp{	
+	margin-left:50%;
+	width:20%;
+}
+
+#login{
+	background-color:#FFF3F3;
+	margin-left:50%;
+	width:10%;
+}
