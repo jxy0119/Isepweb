@@ -33,17 +33,19 @@
 #footer{
 	position: absolute;
 	bottom:5px;
+
 }
 #footer p{
 	width:100%;
 	font-style :oblique;
-	text-align:center;
+	
+	
 }
 
 #footer h2{
 	width:100%;
 	font-style :oblique;
-	text-align:center;
+	
 }
 #footer ul li{
 	display: inline-block;	
@@ -52,5 +54,7 @@
 #footer ul li a{
 	display: inline-block;
 	text-decoration: none;
-	padding: 2em 8em 5em 11em;
+	padding: 2em 6em 5em 8em;
+	margin-left:50%;
+	width:100%;
 }
