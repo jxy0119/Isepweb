@@ -33,19 +33,24 @@
 #footer{
 	position: absolute;
 	bottom:5px;
+	text-align:center;
 
 }
 #footer p{
 	width:100%;
 	font-style :oblique;
+	text-align:center;
+	
+	
 	
 	
 }
 
 #footer h2{
 	width:100%;
-	font-style :oblique;
-	
+	font-style :oblique;	
+	text-align:center;
+	margin-left:30%;
 }
 #footer ul li{
 	display: inline-block;	
