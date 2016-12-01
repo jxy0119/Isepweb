@@ -87,7 +87,7 @@ select{
 <table id="selection">
 <tr>
 <th>
-<select name="date">
+<select multiple name="date">
 <option>Date de rentrée</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -96,7 +96,7 @@ select{
 </th>
 
 <th>
-<select name="subject">
+<select multiple name="subject">
 <option>Systèmes Embarquès</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -105,7 +105,7 @@ select{
 </th>
 
 <th>
-<select name="country">
+<select multiple name="country">
 <option>Pays</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -114,7 +114,7 @@ select{
 </th>
 
 <th>
-<select name="language">
+<select multiple name="language">
 <option>Langues des cours</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -123,7 +123,7 @@ select{
 </th>
 
 <th>
-<select name="duration">
+<select multiple name="duration">
 <option>Durée</option>
 <option value="1">1</option>
 <option value="2">2</option>
