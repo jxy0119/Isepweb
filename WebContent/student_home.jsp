@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Accueil</title>
+<link href="css/menu.css" rel='stylesheet' type='text/css' />	
 <style type="text/css">
 body{
 	font-family:sans-serif;
@@ -17,29 +18,7 @@ body{
 #search{
 	width:40%;
 }
-ul {
-    list-style-type: none;
-    margin: 0 0 0 0 ;
-    padding: 0;
-    overflow: hidden;
-    background: linear-gradient(#BBB, #777);
-}
 
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 40px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background: linear-gradient(#999, #555);
-}
 .searchpad {
     display: inline-block;
     width:30%;
