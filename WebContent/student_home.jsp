@@ -5,7 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Accueil</title>
-<link href="css/menu.css" rel='stylesheet' type='text/css' />	
+<link href="css/menu.css" rel='stylesheet' type='text/css' />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <style type="text/css">
 body{
 	font-family:sans-serif;
@@ -60,12 +62,12 @@ select{
 <img src="img/logo1.jpg" style="width:50px">
 <br>
 <header>
-<ul>
-<li><a href="#">Accueil</a></li>
-<li><a href="#">Profil</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Ecoles</a></li>
-<li><a href="#">Déconnexion</a></li>
+<ul class="menu_ul">
+<li class="menu_li"><a class="menu_a" href="#">Accueil</a></li>
+<li class="menu_li"><a class="menu_a" href="#">Profil</a></li>
+<li class="menu_li"><a class="menu_a" href="#">Contact</a></li>
+<li class="menu_li"><a class="menu_a" href="#">Ecoles</a></li>
+<li class="menu_li"><a class="menu_a" href="#">Déconnexion</a></li>
 </ul>
 </header>
 <br>
@@ -84,11 +86,11 @@ select{
 
 <br><br>
 
+
 <table id="selection">
 <tr>
 <th>
-<select multiple name="date">
-<option>Date de rentrée</option>
+<select  name="date" id="date">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
@@ -96,7 +98,7 @@ select{
 </th>
 
 <th>
-<select multiple name="subject">
+<select  name="subject">
 <option>Systèmes Embarquès</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -105,7 +107,7 @@ select{
 </th>
 
 <th>
-<select multiple name="country">
+<select  name="country">
 <option>Pays</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -114,7 +116,7 @@ select{
 </th>
 
 <th>
-<select multiple name="language">
+<select  name="language">
 <option>Langues des cours</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -123,7 +125,7 @@ select{
 </th>
 
 <th>
-<select multiple name="duration">
+<select  name="duration">
 <option>Durée</option>
 <option value="1">1</option>
 <option value="2">2</option>
