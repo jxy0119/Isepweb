@@ -41,6 +41,19 @@ body{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+table{
+	width:100%;
+}
+
+th{
+	width:20%;
+}
+
+select{
+	width:100%;
+	
+}
 </style>
 </head>
 <body>
@@ -68,5 +81,58 @@ body{
 <span class="searchpad"></span>
 <input type="text" name="search" id="search">
 <span class="searchpad"></span>
+
+<br><br>
+
+<table id="selection">
+<tr>
+<th>
+<select name="date">
+<option>Date de rentrée</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+
+<th>
+<select name="subject">
+<option>Systèmes Embarquès</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+
+<th>
+<select name="country">
+<option>Pays</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+
+<th>
+<select name="language">
+<option>Langues des cours</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+
+<th>
+<select name="duration">
+<option>Durée</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+</tr>
+</table>
+
+
 </body>
 </html>
