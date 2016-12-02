@@ -1,4 +1,9 @@
 @CHARSET "UTF-8";
+
+body{
+	font-family:sans-serif;
+}
+
 .loginpage{
 	display: inline-block;
 	margin-top:5%;

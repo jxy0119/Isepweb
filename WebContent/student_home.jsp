@@ -10,9 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <style type="text/css">
-body{
-	font-family:sans-serif;
-}
+
 #welcome{
 	width: 70%;
 	padding: 1%;
