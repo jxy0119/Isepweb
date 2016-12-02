@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Accueil</title>
 <link href="css/menu.css" rel='stylesheet' type='text/css' />
+<link href="css/isepgo.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <style type="text/css">
@@ -19,32 +20,15 @@ body{
     border: 1px solid ;
 	
 }
-#search{
-	width:40%;
-}
 
-.searchpad {
-    display: inline-block;
-    width:30%;
-}
+
 #school{
 
 }
 #status{
 
 }
-#search{
-    display: inline-block;
-    width: 20%;
-    border: 1px solid rgba(255,255,255,0.6);
-    background: linear-gradient(#eee, #fff);
-    transition: all 0.3s ease-out;
-    box-shadow: 
-        inset 0 1px 4px rgba(0,0,0,0.4);
-    padding: 5px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+
 
 table{
 	width:100%;
@@ -88,7 +72,7 @@ select{
 <br>
 <span class="searchpad"></span>
 <img src="img/search.png" width="30px">
-<input type="text" name="search" id="search">
+<input type="text" name="search" class="search">
 <span class="searchpad"></span>
 
 <br><br>
