@@ -51,13 +51,7 @@ body{
 		
 }
 
-#footer h2{
-	width:100%;
-	font-style :oblique;	
-	font-size:1em;
-	text-align:center;
-	margin-left:20%;
-}
+
 #footer ul li{
 	display: inline-block;	
 	float:left
@@ -71,6 +65,30 @@ body{
 }
 
 /*student_home*/
+#welcomestudent{
+	width: 70%;
+	padding: 1%;
+	box-shadow: 4px 4px 2px rgba(0,0,0,0.4);
+    border: 1px solid ;
+	
+}
+#school{
+}
+#studentstatus{
+}
+
+/*research*/
+#selection{
+	width:100%;
+}
+th{
+	width:20%;
+}
+select{
+	width:100%;
+	
+}
+
 .search{
     display: inline-block;
     width: 20%;
