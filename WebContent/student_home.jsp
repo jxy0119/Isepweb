@@ -5,41 +5,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Accueil</title>
+<link href="css/menu.css" rel='stylesheet' type='text/css' />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <style type="text/css">
 body{
 	font-family:sans-serif;
 }
 #welcome{
-	border-style:solid;
-	border-width:1px;
 	width: 70%;
+	padding: 1%;
+	box-shadow: 4px 4px 2px rgba(0,0,0,0.4);
+    border: 1px solid ;
+	
 }
 #search{
 	width:40%;
 }
-ul {
-    list-style-type: none;
-    margin: 0 0 0 0 ;
-    padding: 0;
-    overflow: hidden;
-    background: linear-gradient(#BBB, #777);
-}
 
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 40px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background: linear-gradient(#999, #555);
-}
 .searchpad {
     display: inline-block;
     width:30%;
@@ -62,18 +45,35 @@ li a:hover {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+table{
+	width:100%;
+}
+
+th{
+	width:20%;
+}
+
+select{
+	width:100%;
+	
+}
+
+
+
+
 </style>
 </head>
 <body>
 <img src="img/logo1.jpg" style="width:50px">
 <br>
 <header>
-<ul>
-<li><a href="#">Accueil</a></li>
-<li><a href="#">Profil</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Ecoles</a></li>
-<li><a href="#">Déconnexion</a></li>
+<ul class="menu_ul">
+<li class="menu_li"><a class="menu_a" href="#">Accueil</a></li>
+<li class="menu_li"><a class="menu_a" href="#">Profil</a></li>
+<li class="menu_li"><a class="menu_a" href="#">Contact</a></li>
+<li class="menu_li"><a class="menu_a" href="#">Ecoles</a></li>
+<li class="menu_li"><a class="menu_a" href="#">Déconnexion</a></li>
 </ul>
 </header>
 <br>
@@ -87,7 +87,61 @@ li a:hover {
 </div>
 <br>
 <span class="searchpad"></span>
+<img src="img/search.png" width="30px">
 <input type="text" name="search" id="search">
 <span class="searchpad"></span>
+
+<br><br>
+
+
+<table id="selection">
+<tr>
+<th>
+<select  name="date" id="date">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+
+<th>
+<select  name="subject">
+<option>Systèmes Embarquès</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+
+<th>
+<select  name="country">
+<option>Pays</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+
+<th>
+<select  name="language">
+<option>Langues des cours</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+
+<th>
+<select  name="duration">
+<option>Durée</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</th>
+</tr>
+</table>
+
+
 </body>
 </html>
