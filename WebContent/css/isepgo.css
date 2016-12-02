@@ -83,6 +83,18 @@ body{
 #studentstatus{
 }
 
+/*research*/
+#selection{
+	width:100%;
+}
+th{
+	width:20%;
+}
+select{
+	width:100%;
+	
+}
+
 .search{
     display: inline-block;
     width: 20%;

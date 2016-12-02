@@ -9,19 +9,6 @@
 <link href="../css/isepgo.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-<style type="text/css">
-
-table{
-	width:100%;
-}
-th{
-	width:20%;
-}
-select{
-	width:100%;
-	
-}
-</style>
 
 <script>
 	$(function(){
@@ -31,14 +18,14 @@ select{
 	$(function(){
 	    $("header").load("../menu.html");
 	    });
+	$(function(){
+	    $("#research").load("../research.jsp");
+	    });
 </script>
+
 </head>
 <body>
 
-<header>
-
-</header>
-<br>
 <div id="welcomestudent">
 <span>Bienvenue </span><span id="name">Bob</span>
 <br>
@@ -48,62 +35,10 @@ select{
 <span id="studentstatus">Statut</span>
 </div>
 <br>
-<span class="searchpad"></span>
-<img src="img/search.png" width="30px">
-<input type="text" name="search" class="search">
-<span class="searchpad"></span>
+<div id="research">
+</div>
 
-<br><br>
-
-
-<table id="selection">
-<tr>
-<th>
-<select  name="date" id="date">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-</select>
-</th>
-
-<th>
-<select  name="subject">
-<option>Systèmes Embarquès</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-</select>
-</th>
-
-<th>
-<select  name="country">
-<option>Pays</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-</select>
-</th>
-
-<th>
-<select  name="language">
-<option>Langues des cours</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-</select>
-</th>
-
-<th>
-<select  name="duration">
-<option>Durée</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-</select>
-</th>
-</tr>
-</table>
 <footer></footer>
-</object>
+
 </body>
 </html>
