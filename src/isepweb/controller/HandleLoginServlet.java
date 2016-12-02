@@ -29,13 +29,13 @@ public class HandleLoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String u=request.getParameter("username");
+		String u=request.getParameter("id");
 		String p=request.getParameter("password");
 		HandleUserBean hub=new HandleUserBean();
 		if(hub.checkUser(u, p)){
-			 request.getRequestDispatcher("Home.jsp").forward(request, response);
+			 request.getRequestDispatcher("student_home.jsp").forward(request, response);
 		}else{
-			 request.getRequestDispatcher("login.jsp").forward(request, response);
+			 request.getRequestDispatcher("loginpage.html").forward(request, response);
 		}
 	}
 
