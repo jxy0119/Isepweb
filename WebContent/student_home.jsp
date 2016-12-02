@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Accueil</title>
-<link href="css/menu.css" rel='stylesheet' type='text/css' />
+
 <link href="css/isepgo.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -50,19 +50,16 @@ select{
 	$(function(){
     $("footer").load("footer.html");
     });
+	
+	$(function(){
+	    $("header").load("menu.html");
+	    });
 </script>
 </head>
 <body>
-<img src="img/logo1.jpg" style="width:50px">
-<br>
+
 <header>
-<ul class="menu_ul">
-<li class="menu_li"><a class="menu_a" href="#">Accueil</a></li>
-<li class="menu_li"><a class="menu_a" href="#">Profil</a></li>
-<li class="menu_li"><a class="menu_a" href="#">Contact</a></li>
-<li class="menu_li"><a class="menu_a" href="#">Ecoles</a></li>
-<li class="menu_li"><a class="menu_a" href="./Logout">Déconnexion</a></li>
-</ul>
+
 </header>
 <br>
 <div id="welcome">
