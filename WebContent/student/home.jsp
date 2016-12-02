@@ -6,11 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Accueil</title>
 
-<link href="css/isepgo.css" rel="stylesheet" type="text/css">
+<link href="../css/isepgo.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <style type="text/css">
-
 #welcome{
 	width: 70%;
 	padding: 1%;
@@ -18,41 +17,29 @@
     border: 1px solid ;
 	
 }
-
-
 #school{
-
 }
 #status{
-
 }
-
-
 table{
 	width:100%;
 }
-
 th{
 	width:20%;
 }
-
 select{
 	width:100%;
 	
 }
-
-
-
-
 </style>
 
 <script>
 	$(function(){
-    $("footer").load("footer.html");
+    $("footer").load("../footer.html");
     });
 	
 	$(function(){
-	    $("header").load("menu.html");
+	    $("header").load("../menu.html");
 	    });
 </script>
 </head>
