@@ -55,7 +55,7 @@ select{
 <li class="menu_li"><a class="menu_a" href="#">Profil</a></li>
 <li class="menu_li"><a class="menu_a" href="#">Contact</a></li>
 <li class="menu_li"><a class="menu_a" href="#">Ecoles</a></li>
-<li class="menu_li"><a class="menu_a" href="#">Déconnexion</a></li>
+<li class="menu_li"><a class="menu_a" href="./Logout">Déconnexion</a></li>
 </ul>
 </header>
 <br>
