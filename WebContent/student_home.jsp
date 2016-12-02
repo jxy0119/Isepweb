@@ -13,9 +13,11 @@ body{
 	font-family:sans-serif;
 }
 #welcome{
-	border-style:solid;
-	border-width:1px;
 	width: 70%;
+	padding: 1%;
+	box-shadow: 4px 4px 2px rgba(0,0,0,0.4);
+    border: 1px solid ;
+	
 }
 #search{
 	width:40%;
@@ -56,6 +58,10 @@ select{
 	width:100%;
 	
 }
+
+
+
+
 </style>
 </head>
 <body>
@@ -81,6 +87,7 @@ select{
 </div>
 <br>
 <span class="searchpad"></span>
+<img src="img/search.png" width="30px">
 <input type="text" name="search" id="search">
 <span class="searchpad"></span>
 
