@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+/*login*/
 body{
 	font-family:sans-serif;
 }
@@ -35,6 +36,8 @@ body{
 	width:10%;
 }
 
+/*footer*/
+
 #footer{
 	position: absolute;
 	bottom:5px;
@@ -67,6 +70,7 @@ body{
 	width:100%;
 }
 
+/*student_home*/
 .search{
     display: inline-block;
     width: 20%;
@@ -83,4 +87,28 @@ body{
 .searchpad {
     display: inline-block;
     width:30%;
+}
+
+/*menu*/
+.menu_ul {
+    list-style-type: none;
+    margin: 0 0 0 0 ;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(#BBB, #777);
+}
+.menu_li {
+    float: left;
+}
+
+.menu_a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+}
+
+.menu_a:hover {
+    background: linear-gradient(#999, #555);
 }
