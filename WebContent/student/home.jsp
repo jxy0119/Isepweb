@@ -25,11 +25,11 @@
 
 </head>
 <body>
-
+<header></header>
 <div id="welcomestudent">
 <span>Bienvenue </span><span id="name">Bob</span>
 <br>
-<img src="img/logo1.jpg" style="width:100px">
+<img src="../img/logo1.jpg" style="width:100px">
 <span id="school">Ecole</span>
 <br>
 <span id="studentstatus">Statut</span>
