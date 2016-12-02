@@ -7,31 +7,27 @@
 </head>
 
 <body>
-<!-- <center>
-<form action="#" method="post">
-<table>
-<tr>
-<th><label>Identifiant</label></th>
-<th><input type="text" name="id"></input></th>
-</tr>
-<tr>
-<th><label>Mot de passe</label></th>
-<th><input type="password" name="password"></input></th>
-</tr>
-</table>
-<p>Mot de passe oublie?</p>
-<input type="submit"></input>
-</form>
-</center> -->
+
+<script>
+	$(function(){
+    $("footer").load("footer.html");
+    });
+	
+</script>
+<header>
+<img src="img/logo.png" >
+</header>
 <form action="HandleLoginServle" method="post">
+
 <label class="loginpage">Identifiant</label>
 <input class = "login" type="text" name="id"></input><br>
 
 <label class = "loginpage">Mot de passe</label>
 <input class="login" type="password" name="password"></input><br>
 
-<p id = "mdp">Mot de passe oubliÃ©?</p><br>
+<p id = "mdp">Mot de passe oublié?</p><br>
 <input id = "login" type="submit" value = "connecter"></input>
+<footer></footer>
 </form>
 </body>
 </html>

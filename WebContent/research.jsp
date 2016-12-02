@@ -10,7 +10,7 @@
 <body>
 
 <span class="searchpad"></span>
-<img src="img/search.png" width="30px">
+<img src="../img/search.png" width="30px">
 <input type="text" name="search" class="search">
 <span class="searchpad"></span>
 
