@@ -10,17 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <style type="text/css">
-#welcome{
-	width: 70%;
-	padding: 1%;
-	box-shadow: 4px 4px 2px rgba(0,0,0,0.4);
-    border: 1px solid ;
-	
-}
-#school{
-}
-#status{
-}
+
 table{
 	width:100%;
 }
@@ -49,13 +39,13 @@ select{
 
 </header>
 <br>
-<div id="welcome">
+<div id="welcomestudent">
 <span>Bienvenue </span><span id="name">Bob</span>
 <br>
 <img src="img/logo1.jpg" style="width:100px">
 <span id="school">Ecole</span>
 <br>
-<span id="status">Statut</span>
+<span id="studentstatus">Statut</span>
 </div>
 <br>
 <span class="searchpad"></span>
