@@ -51,6 +51,7 @@ body{
 #footer h2{
 	width:100%;
 	font-style :oblique;	
+	font-size:1em;
 	text-align:center;
 	margin-left:20%;
 }
