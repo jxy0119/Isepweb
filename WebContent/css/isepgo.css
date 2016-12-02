@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family:sans-serif;
+}
+
+.loginpage{
+	display: inline-block;
+	margin-top:5%;
+	margin-left:30%;
+	text-align:right;
+	width:10%;
+}	
+.login{
+	background-color:#FFF3F3;
+	border-radius:5px;
+	width:160px;
+	margin-left:2%;
+	border-color:#FFF3F3;
+	
+}
+
+.login:focus{
+	background-color: white;
+}
+
+#mdp{	
+	margin-left:50%;
+	width:20%;
+}
+
+#login{
+	background-color:#FFF3F3;
+	margin-left:50%;
+	width:10%;
+}
+
+#footer{
+	position: absolute;
+	bottom:5px;
+	/*text-align:center;*/
+
+}
+#footer p{
+	width:100%;
+	font-style :oblique;
+	
+		
+}
+
+#footer h2{
+	width:100%;
+	font-style :oblique;	
+	text-align:center;
+	margin-left:20%;
+}
+#footer ul li{
+	display: inline-block;	
+	float:left
+}
+#footer ul li a{
+	display: inline-block;
+	text-decoration: none;
+	padding: 2em 6em 5em 8em;
+	margin-left:40%;
+	width:100%;
+}
+
+.search{
+    display: inline-block;
+    width: 20%;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: linear-gradient(#eee, #fff);
+    transition: all 0.3s ease-out;
+    box-shadow: 
+        inset 0 1px 4px rgba(0,0,0,0.4);
+    padding: 5px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.searchpad {
+    display: inline-block;
+    width:30%;
+}
