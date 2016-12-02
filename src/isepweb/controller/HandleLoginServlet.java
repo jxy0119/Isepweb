@@ -35,7 +35,7 @@ public class HandleLoginServlet extends HttpServlet {
 		if(hub.checkUser(u, p)){
 			 request.getRequestDispatcher("student_home.jsp").forward(request, response);
 		}else{
-			 request.getRequestDispatcher("loginpage.html").forward(request, response);
+			 request.getRequestDispatcher("loginpage.jsp").forward(request, response);
 		}
 	}
 
