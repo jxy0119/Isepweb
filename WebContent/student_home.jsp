@@ -46,7 +46,11 @@ select{
 
 </style>
 
-
+<script>
+	$(function(){
+    $("footer").load("footer.html");
+    });
+</script>
 </head>
 <body>
 <img src="img/logo1.jpg" style="width:50px">
@@ -126,7 +130,7 @@ select{
 </tr>
 </table>
 
-<object style="width:100%" type="text/html" data="footer.html">
+<footer></footer>
 </object>
 </body>
 </html>
