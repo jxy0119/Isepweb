@@ -20,17 +20,18 @@
 </tr>
 <tr>
 <td>Langue d'enseignement: </td>
-<td><input type="text" name="pays"></td>
+<td><input type="text" name="langue"></td>
 </tr>
 <tr>
 <td>Domaine: </td>
-<td><input type="text" name="pays"></td>
+<td><input type="text" name="domaine"></td>
 </tr>
 <tr>
 <td>Autre: </td>
 <td><textarea name="autre"></textarea></td>
 </tr>
 </table>
+<input type="submit" value="Ajouter"></input>
 </form>
 </body>
 </html>
