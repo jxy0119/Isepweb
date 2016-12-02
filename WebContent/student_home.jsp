@@ -126,6 +126,6 @@ select{
 </tr>
 </table>
 
-<link rel="import" href="footer.html">
+<object type="text/html" data="footer.html" width="100%"></object>
 </body>
 </html>
