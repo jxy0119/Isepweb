@@ -126,6 +126,7 @@ select{
 </tr>
 </table>
 
-<object type="text/html" data="footer.html" width="100%"></object>
+<object style="width:100%" type="text/html" data="footer.html">
+</object>
 </body>
 </html>
