@@ -22,7 +22,7 @@
 <label class="loginpage">Identifiant</label>
 <input class = "login" type="text" name="id"></input><br>
 
-<label class = "loginpage">Mot de passe</label>
+<label class ="WebContent/css/isepgo.css" "loginpage">Mot de passe</label>
 <input class="login" type="password" name="password"></input><br>
 
 <p id = "mdp">Mot de passe oublié?</p><br>
