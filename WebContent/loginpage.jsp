@@ -17,7 +17,7 @@
 <header>
 <img src="img/logo.png" >
 </header>
-<form action="HandleLoginServle" method="post">
+<form action="HandleLoginServlet" method="post">
 
 <label class="loginpage">Identifiant</label>
 <input class = "login" type="text" name="id"></input><br>

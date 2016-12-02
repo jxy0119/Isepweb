@@ -33,7 +33,7 @@ public class HandleLoginServlet extends HttpServlet {
 		String p=request.getParameter("password");
 		HandleUserBean hub=new HandleUserBean();
 		if(hub.checkUser(u, p)){
-			 request.getRequestDispatcher("student_home.jsp").forward(request, response);
+			 request.getRequestDispatcher("student/home.jsp").forward(request, response);
 		}else{
 			 request.getRequestDispatcher("loginpage.jsp").forward(request, response);
 		}
