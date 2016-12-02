@@ -8,15 +8,11 @@
 
 <body>
 
-<script>
-	$(function(){
-    $("footer").load("footer.html");
-    });
-	
-</script>
+
 <header>
 <img src="img/logo.png" >
 </header>
+
 <form action="HandleLoginServle" method="post">
 
 <label class="loginpage">Identifiant</label>
@@ -27,7 +23,7 @@
 
 <p id = "mdp">Mot de passe oublié?</p><br>
 <input id = "login" type="submit" value = "connecter"></input>
-<footer></footer>
+
 </form>
 </body>
 </html>
