@@ -7,7 +7,7 @@
 <title>Ajouter une offre</title>
 </head>
 <body>
-<h2>Ajouter une offre</h2>
+
 <form>
 <table>
 <tr>
