@@ -8,7 +8,7 @@
 <body>
 
 <header>
-<img src="img/logo.png" >
+<img src="img/logo.png" style="width:30%">
 </header>
 
 <form action="HandleLoginServle" method="post">

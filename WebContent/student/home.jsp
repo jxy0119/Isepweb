@@ -9,30 +9,30 @@
 <link href="../css/isepgo.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-
 <script>
-	$(function(){
-    $("footer").load("../footer.html");
+$(function(){
+$("footer").load("../footer.html");
+});
+
+$(function(){
+    $("header").load("../menu.html");
     });
-	
-	$(function(){
-	    $("header").load("../menu.html");
-	    });
-	$(function(){
-	    $("#research").load("../research.jsp");
-	    });
+$(function(){
+    $("#research").load("../research.jsp");
+    });
 </script>
 
+ 
 </head>
 <body>
 <header></header>
 <div id="welcomestudent">
 <span>Bienvenue </span><span id="name">Bob</span>
 <br>
-<img src="../img/logo1.jpg" style="width:100px">
-<span id="school">Ecole</span>
+<!-- <img src="../img/logo1.jpg" style="width:100px"> -->
+<span id="school">Ecole affecté:</span>
 <br>
-<span id="studentstatus">Statut</span>
+<span id="studentstatus">Statut de module:</span>
 </div>
 <br>
 <div id="research">
