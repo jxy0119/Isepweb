@@ -3,6 +3,8 @@
 /*login*/
 body{
 	font-family:sans-serif;
+	background-color: lightblue;
+		
 }
 
 .loginpage{
@@ -11,6 +13,7 @@ body{
 	margin-left:30%;
 	text-align:right;
 	width:10%;
+	
 }	
 .login{
 	background-color:#FFF3F3;

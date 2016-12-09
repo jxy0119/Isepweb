@@ -5,9 +5,7 @@
 <title>Page de connexion</title>
 <link href="css/isepgo.css" rel='stylesheet' type='text/css' />	
 </head>
-
 <body>
-
 
 <header>
 <img src="img/logo.png" >
