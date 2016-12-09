@@ -27,14 +27,15 @@
       
         <div class="form-signin-heading"><img src="img/logo.png" style="width:80%"></div>
         <label for="id" class="sr-only">Identifiant</label>
-        <input type="text" id="id" class="form-control" name="id" required autofocus>
+        <input type="text" id="id" class="form-control" name="id" placeholder="Identifiant" required autofocus>
         <label for="password" class="sr-only">Mot de passe</label>
-        <input type="password" id="password" class="form-control" name="password" required>
+        <input type="password" id="password" class="form-control" name="password" placeholder="Mot de passe" required>
 
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" >Connecter</button>
+        <p id = "mdp">Mot de passe oublié?</p>
       </form>
-      <p id = "mdp">Mot de passe oublié?</p>
+      
 
     </div> <!-- /container -->
 
