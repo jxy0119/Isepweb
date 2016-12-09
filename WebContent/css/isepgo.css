@@ -3,7 +3,6 @@
 /*login*/
 body{
 	font-family:Arial, Helvetica, sans-serif;
-	background-color: lightblue;
 		
 }
 
@@ -28,6 +27,14 @@ body{
 	background-color: white;
 }
 
+fieldset {
+	border-style: solid;
+	border-color: LightCoral;
+	border-width: 10px;
+	margin-top:10px;
+	width:800px;
+	
+}
 #mdp{	
 	margin-left:50%;
 	width:20%;

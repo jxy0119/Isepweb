@@ -12,6 +12,7 @@
 </header>
 
 <form action="HandleLoginServle" method="post">
+<fieldset>
 
 <label class="loginpage">Identifiant</label>
 <input class="login" type="text" name="id"></input><br>
@@ -21,6 +22,7 @@
 
 <p id = "mdp">Mot de passe oublié?</p><br>
 <input id = "login" type="submit" value = "connecter"></input>
+</fieldset>
 
 </form>
 </body>
