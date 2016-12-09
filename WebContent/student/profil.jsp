@@ -19,13 +19,13 @@ $(function(){
 </script>
 <body>
 <header></header>
-<fieldset>
+<fieldset2>
 <label>Nom Prénom:</label><br>
 <label>Promo : </label><br>
 <label>Parcours : </label><br>
 <label>Ecole affecté : </label><br>
 <label>Choix de module : </label><br>
-</fieldset>
+</fieldset2>
 <footer></footer>
 
 </body>
