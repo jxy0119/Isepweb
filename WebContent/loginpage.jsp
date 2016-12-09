@@ -1,29 +1,41 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Page de connexion</title>
-<link href="css/isepgo.css" rel='stylesheet' type='text/css' />	
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<header>
-<img src="img/logo.png" style="width:30%">
-</header>
 
-<form action="HandleLoginServle" method="post">
-<fieldset>
 
-<label class="loginpage">Identifiant</label>
-<input class="login" type="text" name="id"></input><br>
+    <title>Signin Template for Bootstrap</title>
 
-<label class="loginpage">Mot de passe</label>
-<input class="login" type="password" name="password"></input><br>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<p id = "mdp">Mot de passe oublié?</p><br>
-<input id = "login" type="submit" value = "connecter"></input>
-</fieldset>
+    <!-- Custom styles for this template -->
+    <link href="css/login.css" rel="stylesheet">
 
-</form>
-</body>
+  </head>
+
+  <body>
+
+    <div class="container">
+	<img src="img/logo.png" style="width:30%">
+      <form class="form-signin" action="HandleLoginServlet" method="post">
+        <h2 class="form-signin-heading"></h2>
+        <label for="id" class="sr-only">Identifiant</label>
+        <input type="text" id="id" class="form-control" name="id" required autofocus>
+        <label for="password" class="sr-only">Mot de passe</label>
+        <input type="password" id="password" class="form-control" name="password" required>
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >Connecter</button>
+      </form>
+      <p id = "mdp">Mot de passe oublié?</p>
+
+    </div> <!-- /container -->
+
+  </body>
 </html>
