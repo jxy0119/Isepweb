@@ -22,9 +22,10 @@
   <body>
 
     <div class="container">
-	<img src="img/logo.png" style="width:30%">
+	
       <form class="form-signin" action="HandleLoginServlet" method="post">
-        <h2 class="form-signin-heading"></h2>
+      
+        <div class="form-signin-heading"><img src="img/logo.png" style="width:30%"></div>
         <label for="id" class="sr-only">Identifiant</label>
         <input type="text" id="id" class="form-control" name="id" required autofocus>
         <label for="password" class="sr-only">Mot de passe</label>
