@@ -5,9 +5,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ajouter une offre</title>
+<link href="../css/isepgo.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+$(function(){
+$("footer").load("../footer.html");
+});
+
+$(function(){
+    $("header").load("../menuteacher.html");
+    });
+$(function(){
+    $("#research").load("../research.jsp");
+    });
+</script>
 </head>
 <body>
-
+<img src="../img/logo.png" style="width:10%">
+<header></header>
 <form>
 <table>
 <tr>
@@ -31,7 +47,8 @@
 <td><textarea name="autre"></textarea></td>
 </tr>
 </table>
-<input type="submit" value="Ajouter"></input>
+<input type="submit" value="valider"></input>
 </form>
+<footer></footer>
 </body>
 </html>
