@@ -9,7 +9,7 @@
 
 
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Login ISEP GO</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
