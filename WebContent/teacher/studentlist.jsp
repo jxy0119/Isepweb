@@ -11,14 +11,14 @@
 <body>
 <script>
 $(function(){
-	    $("header").load("../menu.html");
+	    $("header").load("../menuteacher.html");
 	    });
 $(function(){
     $("footer").load("../footer.html");
     });
 	
 </script>
-
+<img src="../img/logo.png" style="width:10%">
 <header></header>
 <fieldset>
 </fieldset>

@@ -18,6 +18,7 @@ $(function(){
 	
 </script>
 <body>
+<img src="../img/logo.png" style="width:10%">
 <header></header>
 <fieldset2>
 <label>Nom Prénom:</label><br>

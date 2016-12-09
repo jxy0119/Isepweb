@@ -25,7 +25,9 @@ $(function(){
  
 </head>
 <body>
+<img src="../img/logo.png" style="width:10%">
 <header></header>
+
 <div id="welcomestudent">
 <span>Bienvenue </span><span id="name">Bob</span>
 <br>
