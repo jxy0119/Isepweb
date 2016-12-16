@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 
-    <title>Fixed Top Navbar Example for Bootstrap</title>
+    <title>Écoles</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,10 +40,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="">Accueil</a></li>
+            <li><a href="">Accueil</a></li>
             <li><a href="">Profil</a></li>
             <li><a href="">Contact</a></li>
-          	<li><a href="">Écoles</a></li>
+          	<li class="active"><a href="">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -57,22 +57,38 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <label for="search">Search:</label>
-    <input type="search" name="search" id="search">
-    <div>
-        <label for="date">Date:</label>
-        <input type="date"  name="date" id="date">
-        <label for="select">systemes Embarques:</label>
-        <select name="select" id="select">
+    	<input type="search" class="form-control col-xs-12" name="search" id="search" placeholder="Search">
+    	
+    	
+    	
+    	
+    	<div>
+        <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control" placeholder="Date"/>
+        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+        
+        <select name="select" id="select" class="form-control">
+        <option value="" disabled selected>Systemes Embarques</option>
         </select>
-        <label for="select2">Pays:</label>
-        <select name="select2" id="select2">
+        
+        <select name="select2" id="select2" class="form-control">
+        <option value="" disabled selected>Pays</option>
         </select>
-        <label for="select3">Langues des cours:</label>
-        <select name="select3" id="select3">
+        
+        <select name="select3" id="select3" class="form-control">
+        <option value="" disabled selected>Langues des cours</option>
         </select>
-        <label for="select4">Duree:</label>
-        <select name="select4" id="select4">
+        
+        <select name="select4" id="select4" class="form-control">
+        <option value="" disabled selected>Duree</option>
         </select>
     </div>
     <div>
