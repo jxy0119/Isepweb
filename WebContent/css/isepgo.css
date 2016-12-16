@@ -6,6 +6,12 @@ body{
 	min-height: 2000px;
   	padding-top: 70px;
 }
+
+select {
+     display:inline;
+     margin:0px;
+     padding:0px;
+}
 	
 		
 }

@@ -56,14 +56,13 @@
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-
-    	<input type="search" class="form-control" name="search" id="search" placeholder="Search">
+      <div class="jumbotron container">
+		<input type="search" class="form-control" name="search" id="search" placeholder="Search">
+    	<br>
     	
+    	<div class="row">
     	
-    	
-    	
-    	<div>
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <div class='input-group date' id='datetimepicker1'>
         <input type='text' class="form-control" placeholder="Date"/>
         <span class="input-group-addon">
@@ -75,25 +74,32 @@
                 $('#datetimepicker1').datetimepicker();
             });
         </script>
+        </div>
         
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <select name="select" id="select" class="form-control">
         <option value="" disabled selected>Systemes Embarques</option>
         </select>
+        </div>
         
-        <select name="select2" id="select2" class="form-control">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <select name="select2" id="select2" class="form-control" >
         <option value="" disabled selected>Pays</option>
         </select>
+        </div>
         
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
         <select name="select3" id="select3" class="form-control">
         <option value="" disabled selected>Langues des cours</option>
         </select>
+        </div>
         
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
         <select name="select4" id="select4" class="form-control">
         <option value="" disabled selected>Duree</option>
         </select>
-    </div>
-    </div>
-
+        </div>
+    </div></div>
     </div> <!-- /container -->
 
 
