@@ -57,6 +57,8 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
+      <label for="textarea5">Text Area:</label>
+      <textarea name="textarea5" id="textarea5"></textarea>
         <label for="search">Search:</label>
     <input type="search" name="search" id="search">
     <div>
