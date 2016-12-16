@@ -57,7 +57,8 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-    	<input type="search" class="form-control col-xs-12" name="search" id="search" placeholder="Search">
+
+    	<input type="search" class="form-control" name="search" id="search" placeholder="Search">
     	
     	
     	
@@ -91,25 +92,7 @@
         <option value="" disabled selected>Duree</option>
         </select>
     </div>
-    <div>
-        <li>
-            <label for="textarea">Text Area:</label>
-            <textarea name="textarea" id="textarea"></textarea>
-        </li>
-        <li>
-            <label for="textarea2">Text Area:</label>
-            <textarea name="textarea2" id="textarea2"></textarea>
-        </li>
-        <li>
-            <label for="textarea3">Text Area:</label>
-            <textarea name="textarea3" id="textarea3"></textarea>
-        </li>
-        <li>
-            <label for="textarea4">Text Area:</label>
-            <textarea name="textarea4" id="textarea4"></textarea>
-        </li>
     </div>
-      </div>
 
     </div> <!-- /container -->
 
