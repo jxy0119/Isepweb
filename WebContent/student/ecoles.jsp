@@ -60,9 +60,10 @@
       	<div class="row">
       		<div class="col-md-3"></div>
       		<div class="col-md-6">
-      			<input type="search" class="form-control" name="search" id="search" placeholder="Search">
+      			<input type="search" class="form-control" name="search" id="search" placeholder="Mot-clé">
       		</div>
-      	<div class="col-md-3"></div>
+      		<div class="col-md-1"><button type="button" class="btn btn-default glyphicon glyphicon-search"></button></div>
+      	<div class="col-md-2"></div>
       </div>
       
       <br>
@@ -94,7 +95,7 @@
         	</select>
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-2">
         	<select name="select3" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
         	</select>
@@ -104,6 +105,9 @@
         	<select name="select4" id="select4" class="form-control">
         		<option value="" disabled selected>Duree</option>
         	</select>
+        </div>
+        <div class="col-md-1">
+        <button type="button" class="btn btn-default glyphicon glyphicon-search"></button>
         </div>
       </div>
      </div>
