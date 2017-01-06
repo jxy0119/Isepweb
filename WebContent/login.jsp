@@ -33,7 +33,7 @@
 
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" >Connecter</button>
-        <p id = "mdp">Mot de passe oublié?</p>
+        <a href="/isepweb/oubliemotdepasse.html"><p id = "mdp">Mot de passe oublié?</p></a>
       </form>
       
 
