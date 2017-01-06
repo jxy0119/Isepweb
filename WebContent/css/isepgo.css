@@ -3,8 +3,18 @@
 /*login*/
 body{
 	font-family:Arial, Helvetica, sans-serif;
-		
+	min-height: 2000px;
+  	padding-top: 70px;
 }
+
+select {
+     display:inline;
+     margin:0px;
+     padding:0px;
+}
+	
+		
+
 
 .loginpage{
 	display: inline-block;
@@ -33,7 +43,7 @@ fieldset {
 	border-width: 10px;
 	margin-top:10px;
 	width:800px;
-	
+	position:
 }
 #mdp{	
 	margin-left:50%;
@@ -97,46 +107,4 @@ th{
 select{
 	width:100%;
 	
-}
-
-.search{
-    display: inline-block;
-    width: 20%;
-    border: 1px solid rgba(255,255,255,0.6);
-    background: linear-gradient(#eee, #fff);
-    transition: all 0.3s ease-out;
-    box-shadow: 
-        inset 0 1px 4px rgba(0,0,0,0.4);
-    padding: 5px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.searchpad {
-    display: inline-block;
-    width:30%;
-}
-
-/*menu*/
-.menu_ul {
-    list-style-type: none;
-    margin: 0 0 0 0 ;
-    padding: 0;
-    overflow: hidden;
-    background: linear-gradient(#BBB, #777);
-}
-.menu_li {
-    float: left;
-}
-
-.menu_a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 40px;
-    text-decoration: none;
-}
-
-.menu_a:hover {
-    background: linear-gradient(#999, #555);
 }
