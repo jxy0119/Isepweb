@@ -2,15 +2,17 @@
 
 /*login*/
 body{
-	font-family:sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
+		
 }
 
 .loginpage{
 	display: inline-block;
-	margin-top:5%;
+	margin-top:8%;
 	margin-left:30%;
 	text-align:right;
 	width:10%;
+	
 }	
 .login{
 	background-color:#FFF3F3;
@@ -25,6 +27,14 @@ body{
 	background-color: white;
 }
 
+fieldset {
+	border-style: solid;
+	border-color: LightCoral;
+	border-width: 10px;
+	margin-top:10px;
+	width:800px;
+	
+}
 #mdp{	
 	margin-left:50%;
 	width:20%;

@@ -29,11 +29,27 @@ public class HandleFindServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String[]values=request.getParameterValues("country");
-		HandleUserBean hub=new HandleUserBean();
-		if(values!=null&&values.length>0){
-			
+		String []Language=request.getParameterValues("language");
+		String major=request.getParameter("major");
+		if((values!=null&&values.length>0)&&(major=="")&&(Language==null)){
+			HandleFindBean hfb=new HandleFindBean();
+			ArrayList<Object> al=hfb.getCountryInfo(values);
+			request.setAttribute("al", al);
+			request.getRequestDispatcher("Result.jsp?num=1").forward(request, response);
 		}
-	} 
+		if((Language!=null&&Language.length>0)&&(major=="")&&(values==null)){
+			HandleFindBean hfb=new HandleFindBean();
+			Object []a=hfb.getLanguageInfo(Language);
+			request.setAttribute("language", a);
+			request.getRequestDispatcher("Result.jsp?num=2").forward(request, response);
+		}
+		if(major!=""){
+			HandleFindBean hfb=new HandleFindBean();
+			Object []a=hfb.getMajorInfo(major);
+			request.setAttribute("major", a);
+			request.getRequestDispatcher("Result.jsp?num=3").forward(request, response);
+		}
+	}  
 		
 	
 

@@ -1,21 +1,53 @@
 package isepweb.model;
 
 public class SchoolBean {
-    private int Id;
+    
     private String SchoolName;
     private String Country;
-    
+    private String Symbol;
+    private String Discription;
+    private String WebSite;
+	public String getSymbol() {
+		return Symbol;
+	}
+
+
+
+	public void setSymbol(String symbol) {
+		Symbol = symbol;
+	}
+
+
+
+	public String getDiscription() {
+		return Discription;
+	}
+
+
+
+	public void setDiscription(String discription) {
+		Discription = discription;
+	}
+
+
+
+	public String getWebSite() {
+		return WebSite;
+	}
+
+
+
+	public void setWebSite(String webSite) {
+		WebSite = webSite;
+	}
+
+
+
 	public SchoolBean() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int id) {
-		Id = id;
-	}
+	
 
 	public String getSchoolName() {
 		return SchoolName;

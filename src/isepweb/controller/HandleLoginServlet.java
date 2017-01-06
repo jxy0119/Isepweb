@@ -33,9 +33,19 @@ public class HandleLoginServlet extends HttpServlet {
 		String p=request.getParameter("password");
 		HandleUserBean hub=new HandleUserBean();
 		if(hub.checkUser(u, p)){
-			 request.getRequestDispatcher("student/home.jsp").forward(request, response);
+			    request.getSession().setAttribute("myName", u);
+			    
+			if(hub.readAuthority(u)==1){ 
+				request.getRequestDispatcher("student/home.jsp").forward(request, response);
+				
+			}else if(hub.readAuthority(u)==2){
+				request.getRequestDispatcher("teacher/home.jsp").forward(request, response);
+				
+			}else{
+				request.getRequestDispatcher("service/home.jsp").forward(request, response);
+			}
 		}else{
-			 request.getRequestDispatcher("loginpage.jsp").forward(request, response);
+			    request.getRequestDispatcher("loginpage.jsp").forward(request, response);
 		}
 	}
 

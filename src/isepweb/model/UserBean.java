@@ -4,7 +4,7 @@ public class UserBean {
     private int UserId;
     private String UserName;
     private String PassWord;
-    private int Permissions;
+    private int Authority;
 	public UserBean() {
 		// TODO Auto-generated constructor stub
 	}
@@ -26,11 +26,12 @@ public class UserBean {
 	public void setPassWord(String passWord) {
 		PassWord = passWord;
 	}
-	public int getPermissions() {
-		return Permissions;
+	public int getAuthority() {
+		return Authority;
 	}
-	public void setPermissions(int permissions) {
-		Permissions = permissions;
+	public void setAuthority(int authority) {
+		Authority = authority;
 	}
+	
 
 }
