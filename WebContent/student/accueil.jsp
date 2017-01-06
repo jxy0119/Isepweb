@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 
-    <title>Fixed Top Navbar Example for Bootstrap</title>
+    <title>Accueil</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,10 +40,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="">Accueil</a></li>
-            <li><a href="">Profil</a></li>
-            <li><a href="">Contact</a></li>
-          	<li><a href="">Écoles</a></li>
+            <li class="active"><a href="accueil.jsp">Accueil</a></li>
+            <li><a href="profil.jsp">Profil</a></li>
+            <li><a href="contact.jsp">Contact</a></li>
+          	<li><a href="ecoles.jsp">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -55,16 +55,9 @@
 
     <div class="container">
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
-      </div>
 
+     <div class="jumbotron container-fluid">
+     </div>
     </div> <!-- /container -->
 
 

@@ -40,10 +40,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="">Accueil</a></li>
-            <li class="active"><a href="">Profil</a></li>
-            <li><a href="">Contact</a></li>
-          	<li><a href="">Écoles</a></li>
+            <li><a href="accueil.jsp">Accueil</a></li>
+            <li class="active"><a href="profil.jsp">Profil</a></li>
+            <li><a href="contact.jsp">Contact</a></li>
+          	<li><a href="ecoles.jsp">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
