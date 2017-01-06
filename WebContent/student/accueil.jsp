@@ -57,6 +57,15 @@
 
 
      <div class="jumbotron container-fluid">
+     <h3>Bonjour</h3>
+     </div>
+     
+     <div class="jumbotron container-fluid">
+     <h3>Statut</h3>
+     </div>
+     
+     <div class="jumbotron container-fluid">
+     <h3>Recherches récentes</h3>
      </div>
     </div> <!-- /container -->
 
