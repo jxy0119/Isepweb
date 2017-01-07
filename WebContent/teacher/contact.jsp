@@ -56,17 +56,7 @@
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-		<h2>Contacter votre responable de parcours</h2>
-		<p>Envoyer un mail à ssimons@isep.fr</p>
-		<form  action="" method="post">
-		<label for="sujet" class="sr-only">sujet</label>
-        <input type="text" id="sujet" class="form-control" name="sujet" placeholder="sujet" required autofocus><br>
-        <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="texte"></textarea><br>
-        <button type="button" class="btn btn-primary">Envoyer</button>
-        </form>
-      </div>
-      <br>
+      
 
       <div class="jumbotron">
       <h2>Envoyer des informations au service international</h2>
