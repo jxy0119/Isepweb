@@ -62,7 +62,10 @@
 	<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
     <input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
     <input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
+    <script>var i=1</script>
+    <input type=button onclick="document.getElementById('langue').insertAdjacentHTML('beforeEnd','<input type=text name='+i+' value='+i+++'>')" value ="ajouter une autre">
 	<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine"><br>
+	<input type=button onclick="document.getElementById('langue').insertAdjacentHTML('beforeEnd','<input type=text name='+i+' value='+i+++'>')" value ="ajouter un autre">
 	<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
 	<input type="submit" class="btn btn-default" value="Valider"></input>
 	</form>
