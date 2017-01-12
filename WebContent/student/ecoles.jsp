@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/isepgo.css" rel="stylesheet">
+    <link href="../css/stickyfooter.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -114,6 +115,8 @@
      <div class="jumbotron container-fluid">
      </div>
     </div> <!-- /container -->
+    
+     <jsp:include page="../footer.html"/>
 
 
     <!-- Bootstrap core JavaScript
