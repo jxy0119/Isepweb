@@ -26,6 +26,14 @@
   </head>
 
   <body>
+  
+  <%
+ 	String u=(String)session.getAttribute("myName");
+ 	if(u==null){
+ 	response.sendRedirect("login.jsp?err=1");
+ 	return ;}
+  %>
+
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -55,10 +63,12 @@
     </nav>
 
     <div class="container">
-
+	
+	
 
      <div class="jumbotron container-fluid">
-     <h3>Bonjour</h3>
+     
+     <h3>Bonjour, <%=u %>!</h3>
      </div>
      
      <div class="jumbotron container-fluid">
