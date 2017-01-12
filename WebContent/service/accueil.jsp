@@ -58,6 +58,35 @@
 
 
      <div class="jumbotron container-fluid">
+     <a href="/isepwebproject/service/offer.jsp">click here to add information</a>
+	<a href="OperateServlet?f=4">click here to check comments of school</a>
+	<form>
+		<label for="textarea">Text Area:</label>
+		<textarea name="textarea" id="textarea"></textarea>
+		<table width="200" border="1">
+			<p>Nouvelles informations</p>
+			<tbody>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
      </div>
     </div> <!-- /container -->
     
