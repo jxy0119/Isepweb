@@ -58,7 +58,7 @@
 
 
      <div class="jumbotron container-fluid">
-     <a href="/isepwebproject/service/offer.jsp">click here to add information</a>
+     <a href="service/offer.jsp">click here to add information</a>
 	<a href="OperateServlet?f=4">click here to check comments of school</a>
 	<form>
 		<label for="textarea">Text Area:</label>
