@@ -68,6 +68,8 @@
      <h3>Recherches récentes</h3>
      </div>
     </div> <!-- /container -->
+    
+    <jsp:include page="../footer.html"/>
 
 
     <!-- Bootstrap core JavaScript
