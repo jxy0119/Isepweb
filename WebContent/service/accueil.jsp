@@ -42,8 +42,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="service/accueil.jsp">Accueil</a></li>
-            <li><a href="service/profil.jsp">Profil</a></li>
-            <li><a href="service/contact.jsp">Contact</a></li>
+            
           	<li><a href="service/ecoles.jsp">Écoles</a></li>
           	
           </ul>
@@ -58,10 +57,11 @@
 
 
      <div class="jumbotron container-fluid">
-     <a href="service/offer.jsp">click here to add information</a>
-	<a href="OperateServlet?f=4">click here to check comments of school</a>
+     
+     <a href="service/offer.jsp"><button type="button" class="btn btn-info">Add information</button></a>
+	<a href="OperateServlet?f=4"><button type="button" class="btn btn-info">Comments of schools</button></a>
 	<form>
-		<label for="textarea">Text Area:</label>
+		<label for="textarea" style="margin-top:20px">Text Area:</label>
 		<textarea name="textarea" id="textarea"></textarea>
 		<table width="200" border="1">
 			<p>Nouvelles informations</p>
