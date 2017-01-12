@@ -26,14 +26,18 @@
   </head>
 
   <body>
-  
-  <%
- 	String u=(String)session.getAttribute("myName");
- 	if(u==null){
- 	response.sendRedirect("login.jsp?err=1");
- 	return ;}
-  %>
+<%
+String u=(String)session.getAttribute("myName");
+if(u==null){
+  response.sendRedirect("isepweb/login.jsp?err=1");
+  return ;
+}
+%>
 
+<a href="<%=request.getContextPath()%>/find.jsp">click here to find school</a><br>
+<a href="<%=request.getContextPath()%>/SubmitAppication.jsp">click here to chose class</a><br>
+<a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u %>" >click here to see the states of my applications</a><br>
+<p>welcome!!<%=u %></p>
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -50,9 +54,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="<%=request.getContextPath()%>/student/profil.jsp">Profil</a></li>
-            <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/student/ecoles.jsp">Écoles</a></li>
+            <li><a href="student/profil.jsp">Profil</a></li>
+            <li><a href="student/contact.jsp">Contact</a></li>
+          	<li><a href="student/ecoles.jsp">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -63,24 +67,12 @@
     </nav>
 
     <div class="container">
-	
-	
-
-     <div class="jumbotron container-fluid">
+    
+    <!-- Main component for a primary marketing message or call to action -->
      
-     <h3>Bonjour, <%=u %>!</h3>
-     </div>
-     
-     <div class="jumbotron container-fluid">
-     <h3>Statut</h3>
-     </div>
-     
-     <div class="jumbotron container-fluid">
-     <h3>Recherches récentes</h3>
-     </div>
     </div> <!-- /container -->
     
-    <jsp:include page="../footer.html"/>
+     <jsp:include page="../footer.html"/>
 
 
     <!-- Bootstrap core JavaScript
