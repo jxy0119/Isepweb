@@ -7,19 +7,35 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="HandleFindServlet" method="post" >
+<%
+String u=(String)session.getAttribute("myName");
+if(u==null){
+	response.sendRedirect("login.jsp?err=1");
+	return ;
+}
+%>
+<form action="HandleFindServlet?flag=1" method="post" >
 <label> country</label><br>
-us:<input type="checkbox" name="country" value="us">
-fr:<input type="checkbox" name="country" value="fr"><br>
+<select name="country">
+<option></option>
+<option>China</option>
+<option>France</option>
+<option>US</option>
+</select>
+
 <label>language</label>
-eng:<input type="checkbox" name="language" value="eng"><br>
-fr:<input type="checkbox" name="language" value="fr"><br>
+<select name="language">
+<option></option>
+<option>Fr</option>
+<option>Eng</option>
+
+</select>
 <label>major</label>
 <select name="major">
 <option></option>
 <option>Informatique</option>
 <option>Mecanique</option>
-<option>Economique</option>
+<option>Telecommunication</option>
 </select>
 <input type="submit" value="submit">
 

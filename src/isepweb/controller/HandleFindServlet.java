@@ -28,26 +28,44 @@ public class HandleFindServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String[]values=request.getParameterValues("country");
-		String []Language=request.getParameterValues("language");
+		String flag=request.getParameter("flag");
+		if(flag.equals("1")){
+		String country=request.getParameter("country");
+		String language=request.getParameter("language");
 		String major=request.getParameter("major");
-		if((values!=null&&values.length>0)&&(major=="")&&(Language==null)){
+		
 			HandleFindBean hfb=new HandleFindBean();
-			ArrayList<Object> al=hfb.getCountryInfo(values);
+			ArrayList<Object> al=hfb.getCountryInfo(country,language,major);
 			request.setAttribute("al", al);
-			request.getRequestDispatcher("Result.jsp?num=1").forward(request, response);
-		}
-		if((Language!=null&&Language.length>0)&&(major=="")&&(values==null)){
+			request.getRequestDispatcher("Result.jsp").forward(request, response);
+		
+		}else if(flag.equals("2")){
+			
 			HandleFindBean hfb=new HandleFindBean();
-			Object []a=hfb.getLanguageInfo(Language);
-			request.setAttribute("language", a);
-			request.getRequestDispatcher("Result.jsp?num=2").forward(request, response);
-		}
-		if(major!=""){
+			ArrayList<Object> al=hfb.getStudentList();
+			request.setAttribute("al", al);
+			request.getRequestDispatcher("/teacher/studentlist.jsp").forward(request, response);
+		}else if(flag.equals("3")){
+			String s=request.getParameter("studentname");
 			HandleFindBean hfb=new HandleFindBean();
-			Object []a=hfb.getMajorInfo(major);
-			request.setAttribute("major", a);
-			request.getRequestDispatcher("Result.jsp?num=3").forward(request, response);
+			ArrayList<Object> al=hfb.WaitingAppList(s);
+			request.setAttribute("al", al);
+			request.getRequestDispatcher("/teacher/resultofstudent.jsp").forward(request, response);
+		    System.out.println(s);
+		}else if(flag.equals("4")){
+			String s=request.getParameter("studentname");
+			HandleFindBean hfb=new HandleFindBean();
+			ArrayList<Object> al=hfb.typeStudent(s);
+			request.setAttribute("al", al);
+			request.getRequestDispatcher("/teacher/studentlist.jsp").forward(request, response);
+		    System.out.println(s);
+			
+		}else{
+			String s=request.getParameter("studentname");
+			HandleFindBean hfb=new HandleFindBean();
+			ArrayList<Object> al=hfb.getStudent(s);
+			request.setAttribute("al", al);
+			request.getRequestDispatcher("/student/ResultOfApp.jsp").forward(request, response);
 		}
 	}  
 		

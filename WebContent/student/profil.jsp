@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/isepgo.css" rel="stylesheet">
+    <link href="../css/stickyfooter.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -57,9 +58,27 @@
 
 		<h3>Votre profil</h3>
       <div class="jumbotron container-fluid">
-      
+      <%
+String u=(String)session.getAttribute("myName");
+if(u==null){
+	response.sendRedirect("login.jsp?err=1");
+	return ;
+}
+%>
+<p>hello <%=u %>,chose ur class plz!</p>
+	<form action="ApplicateServlet?u=<%=u %>" method="post">
+
+		
+		ClassName:<input type="text" name="classname"><br>
+		MajorName:<input type="text" name="majorname"><br>  
+		<input type="submit" value="submit">
+
+
+	</form>
 	  </div>
     </div> <!-- /container -->
+    
+     <jsp:include page="../footer.html"/>
 
 
     <!-- Bootstrap core JavaScript

@@ -29,17 +29,30 @@ public class ApplicateServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		try{
-			String s_StudentNum=request.getParameter("studentnum");
-		    String StudentName=request.getParameter("studentname");
+			String u=request.getParameter("u");
 		    String ClassName=request.getParameter("classname");
 		    String MajorName=request.getParameter("majorname");
-		    String Date=request.getParameter("date");
-			 int StudentNum=Integer.parseInt(s_StudentNum);
+		    
+			 
 			 HandleUserBean hub=new HandleUserBean();
-			 if(hub.addInfo(StudentName, StudentNum, ClassName, MajorName, Date)){
+			 String []a=hub.bacisInfo(u);
+			 
+			 if(hub.addInfo(a[0], a[1], a[2],ClassName, MajorName)){
 				 request.getRequestDispatcher("suc.html").forward(request, response);
+				 System.out.println(u);
+			     System.out.println(a[0]);
+			     System.out.println(a[1]);
+			     System.out.println(a[2]);
+			     System.out.println(ClassName);
+			     System.out.println(MajorName);
 			 }else{
 				 request.getRequestDispatcher("fail.html").forward(request, response);
+			     System.out.println(u);
+			     System.out.println(a[0]);
+			     System.out.println(a[1]);
+			     System.out.println(a[2]);
+			     System.out.println(ClassName);
+			     System.out.println(MajorName);
 			 }
 			 
 			 

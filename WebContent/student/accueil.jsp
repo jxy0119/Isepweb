@@ -12,10 +12,11 @@
     <title>Accueil</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/isepgo.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/isepgo.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/stickyfooter.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -25,6 +26,14 @@
   </head>
 
   <body>
+  
+  <%
+ 	String u=(String)session.getAttribute("myName");
+ 	if(u==null){
+ 	response.sendRedirect("login.jsp?err=1");
+ 	return ;}
+  %>
+
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -36,14 +45,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="../img/logo.png" height="100%"></a>
+          <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="profil.jsp">Profil</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-          	<li><a href="ecoles.jsp">Écoles</a></li>
+            <li><a href="<%=request.getContextPath()%>/student/profil.jsp">Profil</a></li>
+            <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
+          	<li><a href="<%=request.getContextPath()%>/student/ecoles.jsp">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -54,10 +63,12 @@
     </nav>
 
     <div class="container">
-
+	
+	
 
      <div class="jumbotron container-fluid">
-     <h3>Bonjour</h3>
+     
+     <h3>Bonjour, <%=u %>!</h3>
      </div>
      
      <div class="jumbotron container-fluid">
@@ -68,12 +79,14 @@
      <h3>Recherches récentes</h3>
      </div>
     </div> <!-- /container -->
+    
+    <jsp:include page="../footer.html"/>
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

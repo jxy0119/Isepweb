@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@page
+    pageEncoding="ISO-8859-1"%>
+    <%@page
 	import="java.sql.*,java.util.*,isepweb.model.*,isepweb.controller.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,7 +12,7 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("login.jsp?err=1");
+	response.sendRedirect("/isepwebproject/login.jsp?err=1");
 	return ;
 }
 %>
@@ -23,33 +23,37 @@ if(request.getAttribute("al")==null){
 }else{
 %>
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
-	<p><a href="/isepwebproject/find.jsp">back to find page and chose again</a></p>
-	
-	<%}else { %>
 	<table>
 		<tr>
-		    <td>Country</td>
-		    <td>Language</td>
+		    <td>Id</td>
+		    <td>studentID</td>
+		    <td>StudentName</td>
+			<td>School of offer</td>
+			<td>Class</td>
 			<td>Major</td>
-			<td>SchoolName</td>
-			<td>more details</td>
+			<td>State</td>
+		    <td>Date</td>
+			
+			
 		</tr>
 			<%for(int i=0;i<aL1.size();i++){	  
-		    InformationBean Ib=(InformationBean)aL1.get(i);
-	  
+		    ResultBean Rb=(ResultBean)aL1.get(i);
+	   
 	%>
 		
 		<tr>
-		    <td><%=Ib.getCountry() %></td>
-		    <td><%=Ib.getLanguage() %></td>
-		    <td><%=Ib.getMajor() %></td>
-		    <td><%=Ib.getSchoolName() %></td>
-		    <td><a href="ShowSchoolInfoServlet?s=<%=Ib.getSchoolName()%>">go</a></td>
+		    <td><%=Rb.getId() %></td>
+		    <td><%=Rb.getStudentId() %></td>
+		    <td><%=Rb.getStudentName() %></td>
+		    <td><%=Rb.getSchool() %></td>
+		    <td><%=Rb.getCl() %></td>
+		    <td><%=Rb.getMajor() %></td>
+		    <td><%=Rb.getState() %></td>
+		    <td><%=Rb.getDate() %></td>
+
 		</tr>
-		<%}
-		}
-	}%>
+		<% }
+			}%>
 	</table>	
 </body>
 </html>
