@@ -43,12 +43,12 @@ public class HandleUserBean {
     	}
     	return a;
     }
-    public boolean addInfo(String st,int sn,String cn,String mn,String d){
+    public boolean addInfo(String id,String sn,String s,String cn,String mn){
     	boolean b=false;
     	try{
     		ct=new ConnDB().getConn();
     		sm=ct.createStatement();
-    		int a=sm.executeUpdate("insert into student_has_class(UserInformation_Id, Date, ClassName, MajorName, StudentName, state) values('"+sn+"','"+d+"','"+cn+"','"+mn+"','"+st+"','waiting for confirm')");
+    		int a=sm.executeUpdate("insert into resultofapplications(studentId, studentName,school,Class,Major,state) values('"+id+"','"+sn+"','"+s+"','"+cn+"','"+mn+"','waiting for confirm')");
     		if(a==1){
     			b=true;
     		}    		
@@ -61,7 +61,28 @@ public class HandleUserBean {
     	}
     	return b;
     }
-    
+    public String[] bacisInfo(String u){
+    	
+    	String[]a={"","",""};
+    	try{
+    		ct=new ConnDB().getConn();
+    		sm=ct.createStatement();
+    		rs=sm.executeQuery("select*from students where name='"+u+"'");
+    		if(rs.next()){
+    			a[0]=rs.getString(1);
+    			a[1]=rs.getString(2);
+    			a[2]=rs.getString(3);
+    		}
+    		
+    		
+    		
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}finally{
+    		this.close();
+    	}
+    	return a;
+    }
     public void close(){
     	try{
     		if(rs!=null){

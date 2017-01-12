@@ -8,33 +8,25 @@ public class HandleFindBean {
 	    private Connection ct=null;
 	    private Statement sm=null;
 	    private ResultSet rs=null;
-	    private String sql="";
-	    public ArrayList<Object> getCountryInfo(String []a){
+	    
+	    public ArrayList<Object> getCountryInfo(String a,String b,String c){
     	ArrayList<Object> aL1=new ArrayList<Object>();
-    	
-    	if(a!=null){
-    		
+   	
     	try{		
              ct=new ConnDB().getConn();
              sm=ct.createStatement();
-             if(a.length>1){
-              
-         	  for(int i=1;i<a.length;i++){
-             sql="or country like '%"+a[i]+"%'";
-         	 rs=sm.executeQuery("select * from school where country like '%"+a[0]+"%'"+sql);
-         	  }
-             }else{
-        	 rs=sm.executeQuery("select * from school where country like '%"+a[0]+"%'"+sql);
-        	 }
+             rs=sm.executeQuery("select country,language,major,schoolname from information where country like '%"+a+"%'"+"and language like '%"+b+"%'"+"and major like '%"+c+"%'");
+             
     	while(rs.next()){
-    	     SchoolBean Sb=new SchoolBean();	
+    	     InformationBean Ib=new InformationBean();	
     		 
-    		 Sb.setSchoolName(rs.getString(1));
-    		 Sb.setCountry(rs.getString(2));
-    		 aL1.add(Sb);
+    		 Ib.setCountry(rs.getString(1));
+    		 Ib.setLanguage(rs.getString(2));
+    		 Ib.setMajor(rs.getString(3));
+    		 Ib.setSchoolName(rs.getString(4));
+    		 aL1.add(Ib);
     	    }
-    	   
-          
+    	
              }
     	
     	catch(Exception e){
@@ -42,88 +34,9 @@ public class HandleFindBean {
     	}finally{
     		this.close();
     	  } 
-    	}	
+    		
     	return aL1;
     }
-	    public Object[] getLanguageInfo(String []l){
-	    	
-	    	ArrayList<Object> aL1=new ArrayList<Object>();
-	    	ArrayList<Object> aL2=new ArrayList<Object>();
-	    	ArrayList<Object> aL3=new ArrayList<Object>();
-	    	Object []a={aL1,aL2,aL3};
-	    	if(l!=null){
-	    		
-	    	
-	    	try{
-	    		ct=new ConnDB().getConn();
-	    		sm=ct.createStatement();
-	    		if(l.length>1){
-	                
-	           	  for(int i=1;i<l.length;i++){
-	               sql="or language like '%"+l[i]+"%'";
-	    		rs=sm.executeQuery("select class.language,class.classname,class.majorname,class.schoolname from class where language like'%"+l[0]+"%'"+sql);
-	           	  }
-	    		}else{
-	    			rs=sm.executeQuery("select class.language,class.classname,class.majorname,class.schoolname from class where language like'%"+l[0]+"%'"+sql);  
-	           	  }
-	    		while(rs.next()){
-	    		ClassBean Cb=new ClassBean();
-	    		MajorBean Mb=new MajorBean();
-	    		SchoolBean Sb=new SchoolBean();
-	    		Cb.setLanguage(rs.getString(1));
-	    		Cb.setClassName(rs.getString(2));
-	    		Mb.setMajorName(rs.getString(3));
-	    		Sb.setSchoolName(rs.getString(4));
-	    		aL1.add(Cb);
-	    		aL2.add(Mb);
-	    		aL3.add(Sb);
-	    		}     		
-	    		
-	    	}catch(Exception e){
-	    		e.printStackTrace();
-	    	}finally{
-	    		this.close();
-	    	}
-	    	}
-	    	return a ;
-	    	
-	    }
-	    public Object[] getMajorInfo(String m){
-	    	
-	    	ArrayList<Object> aL1=new ArrayList<Object>();
-	    	ArrayList<Object> aL2=new ArrayList<Object>();
-	    	ArrayList<Object> aL3=new ArrayList<Object>();
-	    	Object []a={aL1,aL2,aL3};
-            try{
-            	ct=new ConnDB().getConn();
-	    		sm=ct.createStatement();
-            	rs=sm.executeQuery("select class.majorname,class.classname,class.schoolname from class where class.majorname like '%"+m+"%'");
-            	while(rs.next()){
-    	    		ClassBean Cb=new ClassBean();
-    	    		MajorBean Mb=new MajorBean();
-    	    		SchoolBean Sb=new SchoolBean();
-    	    		
-    	    		Cb.setClassName(rs.getString(1));
-    	    		Mb.setMajorName(rs.getString(2));
-    	    		Sb.setSchoolName(rs.getString(3));
-    	    		aL1.add(Cb);
-    	    		aL2.add(Mb);
-    	    		aL3.add(Sb);
-    	    		}     		
-            	
-            	
-            	
-	    	}catch(Exception e){
-	    		e.printStackTrace();
-	    	}finally{
-	    		this.close();
-	    	}
-	    	
-	    	
-	    	
-	    	
-	    	return a;
-	    }
 	    
 	    public ArrayList<Object> getSchoolInfo(String s){
              
@@ -131,31 +44,127 @@ public class HandleFindBean {
 	    	try{
 	    		ct=new ConnDB().getConn();
 	    		sm=ct.createStatement();
-	    		rs=sm.executeQuery("select*from school where schoolname='"+s+"'");
+	    		rs=sm.executeQuery("select distinct schoolname,country,website,symbol,description from Information where schoolname='"+s+"'");
 	    		while(rs.next()){    	    		
-    	    		SchoolBean Sb=new SchoolBean();
-    	    		Sb.setSchoolName(rs.getString(1));
-    	    		Sb.setCountry(rs.getString(2));
-    	    		Sb.setSymbol(rs.getString(3));
-    	    		Sb.setDiscription(rs.getString(4));
-    	    		Sb.setWebSite(rs.getString(5));
-    	    		aL1.add(Sb);
+    	    		InformationBean Ib=new InformationBean();
+    	    		Ib.setSchoolName(rs.getString(1));
+    	    		Ib.setCountry(rs.getString(2));
+    	    		Ib.setWebsite(rs.getString(3));
+    	    		Ib.setSymbol(rs.getString(4));
+    	    		Ib.setDescription(rs.getString(5));
+    	    		aL1.add(Ib);
     	    		
     	    		} 
-	    		
-	    		
+			
 	    	}catch(Exception e){
 	    		e.printStackTrace();
 	    	}finally{
 	    		this.close();
 	    	}
-	    	
-	    	
-	    	
-	    	
+	
 	    	return aL1;
 	    }
-	    
+	    public ArrayList<Object> getStudentList(){
+            
+	    	ArrayList<Object> aL1=new ArrayList<Object>();
+	    	try{
+	    		ct=new ConnDB().getConn();
+	    		sm=ct.createStatement();
+	    		rs=sm.executeQuery("select * from students" );
+	    		while(rs.next()){    	    		
+    	    		StudentBean Sb=new StudentBean();
+    	    		Sb.setId(rs.getInt(1));
+    	    		Sb.setStudentName(rs.getString(2));
+    	    		Sb.setSchool(rs.getString(3));
+    	    		
+    	    		aL1.add(Sb);
+    	    		
+    	    		} 
+	    	}catch(Exception e){
+	    		e.printStackTrace();
+	    	}finally{
+	    		this.close();
+	    	}
+	    	return aL1;
+	    } 
+            public ArrayList<Object> typeStudent(String t){
+            
+	    	ArrayList<Object> aL1=new ArrayList<Object>();
+	    	try{
+	    		ct=new ConnDB().getConn();
+	    		sm=ct.createStatement();
+	    		rs=sm.executeQuery("select * from students where name='"+t+"'" );
+	    		while(rs.next()){    	    		
+    	    		StudentBean Sb=new StudentBean();
+    	    		Sb.setId(rs.getInt(1));
+    	    		Sb.setStudentName(rs.getString(2));
+    	    		Sb.setSchool(rs.getString(3));
+    	    		
+    	    		aL1.add(Sb);
+    	    		
+    	    		} 
+	    	}catch(Exception e){
+	    		e.printStackTrace();
+	    	}finally{
+	    		this.close();
+	    	}
+	    	return aL1;
+	    }
+         public ArrayList<Object> getStudent(String sn){
+            
+	    	ArrayList<Object> aL1=new ArrayList<Object>();
+	    	try{
+	    		ct=new ConnDB().getConn();
+	    		sm=ct.createStatement();
+	    		rs=sm.executeQuery("select * from resultofapplications where studentname='"+sn+"'");
+	    		while(rs.next()){    	    		
+    	    		ResultBean Rb=new ResultBean();
+    	    		Rb.setId(rs.getInt(1));
+    	    		Rb.setStudentId(rs.getInt(2));
+    	    		Rb.setStudentName(rs.getString(3));
+    	    		Rb.setSchool(rs.getString(4));
+    	    		Rb.setCl(rs.getString(5));
+    	    		Rb.setMajor(rs.getString(6));
+    	    		Rb.setState(rs.getString(7));
+    	    		Rb.setDate(rs.getString(8));
+    	    		aL1.add(Rb);
+    	    		
+    	    		} 
+	    	}catch(Exception e){
+	    		e.printStackTrace();
+	    	}finally{
+	    		this.close();
+	    	}
+	    	return aL1;
+	    } 
+         public ArrayList<Object> WaitingAppList(String sn){
+             
+ 	    	ArrayList<Object> aL1=new ArrayList<Object>();
+ 	    	try{
+ 	    		ct=new ConnDB().getConn();
+ 	    		sm=ct.createStatement();
+ 	    		rs=sm.executeQuery("select * from resultofapplications where studentname='"+sn+"'and state like '%waiting%'");
+ 	    		while(rs.next()){    	    		
+     	    		ResultBean Rb=new ResultBean();
+     	    		Rb.setId(rs.getInt(1));
+     	    		Rb.setStudentId(rs.getInt(2));
+     	    		Rb.setStudentName(rs.getString(3));
+     	    		Rb.setSchool(rs.getString(4));
+     	    		Rb.setCl(rs.getString(5));
+     	    		Rb.setMajor(rs.getString(6));
+     	    		Rb.setState(rs.getString(7));
+     	    		Rb.setDate(rs.getString(8));
+     	    		aL1.add(Rb);
+     	    		
+     	    		} 
+ 	    	}catch(Exception e){
+ 	    		e.printStackTrace();
+ 	    	}finally{
+ 	    		this.close();
+ 	    	}
+ 	    	return aL1;
+ 	    } 
+         
 	    public void close(){
 	    	try{
 	    		if(rs!=null){
