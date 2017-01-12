@@ -12,13 +12,13 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("<%=request.getContextPath()%>/login.jsp?err=1");
+	response.sendRedirect("login.jsp?err=1");
 	return ;
 }
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("<%=request.getContextPath()%>/login.jsp?err=1");
+	response.sendRedirect("/login.jsp?err=1");
 	return ;
 }else{
 %>  

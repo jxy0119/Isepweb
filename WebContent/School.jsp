@@ -18,7 +18,7 @@ if(u==null){
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("<%=request.getContextPath()%>/login.jsp?err=1");
+	response.sendRedirect("/login.jsp?err=1");
 	return ;
 }else{
 %>
