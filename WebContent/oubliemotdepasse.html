@@ -14,10 +14,7 @@
   padding-bottom: 40px;
   background-color: lightblue;
   }
-.form-oublie .form-oublie-heading,
-.form-oublie .checkbox {
-  margin-bottom: 10px;
-}
+
   .form-oublie input[type="text"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 5px;
@@ -35,21 +32,32 @@
   padding: 10px;
   font-size: 16px;
 }
-
 .form-oublie .checkbox {
   font-weight: normal;
 }
 .form-oublie {
-  max-width: 400px;
+  max-width: 600px;
   padding: 15px;
   margin: 0 auto;
 }
-#love{
-border-color:white;
-}
+
 #title{
-font-size:20px;
-margin-
+font-size:30px;
+background-color: #e7ebee;
+font-family:courier, Helvetica, Arial, sans-serif;
+margin-left:20px;
+color:#87CEEB;
+}
+
+.form-oublie-heading{
+height:60px;
+
+}
+#text{
+margin-bottom:20px;
+}
+.hint{
+margin-top:10px;
 }
     </style>
     
@@ -58,20 +66,24 @@ margin-
 <div id="global">
 
 
-
-        
-
 <div id="contenu">
 
-
+<div class="form-oublie-heading">
+        <p id="title">VOUS NE VOUS RAPPELEZ PLUS DE VOTRE MOT DE PASSE ?</p>
+        </div>
    <form class="form-oublie"  method="post">
       
-        <div class="form-oublie-heading"><img src="img/logo.png" style="width:80%"></div>
-          <h2 id="title">VOUS NE VOUS RAPPELEZ PLUS DE VOTRE MOT DE PASSE ?</h2>
+        
+          
           
         <div id="entete-title">
-      
-        <p>Entrez l'adresse email</p></div>
+       
+       <button class="btn" title="back" onclick="location.href='/isepweb/login.jsp'">
+       <i class="fa fa-reply">Back</i>  </button>
+        <p class="hint">
+        Indiquez-nous votre email (qui correspond à votre nom d'utilisateur) pour générer un nouveau mot de passe.<br><br>
+        Entrez l'adresse email 
+        </p></div>
         
         
         <label for="mail" class="sr-only">Mot de passe</label>
