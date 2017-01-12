@@ -18,13 +18,13 @@ if(u==null){
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("<%=request.getContextPath()%>/login.jsp?err=1");
 	return ;
 }else{
 %>
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
-	<p><a href="/isepwebproject/find.jsp">back to find page and chose again</a></p>
+	<p><a href="<%=request.getContextPath()%>/find.jsp">back to find page and chose again</a></p>
 	
 	<%}else { %>
 	<table>
