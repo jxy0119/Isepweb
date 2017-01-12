@@ -22,9 +22,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
   </head>
 
   <body>
+  <header></header>
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -52,13 +56,13 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+   
     <div class="container">
 
 
      <div class="jumbotron container-fluid">
      <h3>Ajouter une offre</h3><br>
-     <form class="form-group">
+     <form class="form-group" action="/isepwebproject/AddInforServlet?flag=1" method="post">
 	<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
     <input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
     <input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
@@ -71,9 +75,11 @@
 	<br>
 	<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
 	<input type="submit" class="btn btn-default" value="Valider"></input>
-	</form>
+	</form><br>
+	<a href="/isepweb/AddInforServlet?flag=2">result</a>
      </div>
     </div> <!-- /container -->
+    <footer></footer>
 
 
     <!-- Bootstrap core JavaScript
