@@ -28,7 +28,14 @@
   </head>
 
   <body>
-
+<%
+String u=(String)session.getAttribute("myName");
+if(u==null){
+	response.sendRedirect("login.jsp?err=1");
+	return ;
+}
+%>
+<form action="HandleFindServlet?flag=1" method="post" >
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -71,10 +78,9 @@
       
       <br>
 
-    
-        
+         
         <div class="col-md-3">
-        	<select name="select" id="select" class="form-control">
+        	<select name="major" id="select" class="form-control">
         		<option value="" disabled selected>Systemes Embarques</option>
         		<option value="" disabled selected>informatique</option>
         		
@@ -82,31 +88,26 @@
         </div>
         
         <div class="col-md-3">
-        	<select name="select2" id="select2" class="form-control" >
+        	<select name="country" id="select2" class="form-control" >
         		<option value="" disabled selected>Pays</option>
         	</select>
         </div>
         
         <div class="col-md-3">
-        	<select name="select3" id="select3" class="form-control">
+        	<select name="language" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
         	</select>
         </div>
         
     
         <div class="col-md-3">
-        <button type="button" class="btn btn-default glyphicon glyphicon-search"></button>
+        <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
         </div>
       </div>
      </div>
+ </form>
+ 
      <div class="jumbotron container-fluid">
-     <%
-String u=(String)session.getAttribute("myName");
-if(u==null){
-	response.sendRedirect("login.jsp?err=1");
-	return ;
-}
-%>
 <%
 if(request.getAttribute("al")==null){
 	response.sendRedirect("/isepweb/login.jsp?err=1");
