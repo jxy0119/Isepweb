@@ -54,9 +54,9 @@ if(u==null){
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="student/profil.jsp">Profil</a></li>
-            <li><a href="student/contact.jsp">Contact</a></li>
-          	<li><a href="student/ecoles.jsp">Écoles</a></li>
+            <li><a href="/isepweb/student/profil.jsp">Profil</a></li>
+            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
+          	<li><a href="/isepweb/student/ecoles.jsp">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
