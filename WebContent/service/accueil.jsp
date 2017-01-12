@@ -17,6 +17,20 @@
     <!-- Custom styles for this template -->
     <link href="<%=request.getContextPath()%>/css/isepgo.css" rel="stylesheet">
     <link href="<%=request.getContextPath()%>/css/stickyfooter.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script>
+    $(function(){
+    $("footer").load("../footer.html");
+    });
+
+    $(function(){
+    $("header").load("../menuteacher.html");
+    });
+    $(function(){
+    $("#research").load("../research.jsp");
+    });
+   </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -56,10 +70,17 @@
     <div class="container">
 
 
+<<<<<<< HEAD
      <div class="jumbotron container-fluid">
      
      <a href="service/offer.jsp"><button type="button" class="btn btn-info">Add information</button></a>
 	<a href="OperateServlet?f=4"><button type="button" class="btn btn-info">Comments of schools</button></a>
+=======
+     <div class="jumbotron container-fluid">
+     <img src="../img/logo.png" style="width: 10%">
+     <a href="service/offer.jsp">click here to add information</a>
+	<a href="OperateServlet?f=4">click here to check comments of school</a>
+>>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
 	<form>
 		<label for="textarea" style="margin-top:20px">Text Area:</label>
 		<textarea name="textarea" id="textarea"></textarea>
