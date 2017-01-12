@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@page
+	import="java.sql.*,java.util.*,isepweb.model.*,isepweb.controller.*"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,50 +71,76 @@
       
       <br>
 
-     <div class="row">
-    	<div class="col-md-2">
-        <div class='input-group date' id='datetimepicker1'>
-        	<input type='text' class="form-control" placeholder="Date"/>
-        	<span class="input-group-addon">
-        		<span class="glyphicon glyphicon-calendar"></span>
-        	</span>
-        </div>
-        	<script type="text/javascript">
-         	   $(function () {
-        	       $('#datetimepicker1').datetimepicker();
-         	   });
-        	</script>
-        </div>
+    
         
         <div class="col-md-3">
         	<select name="select" id="select" class="form-control">
         		<option value="" disabled selected>Systemes Embarques</option>
+        		<option value="" disabled selected>informatique</option>
+        		
         	</select>
         </div>
         
-        <div class="col-md-2">
+        <div class="col-md-3">
         	<select name="select2" id="select2" class="form-control" >
         		<option value="" disabled selected>Pays</option>
         	</select>
         </div>
         
-        <div class="col-md-2">
+        <div class="col-md-3">
         	<select name="select3" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
         	</select>
         </div>
         
-        <div class="col-md-2">
-        	<select name="select4" id="select4" class="form-control">
-        		<option value="" disabled selected>Duree</option>
-        	</select>
-        </div>
-        <div class="col-md-1">
+    
+        <div class="col-md-3">
         <button type="button" class="btn btn-default glyphicon glyphicon-search"></button>
         </div>
       </div>
      </div>
      <div class="jumbotron container-fluid">
+     <%
+String u=(String)session.getAttribute("myName");
+if(u==null){
+	response.sendRedirect("login.jsp?err=1");
+	return ;
+}
+%>
+<%
+if(request.getAttribute("al")==null){
+	response.sendRedirect("/isepweb/login.jsp?err=1");
+	return ;
+}else{
+%>
+	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
+	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
+	
+	<%}else { %>
+	<table>
+		<tr>
+		    <td>Country</td>
+		    <td>Language</td>
+			<td>Major</td>
+			<td>SchoolName</td>
+			<td>more details</td>
+		</tr>
+			<%for(int i=0;i<aL1.size();i++){	  
+		    InformationBean Ib=(InformationBean)aL1.get(i);
+	  
+	%>
+		
+		<tr>
+		    <td><%=Ib.getCountry() %></td>
+		    <td><%=Ib.getLanguage() %></td>
+		    <td><%=Ib.getMajor() %></td>
+		    <td><%=Ib.getSchoolName() %></td>
+		    <td><a href="ShowSchoolInfoServlet?s=<%=Ib.getSchoolName()%>">go</a></td>
+		</tr>
+		<%}
+		}
+	}%>
+	</table>	
      </div>
     </div> <!-- /container -->
     
