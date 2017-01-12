@@ -100,24 +100,24 @@
       </div>
      </div>
      <div class="jumbotron container-fluid">
-     <%
-String u=(String)session.getAttribute("myName");
-if(u==null){
+ <%
+  String u=(String)session.getAttribute("myName");
+   if(u==null){
 	response.sendRedirect("login.jsp?err=1");
 	return ;
-}
-%>
-<%
-if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepweb/login.jsp?err=1");
-	return ;
-}else{
-%>
+  }
+ %>
+ <%
+   if(request.getAttribute("al")==null){
+	 response.sendRedirect("/isepweb/login.jsp?err=1");
+	 return ;
+   }else{
+ %>
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
 	
 	<%}else { %>
-	<table>
+	 <table>
 		<tr>
 		    <td>Country</td>
 		    <td>Language</td>
@@ -127,8 +127,7 @@ if(request.getAttribute("al")==null){
 		</tr>
 			<%for(int i=0;i<aL1.size();i++){	  
 		    InformationBean Ib=(InformationBean)aL1.get(i);
-	  
-	%>
+	  %>
 		
 		<tr>
 		    <td><%=Ib.getCountry() %></td>
