@@ -118,7 +118,12 @@ if(request.getParameter("logout") != null){
      <div class="jumbotron container-fluid">
 
 
-
+ <%
+   if(request.getAttribute("al")==null){
+	 response.sendRedirect("/isepweb/login.jsp?err=1");
+	 return ;
+   }else{
+ %>
  
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
