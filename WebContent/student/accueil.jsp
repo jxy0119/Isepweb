@@ -81,10 +81,11 @@ if(request.getParameter("logout") != null){
 
     <div class="container">
     <div class="jumbotron">
+    <p>Bonjour, <%=u %></p>
     <a href="<%=request.getContextPath()%>/find.jsp">click here to find school</a><br>
-<a href="<%=request.getContextPath()%>/SubmitAppication.jsp">click here to chose class</a><br>
-<a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u %>" >click here to see the states of my applications</a><br>
-<p>welcome!!<%=u %></p>
+	<a href="<%=request.getContextPath()%>/SubmitAppication.jsp">click here to chose class</a><br>
+	<a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u %>" >click here to see the states of my applications</a><br>
+	
     </div>
     
     <!-- Main component for a primary marketing message or call to action -->
