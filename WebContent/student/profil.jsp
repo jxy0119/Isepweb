@@ -74,13 +74,7 @@ if(request.getParameter("logout") != null){
 
 		<h3>Votre profil</h3>
       <div class="jumbotron container-fluid">
-      <%
-String u=(String)session.getAttribute("myName");
-if(u==null){
-	response.sendRedirect("login.jsp?err=1");
-	return ;
-}
-%>
+
 <p>hello <%=u %>,chose ur class plz!</p>
 	<form action="ApplicateServlet?u=<%=u %>" method="post">
 
