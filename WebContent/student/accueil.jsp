@@ -29,15 +29,25 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-  response.sendRedirect("isepweb/login.jsp?err=1");
+  response.sendRedirect("/isepweb/login.jsp?err=1");
   return ;
 }
+
+if(request.getParameter("logout") != null){
+	session.invalidate();
+	response.sendRedirect("/isepweb/login.jsp?err=1");	
+} 
 %>
 
-<a href="<%=request.getContextPath()%>/find.jsp">click here to find school</a><br>
-<a href="<%=request.getContextPath()%>/SubmitAppication.jsp">click here to chose class</a><br>
-<a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u %>" >click here to see the states of my applications</a><br>
-<p>welcome!!<%=u %></p>
+<script>
+        
+        function logoutbutton()
+        {
+            document.logoutform.logout.value = "yes";
+            logoutform.submit();
+        } 
+    </script>
+
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -60,13 +70,23 @@ if(u==null){
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Déconnexion</a></li>
+            <li><FORM NAME="logoutform" METHOD="POST">
+        <INPUT TYPE="HIDDEN" NAME="logout">
+        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+    </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
+    <div class="jumbotron">
+    <p>Bonjour, <%=u %></p>
+    <a href="<%=request.getContextPath()%>/find.jsp">click here to find school</a><br>
+	<a href="<%=request.getContextPath()%>/SubmitAppication.jsp">click here to chose class</a><br>
+	<a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u %>" >click here to see the states of my applications</a><br>
+	
+    </div>
     
     <!-- Main component for a primary marketing message or call to action -->
      

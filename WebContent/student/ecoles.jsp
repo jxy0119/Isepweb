@@ -31,9 +31,14 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("login.jsp?err=1");
-	return ;
+  response.sendRedirect("/isepweb/login.jsp?err=1");
+  return ;
 }
+
+if(request.getParameter("logout") != null){
+	session.invalidate();
+	response.sendRedirect("/isepweb/login.jsp?err=1");	
+} 
 %>
 
     <!-- Fixed navbar -->
@@ -57,7 +62,10 @@ if(u==null){
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Déconnexion</a></li>
+            <li><FORM NAME="logoutform" METHOD="POST">
+        <INPUT TYPE="HIDDEN" NAME="logout">
+        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+    </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

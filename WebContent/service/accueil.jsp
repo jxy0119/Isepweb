@@ -59,14 +59,17 @@
 
 
 
+
+
      <div class="jumbotron container-fluid">
      
+
      <a href="service/offer.jsp"><button type="button" class="btn btn-info">ajouter information</button></a>
 	<a href="OperateServlet?f=4"><button type="button" class="btn btn-info">Commntaire à valider</button></a>
 
-     <div class="jumbotron container-fluid">
-    <!--   <img src="../img/logo.png" style="width: 10%">-->
-   <!-- 
+
+
+
 	<form>
 		<label for="textarea" style="margin-top:20px">Text Area:</label>
 		<textarea name="textarea" id="textarea"></textarea>
