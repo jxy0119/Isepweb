@@ -17,6 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="../css/isepgo.css" rel="stylesheet">
     <link href="../css/stickyfooter.css" rel="stylesheet">
+    <link href="../css/teacher.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -42,7 +43,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="profil.jsp">Profil</a></li>
+            <li><a href="eleves.jsp">liste des éleves</a></li>
             <li><a href="contact.jsp">Contact</a></li>
           	<li class="active"><a href="ecoles.jsp">Écoles</a></li>
           	
@@ -58,61 +59,59 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron container-fluid">
-      	<div class="row">
+      	<div class="row"><form action="#" method="post" >
       		<div class="col-md-3"></div>
       		<div class="col-md-6">
       			<input type="search" class="form-control" name="search" id="search" placeholder="Mot-clé">
       		</div>
       		<div class="col-md-1"><button type="button" class="btn btn-default glyphicon glyphicon-search"></button></div>
       	<div class="col-md-2"></div>
-      </div>
+      </form></div>
       
       <br>
-
-     <div class="row">
-    	<div class="col-md-2">
-        <div class='input-group date' id='datetimepicker1'>
-        	<input type='text' class="form-control" placeholder="Date"/>
-        	<span class="input-group-addon">
-        		<span class="glyphicon glyphicon-calendar"></span>
-        	</span>
-        </div>
-        	<script type="text/javascript">
-         	   $(function () {
-        	       $('#datetimepicker1').datetimepicker();
-         	   });
-        	</script>
+<div class="row"><form action="/isepweb/HandleFindServlet?flag=1" method="post" >
+     
+        <div class="col-md-3"> 
+        	<select name="major" id="select" class="form-control">
+        		<option value="" >Systemes Embarques</option>
+        		<option value="" >informatique</option>
+        		<option value="">télécomunication</option>
+        		
+        	</select>
         </div>
         
         <div class="col-md-3">
-        	<select name="select" id="select" class="form-control">
-        		<option value="" disabled selected>Systemes Embarques</option>
-        	</select>
-        </div>
-        
-        <div class="col-md-2">
-        	<select name="select2" id="select2" class="form-control" >
+        	<select name="country" id="select2" class="form-control" >
         		<option value="" disabled selected>Pays</option>
+        		<option>France</option>
+        		<option>US</option>
+        		<option>Chine</option>
         	</select>
         </div>
         
-        <div class="col-md-2">
-        	<select name="select3" id="select3" class="form-control">
+        <div class="col-md-3">
+        	<select name="language" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
+        		<option>fr</option>
+        		<option>eng</option>
         	</select>
         </div>
         
-        <div class="col-md-2">
-        	<select name="select4" id="select4" class="form-control">
-        		<option value="" disabled selected>Duree</option>
-        	</select>
+    
+        <div class="col-md-3">
+        <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
         </div>
-        <div class="col-md-1">
-        <button type="button" class="btn btn-default glyphicon glyphicon-search"></button>
-        </div>
+        </form>
       </div>
      </div>
+ 
+ 
      <div class="jumbotron container-fluid">
+
+
+
+ 
+
      </div>
     </div> <!-- /container -->
      <jsp:include page="../footer.html"/>

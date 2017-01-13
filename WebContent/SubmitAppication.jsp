@@ -14,7 +14,7 @@ if(u==null){
 	return ;
 }
 %>
-<a href="/isepwebproject/student/accueil.jsp">back</a>
+<a href="student/accueil.jsp">back</a>
 <p>hello <%=u %>,chose ur class plz!</p>
 	<form action="ApplicateServlet?u=<%=u %>" method="post">
 

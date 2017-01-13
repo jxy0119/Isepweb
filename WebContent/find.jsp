@@ -15,7 +15,7 @@ if(u==null){
 }
 %>
 <form action="HandleFindServlet?flag=1" method="post" >
-<label> country</label><br>
+<label> Country</label><br>
 <select name="country">
 <option></option>
 <option>China</option>
@@ -23,14 +23,14 @@ if(u==null){
 <option>US</option>
 </select>
 
-<label>language</label>
+<label>Language</label>
 <select name="language">
 <option></option>
 <option>Fr</option>
-<option>Eng</option>
+<option>En</option>
 
 </select>
-<label>major</label>
+<label>Major</label>
 <select name="major">
 <option></option>
 <option>Informatique</option>

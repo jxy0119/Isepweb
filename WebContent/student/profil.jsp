@@ -28,6 +28,7 @@
   </head>
 
   <body>
+<<<<<<< HEAD
   <%
 String u=(String)session.getAttribute("myName");
 int id=(Integer)session.getAttribute("a");  
@@ -37,6 +38,30 @@ if(u==null||id==0){
 }
 %>
 
+=======
+  
+  <%
+String u=(String)session.getAttribute("myName");
+if(u==null){
+  response.sendRedirect("/isepweb/login.jsp?err=1");
+  return ;
+}
+
+if(request.getParameter("logout") != null){
+	session.invalidate();
+	response.sendRedirect("/isepweb/login.jsp?err=1");	
+} 
+%>
+
+<script>
+        
+        function logoutbutton()
+        {
+            document.logoutform.logout.value = "yes";
+            logoutform.submit();
+        } 
+    </script>
+>>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -64,7 +89,10 @@ if(u==null||id==0){
           	<li><a href="/isepweb/student/ecoles.jsp?flag=1">Écoles</a></li><%} %> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Déconnexion</a></li>
+            <li><FORM NAME="logoutform" METHOD="POST">
+        <INPUT TYPE="HIDDEN" NAME="logout">
+        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+    </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -74,6 +102,7 @@ if(u==null||id==0){
 
 		<h3>Votre profil</h3>
       <div class="jumbotron container-fluid">
+<<<<<<< HEAD
 <%if(id==1||id==2) {%>      
 <%
 if(request.getAttribute("al")==null){
@@ -160,6 +189,10 @@ if(request.getAttribute("al")==null){
 	</table><br>
 	And next chose ur class plz!
 	
+=======
+
+<p>hello <%=u %>,chose ur class plz!</p>
+>>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
 	<form action="ApplicateServlet?u=<%=u %>" method="post">
 
 		

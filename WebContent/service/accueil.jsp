@@ -12,11 +12,13 @@
     <title>Accueil</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/isepgo.css" rel="stylesheet">
-    <link href="../css/stickyfooter.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/isepgo.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/stickyfooter.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,14 +39,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="../img/logo.png" height="100%"></a>
+         <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="profil.jsp">Profil</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-          	<li><a href="ecoles.jsp">Écoles</a></li>
+            <li class="active"><a href="service/accueil.jsp">Accueil</a></li>
+            
+          	<li><a href="teacher/ecoles.jsp">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -57,8 +58,46 @@
     <div class="container">
 
 
+
+
+
      <div class="jumbotron container-fluid">
-     </div>
+     
+
+     <a href="service/offer.jsp"><button type="button" class="btn btn-info">ajouter information</button></a>
+	<a href="OperateServlet?f=4"><button type="button" class="btn btn-info">Commntaire à valider</button></a>
+
+
+
+
+	<form>
+		<label for="textarea" style="margin-top:20px">Text Area:</label>
+		<textarea name="textarea" id="textarea"></textarea>
+		<table width="200" border="1">
+			<p>Nouvelles informations</p>
+			<tbody>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+     </div> -->  
     </div> <!-- /container -->
     
      <jsp:include page="../footer.html"/>
@@ -68,6 +107,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
