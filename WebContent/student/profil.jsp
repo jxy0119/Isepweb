@@ -55,13 +55,13 @@ if(u==null||id==0){
             <li><a href="student/accueil.jsp">Accueil</a></li>
             <li class="active"><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="/isepweb/student/ecoles.jsp">Écoles</a></li>
+          	<li><a href="/isepweb/student/ecoles.jsp?flag=1">Écoles</a></li>
           	<%} %>         	 
              <%if(id==1||id==2){ %>
              <li><a href="student/accueil.jsp">Accueil</a></li>
             <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="/isepweb/student/ecoles.jsp">Écoles</a></li><%} %> 
+          	<li><a href="/isepweb/student/ecoles.jsp?flag=1">Écoles</a></li><%} %> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="">Déconnexion</a></li>

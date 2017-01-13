@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page
+	import="java.sql.*,java.util.*,isepweb.model.*,isepweb.controller.*"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,11 +14,11 @@
     <title>Écoles</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/isepgo.css" rel="stylesheet">
-    <link href="../css/stickyfooter.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/isepgo.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/stickyfooter.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,6 +30,8 @@
   <body>
  <%
 String u=(String)session.getAttribute("myName");
+
+
 int id=(Integer)session.getAttribute("a");  
 if(u==null||id==0){
 	response.sendRedirect("login.jsp?err=1");
@@ -44,20 +48,20 @@ if(u==null||id==0){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="../img/logo.png" height="100%"></a>
+          <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
-            <li><a href="accueil.jsp">Accueil</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
             <li><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-          	<li class="active"><a href="ecoles.jsp">Écoles</a></li>
+            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
+          	<li class="active"><a href="/isepweb/student/ecoles.jsp">Écoles</a></li>
           	<%} %>         	 
              <%if(id==1||id==2){ %>
-             <li><a href="accueil.jsp">Accueil</a></li>
+             <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
             <li><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-          	<li class="active"><a href="ecoles.jsp">Écoles</a></li>
+            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
+          	<li class="active"><a href="/isepweb/student/ecoles.jsp">Écoles</a></li>
           	<%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -123,6 +127,40 @@ if(u==null||id==0){
       </div>
      </div>
      <div class="jumbotron container-fluid">
+     <% if(request.getAttribute("al")!=null){%>
+
+
+
+	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
+	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
+	<p><a href="/isepweb/student/ecoles.jsp">back to find page and chose again</a></p>
+	
+	<%}else { %>
+	<table>
+		<tr>
+		    <td>Country</td>
+		    <td>Language</td>
+			<td>Major</td>
+			<td>SchoolName</td>
+			<td>more details</td>
+		</tr>
+			<%for(int i=0;i<aL1.size();i++){	  
+		    InformationBean Ib=(InformationBean)aL1.get(i);
+	  
+	%>
+		
+		<tr>
+		    <td><%=Ib.getCountry() %></td>
+		    <td><%=Ib.getLanguage() %></td>
+		    <td><%=Ib.getMajor() %></td>
+		    <td><%=Ib.getSchoolName() %></td>
+		    <td><a href="ShowSchoolInfoServlet?s=<%=Ib.getSchoolName()%>">go</a></td>
+		</tr>
+		<%
+	     }
+	   }
+	}%>
+	</table>
      </div>
     </div> <!-- /container -->
     
@@ -133,6 +171,7 @@ if(u==null||id==0){
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+    
   </body>
 </html>
