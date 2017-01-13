@@ -28,20 +28,11 @@
   </head>
 
   <body>
-<<<<<<< HEAD
-  <%
-String u=(String)session.getAttribute("myName");
-int id=(Integer)session.getAttribute("a");  
-if(u==null||id==0){
-	response.sendRedirect("login.jsp?err=1");
-	return ;
-}
-%>
 
-=======
   
   <%
 String u=(String)session.getAttribute("myName");
+int id=(Integer)session.getAttribute("a");
 if(u==null){
   response.sendRedirect("/isepweb/login.jsp?err=1");
   return ;
@@ -61,7 +52,6 @@ if(request.getParameter("logout") != null){
             logoutform.submit();
         } 
     </script>
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -84,9 +74,9 @@ if(request.getParameter("logout") != null){
           	<%} %>         	 
              <%if(id==1||id==2){ %>
              <li><a href="student/accueil.jsp">Accueil</a></li>
-            <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
-            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="/isepweb/student/ecoles.jsp?flag=1">Écoles</a></li><%} %> 
+             <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
+             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
+             <li><a href="/isepweb/student/ecoles.jsp?flag=1">Écoles</a></li><%} %> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
@@ -102,7 +92,6 @@ if(request.getParameter("logout") != null){
 
 		<h3>Votre profil</h3>
       <div class="jumbotron container-fluid">
-<<<<<<< HEAD
 <%if(id==1||id==2) {%>      
 <%
 if(request.getAttribute("al")==null){
@@ -189,10 +178,7 @@ if(request.getAttribute("al")==null){
 	</table><br>
 	And next chose ur class plz!
 	
-=======
 
-<p>hello <%=u %>,chose ur class plz!</p>
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
 	<form action="ApplicateServlet?u=<%=u %>" method="post">
 
 		

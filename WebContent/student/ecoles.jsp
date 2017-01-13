@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<<<<<<< HEAD
-    <%@page
-=======
- <%@page
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
-	import="java.sql.*,java.util.*,isepweb.model.*,isepweb.controller.*"%>
+
+<%@page	import="java.sql.*,java.util.*,isepweb.model.*,isepweb.controller.*"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,32 +28,23 @@
   </head>
 
   <body>
-<<<<<<< HEAD
+
  <%
-String u=(String)session.getAttribute("myName");
-=======
-<%
-String u=(String)session.getAttribute("myName");
-if(u==null){
-  response.sendRedirect("/isepweb/login.jsp?err=1");
-  return ;
-}
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
 
-<<<<<<< HEAD
 
+String u=(String)session.getAttribute("myName");
 int id=(Integer)session.getAttribute("a");  
 if(u==null||id==0){
 	response.sendRedirect("login.jsp?err=1");
 	return ;
 }
-%>
-=======
 if(request.getParameter("logout") != null){
 	session.invalidate();
 	response.sendRedirect("/isepweb/login.jsp?err=1");	
-} 
+	}
 %>
+
+
 
 
 <script>
@@ -68,9 +55,9 @@ if(request.getParameter("logout") != null){
             logoutform.submit();
         } 
     </script>
-<form action="HandleFindServlet?flag=1" method="post" >
 
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
+
+
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -98,10 +85,10 @@ if(request.getParameter("logout") != null){
           	<%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><FORM NAME="logoutform" METHOD="POST">
+            <li><form NAME="logoutform" METHOD="POST">
         <INPUT TYPE="HIDDEN" NAME="logout">
         <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
-    </FORM></li>
+    </form></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -111,11 +98,10 @@ if(request.getParameter("logout") != null){
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron container-fluid">
-<<<<<<< HEAD
-      	<div class="row"><form action="#" method="post">
-=======
+
+      	
       	<div class="row"><form action="#" method="post" >
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
+
       		<div class="col-md-3"></div>
       		<div class="col-md-6">
       			<input type="search" class="form-control" name="search" id="search" placeholder="Mot-clé">
@@ -125,25 +111,12 @@ if(request.getParameter("logout") != null){
       </form></div>
       
       <br>
-<<<<<<< HEAD
+
 
      <div class="row"><form name="second" action="/isepweb/HandleFindServlet?flag=1" method="post">
-    	
-=======
-<div class="row"><form action="/isepweb/HandleFindServlet?flag=1" method="post" >
-     
-        <div class="col-md-3"> 
-        	<select name="major" id="select" class="form-control">
-        		<option value="" >Systemes Embarques</option>
-        		<option value="" >informatique</option>
-        		<option value="" disabled selected>télécomunication</option>
-        		
-        	</select>
-        </div>
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
         
         <div class="col-md-3">
-<<<<<<< HEAD
+
         	<select name="major" id="select" class="form-control">
         		<option value="" disabled selected>Systemes Embarques</option>
         		<option>all</option>
@@ -155,50 +128,33 @@ if(request.getParameter("logout") != null){
         </div>
         
         <div class="col-md-2">
-=======
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
+
+
         	<select name="country" id="select2" class="form-control" >
         		<option value="" disabled selected>Pays</option>
-<<<<<<< HEAD
         		<option>all</option>
         		<option>China</option>
                 <option>France</option>
                 <option>US</option>
-=======
-        		<option>France</option>
-        		<option>US</option>
-        		<option>Chine</option>
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
         	</select>
         </div>
         
-<<<<<<< HEAD
+
         <div class="col-md-2">
-=======
-        <div class="col-md-3">
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
         	<select name="language" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
-<<<<<<< HEAD
         		<option>all</option>
                 <option>Fr</option>
                 <option>Eng</option>
-=======
-        		<option>fr</option>
-        		<option>eng</option>
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
+
         	</select>
         </div>
         
-<<<<<<< HEAD
+
         
         <div class="col-md-1">
         <button type="submit" form="second" class="btn btn-default glyphicon glyphicon-search"></button>
-=======
-    
-        <div class="col-md-3">
-        <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
+
         </div>
         </form>
       </div>
@@ -206,7 +162,6 @@ if(request.getParameter("logout") != null){
  
  
      <div class="jumbotron container-fluid">
-<<<<<<< HEAD
      <% if(request.getAttribute("al")!=null){%>
 
 
@@ -241,13 +196,7 @@ if(request.getParameter("logout") != null){
 	   }
 	}%>
 	</table>
-=======
 
-
-
- 
-
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
      </div>
     </div> <!-- /container -->
     
@@ -259,41 +208,5 @@ if(request.getParameter("logout") != null){
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
-    
-=======
-     <%
-   if(request.getAttribute("al")!=null){
-	 
- %>
-	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	<%if(aL1.size()==0){ %><p>not found any information </p><br>
-	
-	<%}else { %>
-	 <table>
-		<tr>
-		    <td>Country</td>
-		    <td>Language</td>
-			<td>Major</td>
-			<td>SchoolName</td>
-			<td>more details</td>
-		</tr>
-			<%for(int i=0;i<aL1.size();i++){	  
-		    InformationBean Ib=(InformationBean)aL1.get(i);
-	  %>
-		
-		<tr>
-		    <td><%=Ib.getCountry() %></td>
-		    <td><%=Ib.getLanguage() %></td>
-		    <td><%=Ib.getMajor() %></td>
-		    <td><%=Ib.getSchoolName() %></td>
-		    <td><a href="ShowSchoolInfoServlet?s=<%=Ib.getSchoolName()%>">go</a></td>
-		</tr>
-		<%}
-		
-   }
-	}%>
-	</table>	
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
   </body>
 </html>

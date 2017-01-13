@@ -26,25 +26,14 @@
   </head>
 
   <body>
-<<<<<<< HEAD
   
   <%
  	String u=(String)session.getAttribute("myName");
     int id=(Integer)session.getAttribute("a");
  	if(u==null){
  	response.sendRedirect("login.jsp?err=1");
- 	return ;}
-  %>
-  
-=======
-<%
-String u=(String)session.getAttribute("myName");
-if(u==null){
-  response.sendRedirect("/isepweb/login.jsp?err=1");
-  return ;
-}
-
-if(request.getParameter("logout") != null){
+ 	}
+  if(request.getParameter("logout") != null){
 	session.invalidate();
 	response.sendRedirect("/isepweb/login.jsp?err=1");	
 } 
@@ -58,8 +47,7 @@ if(request.getParameter("logout") != null){
             logoutform.submit();
         } 
     </script>
-
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
+  
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -76,7 +64,6 @@ if(request.getParameter("logout") != null){
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
             <li class="active"><a href="accueil.jsp">Accueil</a></li>
-<<<<<<< HEAD
             <li><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
             
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
@@ -88,12 +75,6 @@ if(request.getParameter("logout") != null){
             
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/student/ecoles.jsp">Écoles</a></li><%} %>
-=======
-            <li><a href="/isepweb/student/profil.jsp">Profil</a></li>
-            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="/isepweb/student/ecoles.jsp">Écoles</a></li>
-          	
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
@@ -106,19 +87,24 @@ if(request.getParameter("logout") != null){
     </nav>
 
     <div class="container">
-    <div class="jumbotron">
-    <p>Bonjour, <%=u %></p>
-    <a href="<%=request.getContextPath()%>/find.jsp">click here to find school</a><br>
-	<a href="<%=request.getContextPath()%>/SubmitAppication.jsp">click here to chose class</a><br>
-	<a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u %>" >click here to see the states of my applications</a><br>
 	
-    </div>
-    
-    <!-- Main component for a primary marketing message or call to action -->
+	
+
+     <div class="jumbotron container-fluid">
      
+     <h3>Bonjour, <%=u %>!</h3>
+     </div>
+     
+     <div class="jumbotron container-fluid">
+     <h3>Statut</h3>
+     </div>
+     
+     <div class="jumbotron container-fluid">
+     <h3>Recherches récentes</h3>
+     </div>
     </div> <!-- /container -->
     
-     <jsp:include page="../footer.html"/>
+    <jsp:include page="../footer.html"/>
 
 
     

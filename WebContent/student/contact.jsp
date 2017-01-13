@@ -26,20 +26,10 @@
   </head>
 
   <body>
-<<<<<<< HEAD
-   <%
+  <%
 String u=(String)session.getAttribute("myName");
 int id=(Integer)session.getAttribute("a");  
 if(u==null||id==0){
-	response.sendRedirect("login.jsp?err=1");
-	return ;
-}
-%>
-=======
-  
-  <%
-String u=(String)session.getAttribute("myName");
-if(u==null){
   response.sendRedirect("/isepweb/login.jsp?err=1");
   return ;
 }
@@ -58,7 +48,7 @@ if(request.getParameter("logout") != null){
             logoutform.submit();
         } 
     </script>
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
+
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
