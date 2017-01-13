@@ -37,7 +37,7 @@ public class HandleFindServlet extends HttpServlet {
 			HandleFindBean hfb=new HandleFindBean();
 			ArrayList<Object> al=hfb.getCountryInfo(country,language,major);
 			request.setAttribute("al", al);
-			request.getRequestDispatcher("ecoles.jsp").forward(request, response);
+			request.getRequestDispatcher("/student/ecoles.jsp").forward(request, response);
 		
 		}else if(flag.equals("2")){
 			

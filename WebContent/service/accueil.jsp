@@ -19,18 +19,6 @@
     <link href="<%=request.getContextPath()%>/css/stickyfooter.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
     </script>
-    <script>
-    $(function(){
-    $("footer").load("../footer.html");
-    });
-
-    $(function(){
-    $("header").load("../menuteacher.html");
-    });
-    $(function(){
-    $("#research").load("../research.jsp");
-    });
-   </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -51,13 +39,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
+         <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="service/accueil.jsp">Accueil</a></li>
             
-          	<li><a href="service/ecoles.jsp">Écoles</a></li>
+          	<li><a href="teacher/ecoles.jsp">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -70,17 +58,15 @@
     <div class="container">
 
 
-<<<<<<< HEAD
+
      <div class="jumbotron container-fluid">
      
-     <a href="service/offer.jsp"><button type="button" class="btn btn-info">Add information</button></a>
-	<a href="OperateServlet?f=4"><button type="button" class="btn btn-info">Comments of schools</button></a>
-=======
+     <a href="service/offer.jsp"><button type="button" class="btn btn-info">ajouter information</button></a>
+	<a href="OperateServlet?f=4"><button type="button" class="btn btn-info">Commntaire à valider</button></a>
+
      <div class="jumbotron container-fluid">
-     <img src="../img/logo.png" style="width: 10%">
-     <a href="service/offer.jsp">click here to add information</a>
-	<a href="OperateServlet?f=4">click here to check comments of school</a>
->>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
+    <!--   <img src="../img/logo.png" style="width: 10%">-->
+   <!-- 
 	<form>
 		<label for="textarea" style="margin-top:20px">Text Area:</label>
 		<textarea name="textarea" id="textarea"></textarea>
@@ -108,7 +94,7 @@
 			</tbody>
 		</table>
 	</form>
-     </div>
+     </div> -->  
     </div> <!-- /container -->
     
      <jsp:include page="../footer.html"/>

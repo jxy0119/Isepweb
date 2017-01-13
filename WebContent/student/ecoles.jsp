@@ -14,11 +14,11 @@
     <title>Écoles</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/isepgo.css" rel="stylesheet">
-    <link href="../css/stickyfooter.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/isepgo.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/stickyfooter.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,7 +35,7 @@ if(u==null){
 	return ;
 }
 %>
-<form action="HandleFindServlet?flag=1" method="post" >
+
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -67,22 +67,23 @@ if(u==null){
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron container-fluid">
-      	<div class="row">
+      	<div class="row"><form action="#" method="post" >
       		<div class="col-md-3"></div>
       		<div class="col-md-6">
       			<input type="search" class="form-control" name="search" id="search" placeholder="Mot-clé">
       		</div>
       		<div class="col-md-1"><button type="button" class="btn btn-default glyphicon glyphicon-search"></button></div>
       	<div class="col-md-2"></div>
-      </div>
+      </form></div>
       
       <br>
-
-         
-        <div class="col-md-3">
+<div class="row"><form action="/isepweb/HandleFindServlet?flag=1" method="post" >
+     
+        <div class="col-md-3"> 
         	<select name="major" id="select" class="form-control">
-        		<option value="" disabled selected>Systemes Embarques</option>
-        		<option value="" disabled selected>informatique</option>
+        		<option value="" >Systemes Embarques</option>
+        		<option value="" >informatique</option>
+        		<option value="" disabled selected>télécomunication</option>
         		
         	</select>
         </div>
@@ -90,12 +91,17 @@ if(u==null){
         <div class="col-md-3">
         	<select name="country" id="select2" class="form-control" >
         		<option value="" disabled selected>Pays</option>
+        		<option>France</option>
+        		<option>US</option>
+        		<option>Chine</option>
         	</select>
         </div>
         
         <div class="col-md-3">
         	<select name="language" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
+        		<option>fr</option>
+        		<option>eng</option>
         	</select>
         </div>
         
@@ -103,22 +109,34 @@ if(u==null){
         <div class="col-md-3">
         <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
         </div>
+        </form>
       </div>
      </div>
- </form>
+ 
  
      <div class="jumbotron container-fluid">
 
 
- <%
-   if(request.getAttribute("al")==null){
-	 response.sendRedirect("/isepweb/login.jsp?err=1");
-	 return ;
-   }else{
- %>
+
  
+
+     </div>
+    </div> <!-- /container -->
+    
+     <jsp:include page="../footer.html"/>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+     <%
+   if(request.getAttribute("al")!=null){
+	 
+ %>
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
+	<%if(aL1.size()==0){ %><p>not found any information </p><br>
 	
 	<%}else { %>
 	 <table>
@@ -141,19 +159,9 @@ if(u==null){
 		    <td><a href="ShowSchoolInfoServlet?s=<%=Ib.getSchoolName()%>">go</a></td>
 		</tr>
 		<%}
-		}
+		
+   }
 	}%>
 	</table>	
-     </div>
-    </div> <!-- /container -->
-    
-     <jsp:include page="../footer.html"/>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
