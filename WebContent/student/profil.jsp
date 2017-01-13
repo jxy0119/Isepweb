@@ -40,6 +40,15 @@ if(request.getParameter("logout") != null){
 } 
 %>
 
+<script>
+        
+        function logoutbutton()
+        {
+            document.logoutform.logout.value = "yes";
+            logoutform.submit();
+        } 
+    </script>
+
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -74,13 +83,7 @@ if(request.getParameter("logout") != null){
 
 		<h3>Votre profil</h3>
       <div class="jumbotron container-fluid">
-      <%
-String u=(String)session.getAttribute("myName");
-if(u==null){
-	response.sendRedirect("login.jsp?err=1");
-	return ;
-}
-%>
+
 <p>hello <%=u %>,chose ur class plz!</p>
 	<form action="ApplicateServlet?u=<%=u %>" method="post">
 

@@ -41,6 +41,17 @@ if(request.getParameter("logout") != null){
 } 
 %>
 
+
+<script>
+        
+        function logoutbutton()
+        {
+            document.logoutform.logout.value = "yes";
+            logoutform.submit();
+        } 
+    </script>
+<form action="HandleFindServlet?flag=1" method="post" >
+
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
