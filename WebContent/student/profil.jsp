@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page
+	import="java.sql.*,java.util.*,isepweb.model.*,isepweb.controller.*"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,11 +14,11 @@
     <title>Profil</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/isepgo.css" rel="stylesheet">
-    <link href="../css/stickyfooter.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/isepgo.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/stickyfooter.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -26,6 +28,15 @@
   </head>
 
   <body>
+  <%
+String u=(String)session.getAttribute("myName");
+int id=(Integer)session.getAttribute("a");  
+if(u==null||id==0){
+	response.sendRedirect("login.jsp?err=1");
+	return ;
+}
+%>
+
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -37,15 +48,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="../img/logo.png" height="100%"></a>
+          <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="accueil.jsp">Accueil</a></li>
-            <li class="active"><a href="profil.jsp">Profil</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-          	<li><a href="ecoles.jsp">Écoles</a></li>
-          	
+          <ul class="nav navbar-nav"><%if(id==3){ %>
+            <li><a href="student/accueil.jsp">Accueil</a></li>
+            <li class="active"><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
+            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
+          	<li><a href="/isepweb/student/ecoles.jsp">Écoles</a></li>
+          	<%} %>         	 
+             <%if(id==1||id==2){ %>
+             <li><a href="student/accueil.jsp">Accueil</a></li>
+            <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
+            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
+          	<li><a href="/isepweb/student/ecoles.jsp">Écoles</a></li><%} %> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="">Déconnexion</a></li>
@@ -58,14 +74,92 @@
 
 		<h3>Votre profil</h3>
       <div class="jumbotron container-fluid">
-      <%
-String u=(String)session.getAttribute("myName");
-if(u==null){
-	response.sendRedirect("login.jsp?err=1");
+<%if(id==1||id==2) {%>      
+<%
+if(request.getAttribute("al")==null){
+	response.sendRedirect("/isepwebproject/login.jsp?err=1");
 	return ;
-}
+}else{
 %>
-<p>hello <%=u %>,chose ur class plz!</p>
+	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
+	
+	<table>
+		<tr>
+		    <td>ID</td>
+		    <td>StudentName</td>
+			<td>School of offer</td>
+			<td>operate</td>
+			
+		</tr>
+		<%for(int i=0;i<aL1.size();i++){	  
+		    StudentBean Sb=(StudentBean)aL1.get(i);
+	  
+	%>
+		
+		
+		<tr>
+		    <td><%=Sb.getId() %></td>
+		    <td><%=Sb.getStudentName() %></td>
+		    <td><%=Sb.getSchool() %></td>
+		    <td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">his application</a></td><td><a href="#">all info </a></td>
+		    
+		</tr>
+		<%  }
+	
+	    }%>		
+	</table>
+	
+	
+	<form action="HandleFindServlet?flag=4" method="post">
+	<label>find student</label><br>
+	<input type="text" name="studentname"><br>
+	<input type="submit" name="submit"><br>
+	
+	
+	</form>
+	<%}if(id==3){ %>
+	<%
+if(request.getAttribute("al")==null){
+	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	return ;
+}else{
+%>
+    <p>hello <%=u %></p>
+	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
+	<table>
+		<tr>
+		    <td>Id</td>
+		    <td>studentID</td>
+		    <td>StudentName</td>
+			<td>School of offer</td>
+			<td>Class</td>
+			<td>Major</td>
+			<td>State</td>
+		    <td>Date</td>
+			
+			
+		</tr>
+			<%for(int i=0;i<aL1.size();i++){	  
+		    ResultBean Rb=(ResultBean)aL1.get(i);
+	   
+	%>
+		
+		<tr>
+		    <td><%=Rb.getId() %></td>
+		    <td><%=Rb.getStudentId() %></td>
+		    <td><%=Rb.getStudentName() %></td>
+		    <td><%=Rb.getSchool() %></td>
+		    <td><%=Rb.getCl() %></td>
+		    <td><%=Rb.getMajor() %></td>
+		    <td><%=Rb.getState() %></td>
+		    <td><%=Rb.getDate() %></td>
+
+		</tr>
+		<% }
+			}%>
+	</table><br>
+	And next chose ur class plz!
+	
 	<form action="ApplicateServlet?u=<%=u %>" method="post">
 
 		
@@ -75,6 +169,9 @@ if(u==null){
 
 
 	</form>
+	<a href="/isepweb/student/accueil.jsp">back</a>
+	
+	<%} %>
 	  </div>
     </div> <!-- /container -->
     
@@ -85,6 +182,6 @@ if(u==null){
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

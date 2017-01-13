@@ -29,11 +29,12 @@
   
   <%
  	String u=(String)session.getAttribute("myName");
+    int id=(Integer)session.getAttribute("a");
  	if(u==null){
  	response.sendRedirect("login.jsp?err=1");
  	return ;}
   %>
-
+  
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -48,12 +49,19 @@
           <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav"><%if(id==3){ %>
             <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="<%=request.getContextPath()%>/student/profil.jsp">Profil</a></li>
+            <li><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
+            
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/student/ecoles.jsp">Écoles</a></li>
-          	
+          	 <%} %>         	 
+             <%if(id==1||id==2){ %>
+            <li class="active"><a href="accueil.jsp">Accueil</a></li>
+            <li><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
+            
+            <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
+          	<li><a href="<%=request.getContextPath()%>/student/ecoles.jsp">Écoles</a></li><%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="">Déconnexion</a></li>
@@ -83,10 +91,7 @@
     <jsp:include page="../footer.html"/>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+    
+    
   </body>
 </html>

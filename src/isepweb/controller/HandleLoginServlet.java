@@ -35,17 +35,11 @@ public class HandleLoginServlet extends HttpServlet {
 		if(hub.checkUser(u, p)){
 			    request.getSession().setAttribute("myName", u);
 			    
-			if(hub.readAuthority(u)==3){ 
+			    int a=hub.readAuthority(u);
+			    request.getSession().setAttribute("a", a);
 				request.getRequestDispatcher("/student/accueil.jsp").forward(request, response);
 				
-			}else if(hub.readAuthority(u)==2){
-				request.getRequestDispatcher("/teacher/home.jsp").forward(request, response);
-				
-			}else{
-				request.getRequestDispatcher("/service/accueil.jsp").forward(request, response);
-			}
-		}else{
-			    request.getRequestDispatcher("login.jsp").forward(request, response);
+			
 		}
 	}
 

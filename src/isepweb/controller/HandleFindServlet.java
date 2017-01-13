@@ -34,6 +34,14 @@ public class HandleFindServlet extends HttpServlet {
 		String language=request.getParameter("language");
 		String major=request.getParameter("major");
 		
+		
+		
+		if(country.equals("all")){country="";}
+		if(language.equals("all")){language="";}
+		if(major.equals("all")){major="";}
+		
+		
+		
 			HandleFindBean hfb=new HandleFindBean();
 			ArrayList<Object> al=hfb.getCountryInfo(country,language,major);
 			request.setAttribute("al", al);
@@ -44,7 +52,7 @@ public class HandleFindServlet extends HttpServlet {
 			HandleFindBean hfb=new HandleFindBean();
 			ArrayList<Object> al=hfb.getStudentList();
 			request.setAttribute("al", al);
-			request.getRequestDispatcher("/teacher/studentlist.jsp").forward(request, response);
+			request.getRequestDispatcher("/student/profil.jsp").forward(request, response);
 		}else if(flag.equals("3")){
 			String s=request.getParameter("studentname");
 			HandleFindBean hfb=new HandleFindBean();
@@ -65,7 +73,7 @@ public class HandleFindServlet extends HttpServlet {
 			HandleFindBean hfb=new HandleFindBean();
 			ArrayList<Object> al=hfb.getStudent(s);
 			request.setAttribute("al", al);
-			request.getRequestDispatcher("/student/ResultOfApp.jsp").forward(request, response);
+			request.getRequestDispatcher("/student/profil.jsp").forward(request, response);
 		}
 	}  
 		

@@ -26,7 +26,14 @@
   </head>
 
   <body>
-
+ <%
+String u=(String)session.getAttribute("myName");
+int id=(Integer)session.getAttribute("a");  
+if(u==null||id==0){
+	response.sendRedirect("login.jsp?err=1");
+	return ;
+}
+%>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -40,12 +47,18 @@
           <a class="navbar-brand" href="#"><img src="../img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav"><%if(id==3){ %>
             <li><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="profil.jsp">Profil</a></li>
+            <li><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
             <li><a href="contact.jsp">Contact</a></li>
           	<li class="active"><a href="ecoles.jsp">Écoles</a></li>
-          	
+          	<%} %>         	 
+             <%if(id==1||id==2){ %>
+             <li><a href="accueil.jsp">Accueil</a></li>
+            <li><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
+            <li><a href="contact.jsp">Contact</a></li>
+          	<li class="active"><a href="ecoles.jsp">Écoles</a></li>
+          	<%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="">Déconnexion</a></li>
@@ -58,58 +71,55 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron container-fluid">
-      	<div class="row">
+      	<div class="row"><form action="#" method="post">
       		<div class="col-md-3"></div>
       		<div class="col-md-6">
       			<input type="search" class="form-control" name="search" id="search" placeholder="Mot-clé">
       		</div>
       		<div class="col-md-1"><button type="button" class="btn btn-default glyphicon glyphicon-search"></button></div>
       	<div class="col-md-2"></div>
-      </div>
+      </form></div>
       
       <br>
 
-     <div class="row">
-    	<div class="col-md-2">
-        <div class='input-group date' id='datetimepicker1'>
-        	<input type='text' class="form-control" placeholder="Date"/>
-        	<span class="input-group-addon">
-        		<span class="glyphicon glyphicon-calendar"></span>
-        	</span>
-        </div>
-        	<script type="text/javascript">
-         	   $(function () {
-        	       $('#datetimepicker1').datetimepicker();
-         	   });
-        	</script>
-        </div>
+     <div class="row"><form name="second" action="/isepweb/HandleFindServlet?flag=1" method="post">
+    	
         
         <div class="col-md-3">
-        	<select name="select" id="select" class="form-control">
+        	<select name="major" id="select" class="form-control">
         		<option value="" disabled selected>Systemes Embarques</option>
+        		<option>all</option>
+        		<option>Informatique</option>
+                <option>Mecanique</option>
+                <option>Telecommunication</option>
+                <option>Electronique</option>
         	</select>
         </div>
         
         <div class="col-md-2">
-        	<select name="select2" id="select2" class="form-control" >
+        	<select name="country" id="select2" class="form-control" >
         		<option value="" disabled selected>Pays</option>
+        		<option>all</option>
+        		<option>China</option>
+                <option>France</option>
+                <option>US</option>
         	</select>
         </div>
         
         <div class="col-md-2">
-        	<select name="select3" id="select3" class="form-control">
+        	<select name="language" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
+        		<option>all</option>
+                <option>Fr</option>
+                <option>Eng</option>
         	</select>
         </div>
         
-        <div class="col-md-2">
-        	<select name="select4" id="select4" class="form-control">
-        		<option value="" disabled selected>Duree</option>
-        	</select>
-        </div>
+        
         <div class="col-md-1">
-        <button type="button" class="btn btn-default glyphicon glyphicon-search"></button>
+        <button type="submit" form="second" class="btn btn-default glyphicon glyphicon-search"></button>
         </div>
+        </form>
       </div>
      </div>
      <div class="jumbotron container-fluid">
