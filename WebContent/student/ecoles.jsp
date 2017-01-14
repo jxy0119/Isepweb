@@ -165,7 +165,7 @@ if(request.getParameter("logout") != null){
      <% if(request.getAttribute("al")!=null){%>
 
 
-
+	<%! @SuppressWarnings("unchecked") %> // for the line below
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
 	<p><a href="/isepweb/student/ecoles.jsp">back to find page and chose again</a></p>

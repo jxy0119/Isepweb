@@ -23,6 +23,7 @@ if(request.getAttribute("al")==null){
 }else{
 %>
 <a href="student/accueil.jsp">back to accueil page</a>
+	<%! @SuppressWarnings("unchecked") %> // for the line below
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<table>
 		<tr>

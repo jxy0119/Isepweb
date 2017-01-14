@@ -24,6 +24,7 @@ if(request.getAttribute("al")==null){
 %>
 
 <p>add successfully!!</p>
+<%! @SuppressWarnings("unchecked") %> // for the line below
 <%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<table>
 		<tr>

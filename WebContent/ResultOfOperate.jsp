@@ -22,6 +22,7 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>  
+	<%! @SuppressWarnings("unchecked") %> // for the line below
 	<% String sn="";
 	ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	

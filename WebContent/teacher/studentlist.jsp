@@ -76,6 +76,7 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
+	<%! @SuppressWarnings("unchecked") %> // for the line below
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 <div class="jumbotron container-fluid">
     
