@@ -73,8 +73,9 @@
 	<form>
 		<label for="textarea" style="margin-top:20px">Text Area:</label>
 		<textarea name="textarea" id="textarea"></textarea>
+		<p>Nouvelles informations</p>
 		<table width="200" border="1">
-			<p>Nouvelles informations</p>
+			
 			<tbody>
 				<tr>
 					<td>&nbsp;</td>
