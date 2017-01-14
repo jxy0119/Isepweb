@@ -74,7 +74,7 @@
 		<label for="textarea" style="margin-top:20px">Text Area:</label>
 		<textarea name="textarea" id="textarea"></textarea>
 		<p>Nouvelles informations</p>
-		<table width="200" border="1">
+		<table style="width:200px" border="1">
 			
 			<tbody>
 				<tr>
