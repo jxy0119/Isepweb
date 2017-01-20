@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page
 	import="java.sql.*,java.util.*,isepweb.model.*,isepweb.controller.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -76,6 +76,7 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
+	<%! @SuppressWarnings("unchecked") %> // for the line below
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 <div class="jumbotron container-fluid">
     

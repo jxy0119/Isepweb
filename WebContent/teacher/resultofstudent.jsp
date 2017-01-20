@@ -22,6 +22,7 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
+	<%! @SuppressWarnings("unchecked") %> // for the line below
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any waiting applications</p><br>
 	<p><a href="/isepwebproject/HandleFindServlet?flag=2">back to last page</a></p>

@@ -101,6 +101,7 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
+
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	
 	<table>
@@ -145,6 +146,7 @@ if(request.getAttribute("al")==null){
 }else{
 %>
     <p>hello <%=u %></p>
+
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<table>
 		<tr>

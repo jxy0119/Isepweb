@@ -123,7 +123,7 @@ if(request.getParameter("logout") != null){
 
      <div class="row"><form name="second" action="/isepweb/HandleFindServlet?flag=1&m=0" method="post">
         
-        <div class="col-md-3">
+        <div class="col-md-4">
 
         	<select name="major" id="select" class="form-control">
         		<option value="" disabled selected>Systemes Embarques</option>
@@ -136,7 +136,7 @@ if(request.getParameter("logout") != null){
         	</select>
         </div>
         
-        <div class="col-md-2">
+        <div class="col-md-3">
 
 
         	<select name="country" id="select2" class="form-control" >
@@ -151,7 +151,7 @@ if(request.getParameter("logout") != null){
         </div>
         
 
-        <div class="col-md-2">
+        <div class="col-md-4">
         	<select name="language" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
         		<option>all</option>
@@ -179,7 +179,7 @@ if(request.getParameter("logout") != null){
      <% if(request.getAttribute("al")!=null){%>
 
 
-
+	<%! @SuppressWarnings("unchecked") %> // for the line below
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
 	<p><a href="HandleFindServlet?m=1&flag=6">back to find page and chose again</a></p>

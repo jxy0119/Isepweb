@@ -153,6 +153,7 @@ if(request.getAttribute("al")==null){
 }else{
 %>
     <p>hello <%=u %></p>
+    <%! @SuppressWarnings("unchecked") %> // for the line below
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<table>
 		<tr>
