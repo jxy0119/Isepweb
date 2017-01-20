@@ -9,7 +9,7 @@ public class ConnDB {
 	public Connection getConn(){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			ct=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/isepweb","root","19940119jxy");
+			ct=DriverManager.getConnection("jdbc:mysql://nhz.hk:3307/johnson","JChong","johnchon");
 			
 		}catch(Exception e){
 			e.printStackTrace();
