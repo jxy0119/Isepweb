@@ -58,24 +58,21 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-   
     <div class="container">
-
-
      <div class="jumbotron container-fluid">
      <h3>Ajouter une offre</h3><br>
      <form class="form-group" action="/isepweb/AddInforServlet?flag=1" method="post">
-	<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
-    <input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
-    <input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
+	 Nom d'école<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
+     pays<input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
+     Langue d'enseignement<input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
     <label id=langue2></label>
     <input type=button onclick="document.getElementById('langue2').insertAdjacentHTML('beforeEnd','<input type=text>')" value ="ajouter une autre"><br>
 	<br>
-	<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine"><br>
+	Domaine<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine"><br>
 	<label id=domaine2></label>
 	<input type=button onclick="document.getElementById('domaine2').insertAdjacentHTML('beforeEnd','<input type=text>')" value ="ajouter un autre"><br>
 	<br>
-	<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
+	autre<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
 	<input type="submit" class="btn btn-default" value="Valider"></input>
 	</form><br>
 	<a href="/isepweb/AddInforServlet?flag=2">result</a>

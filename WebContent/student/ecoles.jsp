@@ -112,22 +112,26 @@ if(request.getParameter("logout") != null){
 
       		<div class="col-md-3"></div>
       		<div class="col-md-6">
-      			<input type="search" class="form-control" name="search" id="search" placeholder="Mot-clé">
+      			<input type="search" class="form-control" name="search" id="search" placeholder="keywords">
       		</div>
       		<div class="col-md-1"><button type="submit" form="first" class="btn btn-default glyphicon glyphicon-search"></button></div>
       	<div class="col-md-2"></div>
       </form></div>
       
       <br>
+	<div class="row">
+	<div class="col-md-4">Major</div>
+	<div class="col-md-4">country</div>
+	<div class="col-md-4">language</div>
 
+	</div>
 
      <div class="row"><form name="second" action="/isepweb/HandleFindServlet?flag=1&m=0" method="post">
         
         <div class="col-md-4">
-
+            
         	<select name="major" id="select" class="form-control">
-        		<option value="" disabled selected>Systemes Embarques</option>
-        		<option>all</option>
+        		<option value="" disabled selected>all</option>
         		<%ArrayList<Object> AL1=(ArrayList<Object>)request.getAttribute("al1"); %>
         		<%for(int i=0;i<AL1.size();i++){	  
 		    InformationBean Ib=(InformationBean)AL1.get(i);%>
@@ -138,10 +142,9 @@ if(request.getParameter("logout") != null){
         
         <div class="col-md-3">
 
-
+           
         	<select name="country" id="select2" class="form-control" >
-        		<option value="" disabled selected>Pays</option>
-        		<option>all</option>
+        		<option value="" disabled selected>all</option>
         		<%ArrayList<Object> AL3=(ArrayList<Object>)request.getAttribute("al3"); %>
         		<%for(int i=0;i<AL3.size();i++){	  
 		    InformationBean Ib=(InformationBean)AL3.get(i);%>
@@ -152,9 +155,9 @@ if(request.getParameter("logout") != null){
         
 
         <div class="col-md-4">
+            
         	<select name="language" id="select3" class="form-control">
-        		<option value="" disabled selected>Langues des cours</option>
-        		<option>all</option>
+        		<option value="" disabled selected>all</option>
                 <%ArrayList<Object> AL2=(ArrayList<Object>)request.getAttribute("al2"); %>
         		<%for(int i=0;i<AL2.size();i++){	  
 		    InformationBean Ib=(InformationBean)AL2.get(i);%>

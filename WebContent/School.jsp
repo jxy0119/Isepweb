@@ -6,9 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
+    <!-- Bootstrap core CSS -->
+    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
 </head>
 <body>
+
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
@@ -22,28 +27,40 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
+<<<<<<< HEAD
 <a href="student/accueil.jsp">back to accueil page</a>
 	
+=======
+
+<br>
+
+>>>>>>> branch 'master' of https://github.com/johnsonofhongkong/isepweb.git
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	<table>
-		<tr>
-			<td>SchoolName</td>
-			<td>Country</td>
-			<td>Description</td>
-			<td>Symbol</td>
-			<td>WebSite</td>
-			<td>Comment</td>
-		<tr>
-			<%for(int i=0;i<aL1.size();i++){
+				<%for(int i=0;i<aL1.size();i++){
 	
 	  
 		  InformationBean Ib=(InformationBean)aL1.get(i);
+		  
 	  
 	%>
+	<div class="panel panel-info ">
+<div class="panel-heading"><h3><%=Ib.getSchoolName() %> - <%=Ib.getCountry() %></h3></div>
+<div class="panel-body">
+
 		
+	<table class="table table-bordered">
+		<tr class="success">
+			<th>School Name</th>
+			<th>Country</th>
+			<th>Description</th>
+			<th>Symbol</th>
+			<th>Website</th>
+			<th>Comment</th>
+		</tr>
+
 		<tr>
 			<td><%=Ib.getSchoolName() %></td>
-			<td><%=Ib.getCountry() %></td>
+			<td></td>
 			<td><%=Ib.getDescription() %></td>
 			<td><%=Ib.getSymbol() %></td>
 			<td><a href="#"><%=Ib.getWebsite() %></a></td>
@@ -51,13 +68,31 @@ if(request.getAttribute("al")==null){
 		</tr>
 
 	</table>
+
 	<form action="OperateServlet?f=3&u=<%=u %>&s=<%=Ib.getSchoolName() %>" method="post">
 	<%} %><p>comment here</p>
 	<input type="text" name="comment">
 	<input type="submit" value="submit">
 	</form>
+
+
 	
+
 		 
    <%} %>	
+
+	
+	
+	
+	
+	
+	
+
+</div>
+   
+   </div>
+   
+   <h4><a href="student/accueil.jsp">&larr;Return</a></h4>
+
 </body>
 </html>
