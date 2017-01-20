@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<div class="panel panel-info ">
+
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
@@ -29,9 +29,20 @@ if(request.getAttribute("al")==null){
 %>
 
 <br>
-<div class="panel-heading"><h4><a href="student/accueil.jsp">Back to home</a></h4></div>
-<div class="panel-body">
+
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
+				<%for(int i=0;i<aL1.size();i++){
+	
+	  
+		  InformationBean Ib=(InformationBean)aL1.get(i);
+		  
+	  
+	%>
+	<div class="panel panel-info ">
+<div class="panel-heading"><h3><%=Ib.getSchoolName() %> - <%=Ib.getCountry() %></h3></div>
+<div class="panel-body">
+
+		
 	<table class="table table-bordered">
 		<tr class="success">
 			<th>School Name</th>
@@ -41,16 +52,10 @@ if(request.getAttribute("al")==null){
 			<th>Website</th>
 			<th>Comment</th>
 		</tr>
-			<%for(int i=0;i<aL1.size();i++){
-	
-	  
-		  InformationBean Ib=(InformationBean)aL1.get(i);
-	  
-	%>
-		
+
 		<tr>
 			<td><%=Ib.getSchoolName() %></td>
-			<td><%=Ib.getCountry() %></td>
+			<td></td>
 			<td><%=Ib.getDescription() %></td>
 			<td><%=Ib.getSymbol() %></td>
 			<td><a href="#"><%=Ib.getWebsite() %></a></td>
@@ -59,17 +64,19 @@ if(request.getAttribute("al")==null){
 
 	</table>
 	
-	<form action="OperateServlet?f=3&u=<%=u %>&s=<%=Ib.getSchoolName() %>" method="post"><br>
-	
-	<%}}%><p>comment</p>
-	<input class="form-control col-md-3" type="text" name="comment" placeholder="comment"><br><br>
-	<input class="btn btn-default" type="submit" value="submit"><br><br>
-	</form>
 	
 	
+	
+	
+	
+	<%}%>
+	
+	<%}%>
 
 </div>
    
    </div>
+   
+   <h4><a href="student/accueil.jsp">&larr;Return</a></h4>
 </body>
 </html>
