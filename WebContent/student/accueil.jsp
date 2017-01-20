@@ -63,18 +63,26 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
-            <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
+            <li class="active"><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
+            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
+          	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
+          	         	 
+             <%}else if(id==2){ %>
+            <li class="active"><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
             
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/student/ecoles.jsp">Écoles</a></li>
-          	 <%} %>         	 
-             <%if(id==1||id==2){ %>
-            <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
-            
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
+            <%}else {%>
+            <li class="active"><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
+            <li><a href="/isepweb/service/offer.jsp">offer</a></li>
+            <li><a href="#">update</a></li>
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/student/ecoles.jsp">Écoles</a></li><%} %>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li><%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">

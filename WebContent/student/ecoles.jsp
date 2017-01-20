@@ -73,16 +73,24 @@ if(request.getParameter("logout") != null){
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
             <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
-            <li><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li class="active"><a href="/isepweb/student/ecoles.jsp">Écoles</a></li>
-          	<%} %>         	 
-             <%if(id==1||id==2){ %>
+          	<li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
+          	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
+          	        	 
+             <%}else if(id==2){ %>
              <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
-            <li><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
-            <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li class="active"><a href="/isepweb/student/ecoles.jsp">Écoles</a></li>
-          	<%} %>
+             <li><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
+             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
+             <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li> 
+             <%}else {%>
+            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
+            <li><a href="/isepweb/service/offer.jsp">offer</a></li>
+            <li><a href="#">update</a></li>
+            <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
+          	<li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li><%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><form NAME="logoutform" METHOD="POST">
@@ -93,37 +101,38 @@ if(request.getParameter("logout") != null){
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+<%if(request.getAttribute("al1")!=null&&request.getAttribute("al2")!=null&&request.getAttribute("al3")!=null){ %>
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron container-fluid">
 
       	
-      	<div class="row"><form action="#" method="post" >
+      	<div class="row"><form name="first" action="/isepweb/HandleFindServlet?flag=7&m=0" method="post" >
 
       		<div class="col-md-3"></div>
       		<div class="col-md-6">
       			<input type="search" class="form-control" name="search" id="search" placeholder="Mot-clé">
       		</div>
-      		<div class="col-md-1"><button type="button" class="btn btn-default glyphicon glyphicon-search"></button></div>
+      		<div class="col-md-1"><button type="submit" form="first" class="btn btn-default glyphicon glyphicon-search"></button></div>
       	<div class="col-md-2"></div>
       </form></div>
       
       <br>
 
 
-     <div class="row"><form name="second" action="/isepweb/HandleFindServlet?flag=1" method="post">
+     <div class="row"><form name="second" action="/isepweb/HandleFindServlet?flag=1&m=0" method="post">
         
         <div class="col-md-3">
 
         	<select name="major" id="select" class="form-control">
         		<option value="" disabled selected>Systemes Embarques</option>
         		<option>all</option>
-        		<option>Informatique</option>
-                <option>Mecanique</option>
-                <option>Telecommunication</option>
-                <option>Electronique</option>
+        		<%ArrayList<Object> AL1=(ArrayList<Object>)request.getAttribute("al1"); %>
+        		<%for(int i=0;i<AL1.size();i++){	  
+		    InformationBean Ib=(InformationBean)AL1.get(i);%>
+        		<option><%=Ib.getMajor() %></option>
+                <%} %>
         	</select>
         </div>
         
@@ -133,9 +142,11 @@ if(request.getParameter("logout") != null){
         	<select name="country" id="select2" class="form-control" >
         		<option value="" disabled selected>Pays</option>
         		<option>all</option>
-        		<option>China</option>
-                <option>France</option>
-                <option>US</option>
+        		<%ArrayList<Object> AL3=(ArrayList<Object>)request.getAttribute("al3"); %>
+        		<%for(int i=0;i<AL3.size();i++){	  
+		    InformationBean Ib=(InformationBean)AL3.get(i);%>
+        		<option><%=Ib.getCountry() %></option>
+                <%} %>
         	</select>
         </div>
         
@@ -144,9 +155,11 @@ if(request.getParameter("logout") != null){
         	<select name="language" id="select3" class="form-control">
         		<option value="" disabled selected>Langues des cours</option>
         		<option>all</option>
-                <option>Fr</option>
-                <option>Eng</option>
-
+                <%ArrayList<Object> AL2=(ArrayList<Object>)request.getAttribute("al2"); %>
+        		<%for(int i=0;i<AL2.size();i++){	  
+		    InformationBean Ib=(InformationBean)AL2.get(i);%>
+        		<option><%=Ib.getLanguage() %></option>
+                <%} %>
         	</select>
         </div>
         
@@ -162,13 +175,14 @@ if(request.getParameter("logout") != null){
  
  
      <div class="jumbotron container-fluid">
+     <%} %>
      <% if(request.getAttribute("al")!=null){%>
 
 
 
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
-	<p><a href="/isepweb/student/ecoles.jsp">back to find page and chose again</a></p>
+	<p><a href="HandleFindServlet?m=1&flag=6">back to find page and chose again</a></p>
 	
 	<%}else { %>
 	<table>

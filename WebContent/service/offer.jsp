@@ -12,10 +12,10 @@
     <title>Ajouter une offre</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/isepgo.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/isepgo.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,14 +40,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="../img/logo.png" height="100%"></a>
+          <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="accueil.jsp">Accueil</a></li>
-           <!--   <li><a href="profil.jsp">Profil</a></li>
-            <li><a href="contact.jsp">Contact</a></li>-->
-          	<li><a href="teacher/ecoles.jsp">Écoles</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
+            <li class="active"><a href="/isepweb/service/offer.jsp">offer</a></li>
+            <li><a href="#">update</a></li>
+            <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -86,6 +88,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -70,9 +70,9 @@ if(request.getParameter("logout") != null){
             <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="HandleFindServlet?m=1&flag=6">Écoles</a></li>
-          	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
-          	<li class="active"><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
+          	<li class="active"><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
           	<%} %>         	 
              <%if(id==1||id==2){ %>
              <li><a href="student/accueil.jsp">Accueil</a></li>
@@ -92,93 +92,26 @@ if(request.getParameter("logout") != null){
 
     <div class="container">
 
-		<h3>Votre Applications</h3>
-      <div class="jumbotron container-fluid">
-<%if(id==1||id==2) {%>      
-<%
-if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
-	return ;
-}else{
-%>
-	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	
-	<table>
-		<tr>
-		    <td>ID</td>
-		    <td>StudentName</td>
-			<td>School of offer</td>
-			<td>operate</td>
-			
-		</tr>
-		<%for(int i=0;i<aL1.size();i++){	  
-		    StudentBean Sb=(StudentBean)aL1.get(i);
-	  
-	%>
-		
-		
-		<tr>
-		    <td><%=Sb.getId() %></td>
-		    <td><%=Sb.getStudentName() %></td>
-		    <td><%=Sb.getSchool() %></td>
-		    <td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">his application</a></td><td><a href="#">all info </a></td>
-		    
-		</tr>
-		<%  }
-	
-	    }%>		
-	</table>
-	
-	
-	<form action="HandleFindServlet?flag=4" method="post">
-	<label>find student</label><br>
-	<input type="text" name="studentname"><br>
-	<input type="submit" name="submit"><br>
-	
-	
-	</form>
-	<%}if(id==3){ %>
-	<%
-if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
-	return ;
-}else{
-%>
+		<h3>Make a New App</h3>
+      <div class="jumbotron container-fluid">	
     <p>hello <%=u %></p>
-	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	<table>
-		<tr>
-		    <td>Id</td>
-		    <td>studentID</td>
-		    <td>StudentName</td>
-			<td>School of offer</td>
-			<td>Class</td>
-			<td>Major</td>
-			<td>State</td>
-		    <td>Date</td>
-			
-			
-		</tr>
-			<%for(int i=0;i<aL1.size();i++){	  
-		    ResultBean Rb=(ResultBean)aL1.get(i);
-	   
-	%>
-		
-		<tr>
-		    <td><%=Rb.getId() %></td>
-		    <td><%=Rb.getStudentId() %></td>
-		    <td><%=Rb.getStudentName() %></td>
-		    <td><%=Rb.getSchool() %></td>
-		    <td><%=Rb.getCl() %></td>
-		    <td><%=Rb.getMajor() %></td>
-		    <td><%=Rb.getState() %></td>
-		    <td><%=Rb.getDate() %></td>
+	
+	
+	And next chose ur class plz!
+	
 
-		</tr>
-		<% }
-			}%>
-	</table><br>
-	<%} %>
+	<form action="ApplicateServlet?u=<%=u %>" method="post">
+
+		
+		ClassName:<input type="text" name="classname"><br>
+		MajorName:<input type="text" name="majorname"><br>  
+		<input type="submit" value="submit">
+
+
+	</form>
+	<a href="/isepweb/student/accueil.jsp">back</a>
+	
+	
 	  </div>
     </div> <!-- /container -->
     
@@ -190,6 +123,4 @@ if(request.getAttribute("al")==null){
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
-  </body>
 </html>
-	

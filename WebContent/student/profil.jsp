@@ -67,16 +67,25 @@ if(request.getParameter("logout") != null){
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
-            <li><a href="student/accueil.jsp">Accueil</a></li>
-            <li class="active"><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Profil</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+            <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="/isepweb/student/ecoles.jsp?flag=1">Écoles</a></li>
-          	<%} %>         	 
-             <%if(id==1||id==2){ %>
-             <li><a href="student/accueil.jsp">Accueil</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
+          	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
+          	        	 
+             <%}else if(id==2){ %>
+             <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
              <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
              <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-             <li><a href="/isepweb/student/ecoles.jsp?flag=1">Écoles</a></li><%} %> 
+             <li><a href="HandleFindServlet?m=1&flag=6">Écoles</a></li> 
+             <%}else {%>
+            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+            <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
+            <li><a href="/isepweb/service/offer.jsp">offer</a></li>
+            <li><a href="#">update</a></li>
+            <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li><%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
@@ -119,8 +128,9 @@ if(request.getAttribute("al")==null){
 		    <td><%=Sb.getId() %></td>
 		    <td><%=Sb.getStudentName() %></td>
 		    <td><%=Sb.getSchool() %></td>
-		    <td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">his application</a></td><td><a href="#">all info </a></td>
-		    
+		    <%if(id==2){ %><td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">his application</a></td><td><a href="#">all info </a></td>
+		    <%} %>
+		    <%if(id==1){ %><td><a href="#">add his school</a></td><%} %>
 		</tr>
 		<%  }
 	
@@ -146,51 +156,32 @@ if(request.getAttribute("al")==null){
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<table>
 		<tr>
-		    <td>Id</td>
+		   
 		    <td>studentID</td>
 		    <td>StudentName</td>
 			<td>School of offer</td>
-			<td>Class</td>
-			<td>Major</td>
-			<td>State</td>
-		    <td>Date</td>
 			
 			
 		</tr>
 			<%for(int i=0;i<aL1.size();i++){	  
-		    ResultBean Rb=(ResultBean)aL1.get(i);
+		    StudentBean Sb=(StudentBean)aL1.get(i);
 	   
 	%>
 		
 		<tr>
-		    <td><%=Rb.getId() %></td>
-		    <td><%=Rb.getStudentId() %></td>
-		    <td><%=Rb.getStudentName() %></td>
-		    <td><%=Rb.getSchool() %></td>
-		    <td><%=Rb.getCl() %></td>
-		    <td><%=Rb.getMajor() %></td>
-		    <td><%=Rb.getState() %></td>
-		    <td><%=Rb.getDate() %></td>
+		    
+		    <td><%=Sb.getId() %></td>
+		    <td><%=Sb.getStudentName() %></td>
+		    <td><%=Sb.getSchool() %></td>
+		    
 
 		</tr>
 		<% }
 			}%>
 	</table><br>
-	And next chose ur class plz!
 	
-
-	<form action="ApplicateServlet?u=<%=u %>" method="post">
-
-		
-		ClassName:<input type="text" name="classname"><br>
-		MajorName:<input type="text" name="majorname"><br>  
-		<input type="submit" value="submit">
-
-
-	</form>
-	<a href="/isepweb/student/accueil.jsp">back</a>
 	
-	<%} %>
+	
 	  </div>
     </div> <!-- /container -->
     
@@ -201,6 +192,6 @@ if(request.getAttribute("al")==null){
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script><%} %>
   </body>
 </html>

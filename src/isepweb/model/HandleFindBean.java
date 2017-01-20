@@ -64,6 +64,29 @@ public class HandleFindBean {
 	
 	    	return aL1;
 	    }
+         public ArrayList<Object> getStudentProfil(String s){
+            
+	    	ArrayList<Object> aL1=new ArrayList<Object>();
+	    	try{
+	    		ct=new ConnDB().getConn();
+	    		sm=ct.createStatement();
+	    		rs=sm.executeQuery("select * from students where name='"+s+"'" );
+	    		while(rs.next()){    	    		
+    	    		StudentBean Sb=new StudentBean();
+    	    		Sb.setId(rs.getInt(1));
+    	    		Sb.setStudentName(rs.getString(2));
+    	    		Sb.setSchool(rs.getString(3));
+    	    		
+    	    		aL1.add(Sb);
+    	    		
+    	    		} 
+	    	}catch(Exception e){
+	    		e.printStackTrace();
+	    	}finally{
+	    		this.close();
+	    	}
+	    	return aL1;
+	    } 
 	    public ArrayList<Object> getStudentList(){
             
 	    	ArrayList<Object> aL1=new ArrayList<Object>();
@@ -164,6 +187,92 @@ public class HandleFindBean {
  	    	}
  	    	return aL1;
  	    } 
+         public ArrayList<Object> LangList(){
+             
+  	    	ArrayList<Object> aL1=new ArrayList<Object>();
+  	    	try{
+  	    		ct=new ConnDB().getConn();
+  	    		sm=ct.createStatement();
+  	    		rs=sm.executeQuery("select distinct language from information");
+  	    		while(rs.next()){    	    		
+      	    		InformationBean Ib=new InformationBean();
+      	    		Ib.setLanguage(rs.getString(1));
+      	    		
+      	    		aL1.add(Ib);
+      	    		
+      	    		} 
+  	    	}catch(Exception e){
+  	    		e.printStackTrace();
+  	    	}finally{
+  	    		this.close();
+  	    	}
+  	    	return aL1;
+  	    } 
+         public ArrayList<Object> MajorList(){
+             
+   	    	ArrayList<Object> aL1=new ArrayList<Object>();
+   	    	try{
+   	    		ct=new ConnDB().getConn();
+   	    		sm=ct.createStatement();
+   	    		rs=sm.executeQuery("select distinct major from information");
+   	    		while(rs.next()){    	    		
+       	    		InformationBean Ib=new InformationBean();
+       	    		Ib.setMajor(rs.getString(1));
+       	    		
+       	    		aL1.add(Ib);
+       	    		
+       	    		} 
+   	    	}catch(Exception e){
+   	    		e.printStackTrace();
+   	    	}finally{
+   	    		this.close();
+   	    	}
+   	    	return aL1;
+   	    }
+         public ArrayList<Object> CountryList(){
+             
+   	    	ArrayList<Object> aL1=new ArrayList<Object>();
+   	    	try{
+   	    		ct=new ConnDB().getConn();
+   	    		sm=ct.createStatement();
+   	    		rs=sm.executeQuery("select distinct country from information");
+   	    		while(rs.next()){    	    		
+       	    		InformationBean Ib=new InformationBean();
+       	    		Ib.setCountry(rs.getString(1));
+       	    		
+       	    		aL1.add(Ib);
+       	    		
+       	    		} 
+   	    	}catch(Exception e){
+   	    		e.printStackTrace();
+   	    	}finally{
+   	    		this.close();
+   	    	}
+   	    	return aL1;
+   	    }
+         public ArrayList<Object> KeyWords(String s){
+             
+    	    	ArrayList<Object> aL1=new ArrayList<Object>();
+    	    	try{
+    	    		ct=new ConnDB().getConn();
+    	    		sm=ct.createStatement();
+    	    		rs=sm.executeQuery("select schoolname,country,language,major from information where schoolname like '%"+s+"%' or country like '%"+s+"%' or language like '%"+s+"%' or major like '%"+s+"%'");
+    	    		while(rs.next()){    	    		
+        	    		InformationBean Ib=new InformationBean();
+        	    		Ib.setSchoolName(rs.getString(1));
+        	    		Ib.setCountry(rs.getString(2));
+        	    		Ib.setLanguage(rs.getString(3));
+        	    		Ib.setMajor(rs.getString(4));
+        	    		aL1.add(Ib);
+        	    		
+        	    		} 
+    	    	}catch(Exception e){
+    	    		e.printStackTrace();
+    	    	}finally{
+    	    		this.close();
+    	    	}
+    	    	return aL1;
+    	    }
          
 	    public void close(){
 	    	try{
