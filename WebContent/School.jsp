@@ -23,7 +23,7 @@ if(request.getAttribute("al")==null){
 }else{
 %>
 <a href="student/accueil.jsp">back to accueil page</a>
-	<%! @SuppressWarnings("unchecked") %> // for the line below
+	
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<table>
 		<tr>
@@ -52,12 +52,12 @@ if(request.getAttribute("al")==null){
 
 	</table>
 	<form action="OperateServlet?f=3&u=<%=u %>&s=<%=Ib.getSchoolName() %>" method="post">
-	<p>comment here</p>
+	<%} %><p>comment here</p>
 	<input type="text" name="comment">
 	<input type="submit" value="submit">
 	</form>
 	
-		<%}  
-   }%>	
+		 
+   <%} %>	
 </body>
 </html>
