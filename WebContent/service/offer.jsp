@@ -58,10 +58,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-   
     <div class="container">
-
-
      <div class="jumbotron container-fluid">
      <h3>Ajouter une offre</h3><br>
      <form class="form-group" action="/isepweb/AddInforServlet?flag=1" method="post">
