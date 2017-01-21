@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page
+	import="java.sql.*,java.util.*,isepweb.model.*,isepweb.controller.*"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +11,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 
-    <title>Ajouter une offre</title>
+    <title>EDIT</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +30,24 @@
   </head>
 
   <body>
-  <header></header>
+  <%
+String u=(String)session.getAttribute("myName");
+if(u==null){
+	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	return ;
+}
+%>
+<%
+if(request.getAttribute("al")==null){
+	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	return ;
+}else{
+%>
+<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
+<%for(int i=0;i<aL1.size();i++){	  
+		    InformationBean Ib=(InformationBean)aL1.get(i);
+	   
+	%>
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -46,8 +65,8 @@
           <ul class="nav navbar-nav">
             <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
-            <li class="active"><a href="/isepweb/service/offer.jsp">offer</a></li>
-            <li><a href="#">update</a></li>
+            <li><a href="/isepweb/service/offer.jsp">offer</a></li>
+            
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
           	
@@ -60,24 +79,24 @@
     </nav>
     <div class="container">
      <div class="jumbotron container-fluid">
-     <h3>Ajouter une offre</h3><br>
-     <form class="form-group" action="<%=request.getContextPath()%>/AddInforServlet?flag=1" method="post">
-	 Nom d'école<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
-     pays<input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
-     Langue d'enseignement<input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
+     <h3>EDIT</h3><br>
+     <form class="form-group" action="/isepweb/AddInforServlet?flag=5&id=<%=Ib.getId() %>" method="post">
+	 Nom d'école<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école" value="<%=Ib.getSchoolName() %>"><br>
+     pays<input class="form-control" type="text" name="pays" id="pays" placeholder="Pays" value="<%=Ib.getCountry() %>"><br>
+     Langue d'enseignement<input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement" value="<%=Ib.getLanguage() %>"><br>
     <label id=langue2></label>
     <input type=button onclick="document.getElementById('langue2').insertAdjacentHTML('beforeEnd','<input type=text>')" value ="ajouter une autre"><br>
 	<br>
-	Domaine<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine"><br>
+	Domaine<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine" value="<%=Ib.getMajor() %>"><br>
 	<label id=domaine2></label>
 	<input type=button onclick="document.getElementById('domaine2').insertAdjacentHTML('beforeEnd','<input type=text>')" value ="ajouter un autre"><br>
 	<br>
-	 website<input class="form-control" type="text" name="website" id="website" placeholder="website"><br>
-	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol"><br>
-	autre<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
+	website<input class="form-control" type="text" name="website" id="website" placeholder="website" value="<%=Ib.getWebsite() %>"><br>
+	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol" value="<%=Ib.getSymbol() %>"><br>
+	autre<textarea class="form-control" name="autre" id="autre" placeholder="Autre" value="<%=Ib.getDescription() %>"></textarea><br>
 	<input type="submit" class="btn btn-default" value="Valider"></input>
 	</form><br>
-	<a href="<%=request.getContextPath()%>/AddInforServlet?flag=2">result</a>
+	<a href="/isepweb/AddInforServlet?flag=2">result</a>
      </div>
     </div> <!-- /container -->
     <footer></footer>
@@ -87,6 +106,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script><% }
+			}%>
   </body>
 </html>

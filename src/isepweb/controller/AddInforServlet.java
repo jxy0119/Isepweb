@@ -41,16 +41,45 @@ public class AddInforServlet extends HttpServlet {
 		HandleAddInfor ha=new HandleAddInfor();
 		if(f.equals("1")){
 		     if(ha.AddInfo(school, country, language, major, webSite, symbol, details)){
+			   String x="1";
+		    	 ArrayList<Object> al=ha.InfoResult();
+			    request.setAttribute("al",al );
+			    request.setAttribute("x", x);
+			    request.getRequestDispatcher("/service/addSuc.jsp?").forward(request, response);
+		    }else{
+			    request.getRequestDispatcher("/service/addFail.jsp").forward(request, response);
+		  }
+		}else if(f.equals("2")){
+			String x="2";
+			ArrayList<Object> al=ha.InfoResult();
+		    request.setAttribute("al",al );
+		    request.setAttribute("x", x);
+		    request.getRequestDispatcher("/service/addSuc.jsp").forward(request, response);
+		}else if(f.equals("3")){
+			String id=request.getParameter("id");
+			ArrayList<Object> al=ha.InfoResultById(id);
+			request.setAttribute("al",al );
+		    request.getRequestDispatcher("/service/update.jsp").forward(request, response);
+		}else if(f.equals("4")){
+			String id=request.getParameter("id");
+			String x="3";
+			if(ha.DeleteInfo(id)){
+				ArrayList<Object> al=ha.InfoResult();
+			    request.setAttribute("al",al );
+			    request.setAttribute("x", x);
+			    request.getRequestDispatcher("/service/addSuc.jsp?").forward(request, response);
+			}
+		}else{
+			String id=request.getParameter("id");
+			String x="4";
+			if(ha.UpdateInfo(id,school, country, language, major, webSite, symbol, details)){
 			    ArrayList<Object> al=ha.InfoResult();
 			    request.setAttribute("al",al );
+			    request.setAttribute("x", x);
 			    request.getRequestDispatcher("/service/addSuc.jsp").forward(request, response);
 		    }else{
 			    request.getRequestDispatcher("/service/addFail.jsp").forward(request, response);
 		  }
-		}else{
-			ArrayList<Object> al=ha.InfoResult();
-		    request.setAttribute("al",al );
-		    request.getRequestDispatcher("/service/addSuc.jsp").forward(request, response);
 		}
 		
 	}

@@ -12,19 +12,27 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }
+String x=(String)request.getAttribute("x");
+
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>
-
+<%if(x.equals("1")) {%>
 <p>add successfully!!</p>
-<%! @SuppressWarnings("unchecked") %> // for the line below
+<%}else if(x.equals("2")){ %>
+<p>RESULT</p>
+<%}else if(x.equals("3")){ %>
+<p>DELETE successfully!!</p>
+<%}else{ %>
+<p>UPDATE successfully!!</p>
+<%} %>
 <%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<table>
 		<tr>
@@ -36,6 +44,7 @@ if(request.getAttribute("al")==null){
 			<td>website</td>
 			<td>symbol</td>
 		    <td>description</td>
+		    <td>Operate</td>
 			
 			
 		</tr>
@@ -53,11 +62,11 @@ if(request.getAttribute("al")==null){
 		    <td><%=Ib.getWebsite() %></td>
 		    <td><%=Ib.getSymbol() %></td>
 		    <td><%=Ib.getDescription() %></td>
-		    
+		    <td><a href="AddInforServlet?flag=3&id=<%=Ib.getId()%>">update</a></td><td><a href="AddInforServlet?flag=4&id=<%=Ib.getId()%>">delete</a></td>
 		</tr>
 		<% }
 			}%>
 	</table>
-<p><a href="/isepwebproject/service/offer.jsp">back to add page</a></p>
+<p><a href="/isepweb/service/offer.jsp">back to add page</a></p>
 </body>
 </html>
