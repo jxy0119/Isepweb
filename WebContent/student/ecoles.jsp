@@ -100,7 +100,7 @@ if(request.getParameter("logout") != null){
           <ul class="nav navbar-nav navbar-right">
             <li><form NAME="logoutform" METHOD="POST">
         <INPUT TYPE="HIDDEN" NAME="logout">
-        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
     </form></li>
           </ul>
         </div><!--/.nav-collapse -->

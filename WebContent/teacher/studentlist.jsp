@@ -58,7 +58,7 @@ th {
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Déconnexion</a></li>
+            <li><a href="">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

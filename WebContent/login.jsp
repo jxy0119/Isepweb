@@ -40,7 +40,7 @@
         </div>
             <br>
         
-        <button class="btn btn-lg btn-primary btn-block" type="submit" >Connect</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >Login</button>
         
           <p class="text-success"><a href="/isepweb/oubliemotdepasse.html"><strong>Forgot Password?</strong></a></p>
        
