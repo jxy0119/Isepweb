@@ -97,7 +97,7 @@ if(request.getParameter("logout") != null){
 
     <div class="container">
 
-		<h3>Make a New App</h3>
+		<h3>Make a new application</h3>
       <div class="jumbotron container-fluid">	
     <h2>Hello <%=u %></h2>
 	
