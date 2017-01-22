@@ -81,8 +81,8 @@ if(request.getParameter("logout") != null){
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
           	<li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
-          	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
+          	<li><a href="/isepweb/student/addApp.jsp">Apply</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Application Result</a></li>
           	        	 
              <%}else if(id==2){ %>
              <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
@@ -100,7 +100,7 @@ if(request.getParameter("logout") != null){
           <ul class="nav navbar-nav navbar-right">
             <li><form NAME="logoutform" METHOD="POST">
         <INPUT TYPE="HIDDEN" NAME="logout">
-        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
     </form></li>
           </ul>
         </div><!--/.nav-collapse -->
