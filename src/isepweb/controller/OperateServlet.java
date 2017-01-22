@@ -65,20 +65,20 @@ public class OperateServlet extends HttpServlet {
 			HandleCommBean hcb=new HandleCommBean();
 			if(hcb.comment(userName, school, Com)){
 				request.setAttribute("school", school);
-				request.getRequestDispatcher("commentSuc.jsp").forward(request, response);
+				request.getRequestDispatcher("/student/commentSuc.jsp").forward(request, response);
 			}
 		}else if(flag==4){
 			HandleCommBean hcb=new HandleCommBean();
 			ArrayList<Object> al=hcb.WaitingCommList();
 			request.setAttribute("al", al);
-			request.getRequestDispatcher("#").forward(request, response);
+			request.getRequestDispatcher("/service/WaittingList.jsp").forward(request, response);
 		}else if(flag==5){
 			String Id=request.getParameter("id");
 			HandleCommBean hcb=new HandleCommBean();
 			if(hcb.acceptComm(Id)){
 				ArrayList<Object> al=hcb.ServiceCommentResult();
 				request.setAttribute("al", al);
-				request.getRequestDispatcher("#").forward(request, response);	
+				request.getRequestDispatcher("/service/commentResult.jsp").forward(request, response);	
 			}
 			
 		}else if(flag==6){
@@ -87,14 +87,21 @@ public class OperateServlet extends HttpServlet {
 			if(hcb.refuseComm(Id)){
 				ArrayList<Object> al=hcb.ServiceCommentResult();
 				request.setAttribute("al", al);
-				request.getRequestDispatcher("#").forward(request, response);
+				request.getRequestDispatcher("/service/commentResult.jsp").forward(request, response);
 			}
 		}
-		else {
+		else if(flag==7) {
+			String s=request.getParameter("s");
 			HandleCommBean hcb=new HandleCommBean();
-			ArrayList<Object> al=hcb.commentResult();
+			ArrayList<Object> al=hcb.commentResult(s);
 			request.setAttribute("al", al);
-			request.getRequestDispatcher("#").forward(request, response);
+			request.setAttribute("s", s);
+			request.getRequestDispatcher("/Comment.jsp").forward(request, response);
+		}else{
+			HandleCommBean hcb=new HandleCommBean();
+			ArrayList<Object> al=hcb.ServiceCommentResult();
+			request.setAttribute("al", al);
+			request.getRequestDispatcher("/service/commentResult.jsp").forward(request, response);	
 		}
 	}
 	

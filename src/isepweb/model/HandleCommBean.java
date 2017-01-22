@@ -114,13 +114,13 @@ public class HandleCommBean {
     		
     	return aL1;
     }
-	public ArrayList<Object> commentResult(){
+	public ArrayList<Object> commentResult(String s){
 		ArrayList<Object> aL1=new ArrayList<Object>();
 	   	
     	try{		
              ct=new ConnDB().getConn();
              sm=ct.createStatement();
-             rs=sm.executeQuery("select userName,details,date from comment where state like '%accepted%'");
+             rs=sm.executeQuery("select userName,details,date from comment where state like '%accepted%' and school='"+s+"'");
              
     	while(rs.next()){
     	     CommentBean Cb=new CommentBean();	
