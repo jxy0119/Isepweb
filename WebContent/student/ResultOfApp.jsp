@@ -70,8 +70,8 @@ if(request.getParameter("logout") != null){
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
           	<li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li>
-          	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
-          	<li class="active"><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
+          	<li><a href="/isepweb/student/addApp.jsp">Apply</a></li>
+          	<li class="active"><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Application Result</a></li>
           	<%} %>         	 
              <%if(id==1||id==2){ %>
              <li><a href="student/accueil.jsp">Home</a></li>
