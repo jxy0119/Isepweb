@@ -23,6 +23,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style >
+    .jumbotron{
+    font-family:courier, Helvetica, Arial, sans-serif;
+    
+    }</style>
   </head>
 
   <body>
@@ -64,25 +69,25 @@ if(request.getParameter("logout") != null){
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
-            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
-            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li class="active"><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
           	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
           	        	 
              <%}else if(id==2){ %>
-             <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
              <li><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
              <li class="active"><a href="/isepweb/student/contact.jsp">Contact</a></li>
-             <li><a href="HandleFindServlet?m=1&flag=6">Écoles</a></li> 
+             <li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li> 
              <%}else {%>
-            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
             <li><a href="/isepweb/service/offer.jsp">offer</a></li>
             <li><a href="#">update</a></li>
             <li class="active"><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li><%} %>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li><%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
@@ -92,13 +97,19 @@ if(request.getParameter("logout") != null){
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </nav>
+    </nav> 
 
-    <div class="container">
+    <div class="container" align="center" >
+<img src="../img/contact.jpg" width="30%" style="margin-bottom:20px">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-		<h2>Contacter votre responable de parcours</h2>
+      <div class="jumbotron" align="center">
+<hr style="margin-top:-30px">
+
+     
+		<h2 >Contacter votre responable de parcours</h2>
+		     
+		
 		<p>Envoyer un mail à ssimons@isep.fr</p>
 		<form  action="" method="post">
 		<label for="sujet" class="sr-only">sujet</label>
@@ -109,9 +120,9 @@ if(request.getParameter("logout") != null){
       </div>
       <br>
 
-      <div class="jumbotron">
+      <div class="jumbotron" align="center">
       <h2>Envoyer des informations au service international</h2>
-		<p>Envoyer un mail au service internattional:</p>
+		<p>Envoyer un mail au service international:</p>
 		<form  action="" method="post">
 		<label for="pays" class="sr-only">Pays</label>
         <input type="text" id="pays" class="form-control" name="pays" placeholder="Pays" required autofocus><br>

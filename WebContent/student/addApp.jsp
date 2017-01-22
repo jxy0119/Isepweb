@@ -67,18 +67,18 @@ if(request.getParameter("logout") != null){
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
-            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
-            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
           	<li class="active"><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
           	<%} %>         	 
              <%if(id==1||id==2){ %>
-             <li><a href="student/accueil.jsp">Accueil</a></li>
+             <li><a href="student/accueil.jsp">Home</a></li>
              <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
              <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-             <li><a href="HandleFindServlet?m=1&flag=6">Écoles</a></li><%} %> 
+             <li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li><%} %> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
@@ -94,22 +94,21 @@ if(request.getParameter("logout") != null){
 
 		<h3>Make a New App</h3>
       <div class="jumbotron container-fluid">	
-    <p>hello <%=u %></p>
+    <p>Hello <%=u %></p>
 	
 	
-	And next chose ur class plz!
+	And next choose your class please!
 	
 
 	<form action="ApplicateServlet?u=<%=u %>" method="post">
 
 		
-		ClassName:<input type="text" name="classname"><br>
-		MajorName:<input type="text" name="majorname"><br>  
+		<label>ClassName:</label><input type="text" name="classname"><br>
+	    <label>MajorName:</label><input type="text" name="majorname"><br>  
 		<input type="submit" value="submit">
 
 
 	</form>
-	<a href="/isepweb/student/accueil.jsp">back</a>
 	
 	
 	  </div>

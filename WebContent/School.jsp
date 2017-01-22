@@ -47,7 +47,7 @@ if(request.getAttribute("al")==null){
 			<td><%=Ib.getDescription() %></td>
 			<td><%=Ib.getSymbol() %></td>
 			<td><a href="#"><%=Ib.getWebsite() %></a></td>
-			<td><a href="OperateServlet?f=7">click here to watch comments</a></td>
+			<td><a href="OperateServlet?f=7">See Comments</a></td>
 		</tr>
 
 	</table>
