@@ -105,7 +105,7 @@ if(request.getParameter("logout") != null){
 	<p>And next choose your class please!</p><br>
 	
 
-	<form action="ApplicateServlet?u=<%=u %>" method="post">
+	<form action="<%=request.getContextPath()%>/ApplicateServlet?u=<%=u %>" method="post">
 
 		    <div class="form-group">
 		    <label for="inputlg">ClassName:</label>
