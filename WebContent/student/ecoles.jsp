@@ -136,7 +136,7 @@ if(request.getParameter("logout") != null){
         <div class="col-md-4">
             
         	<select name="major" id="select" class="form-control">
-        		<option value="" disabled selected>all</option>
+        		<option>all</option>
         		<%ArrayList<Object> AL1=(ArrayList<Object>)request.getAttribute("al1"); %>
         		<%for(int i=0;i<AL1.size();i++){	  
 		    InformationBean Ib=(InformationBean)AL1.get(i);%>
@@ -149,7 +149,7 @@ if(request.getParameter("logout") != null){
 
            
         	<select name="country" id="select2" class="form-control" >
-        		<option value="" disabled selected>all</option>
+        		<option>all</option>
         		<%ArrayList<Object> AL3=(ArrayList<Object>)request.getAttribute("al3"); %>
         		<%for(int i=0;i<AL3.size();i++){	  
 		    InformationBean Ib=(InformationBean)AL3.get(i);%>
@@ -162,7 +162,7 @@ if(request.getParameter("logout") != null){
         <div class="col-md-4">
             
         	<select name="language" id="select3" class="form-control">
-        		<option value="" disabled selected>all</option>
+        		<option>all</option>
                 <%ArrayList<Object> AL2=(ArrayList<Object>)request.getAttribute("al2"); %>
         		<%for(int i=0;i<AL2.size();i++){	  
 		    InformationBean Ib=(InformationBean)AL2.get(i);%>
