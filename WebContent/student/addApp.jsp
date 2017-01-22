@@ -25,6 +25,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style >
+    .jumbotron{
+    font-family:courier, Helvetica, Arial, sans-serif;
+    
+    }</style>
   </head>
 
   <body>
@@ -94,17 +99,23 @@ if(request.getParameter("logout") != null){
 
 		<h3>Make a New App</h3>
       <div class="jumbotron container-fluid">	
-    <p>Hello <%=u %></p>
+    <h2>Hello <%=u %></h2>
 	
 	
-	And next choose your class please!
+	<p>And next choose your class please!</p><br>
 	
 
 	<form action="ApplicateServlet?u=<%=u %>" method="post">
 
+		    <div class="form-group">
+		    <label for="inputlg">ClassName:</label>
+		    <input type="text" name="classname" id="inputlg" class="form-control input-lg" >
+		    </div>
 		
-		<label>ClassName:</label><input type="text" name="classname"><br>
-	    <label>MajorName:</label><input type="text" name="majorname"><br>  
+		    <div class="form-group">
+	    <label for="inputlg">MajorName:</label><input type="text" name="majorname" id="inputlg"class="form-control input-lg" ><br>  
+				</div>
+		
 		<input type="submit" value="submit">
 
 
