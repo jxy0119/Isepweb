@@ -108,22 +108,22 @@ if(request.getParameter("logout") != null){
 <hr style="margin-top:-30px">
 
      
-		<h2 >Contacter votre responable de parcours</h2>
+		<h2>Contact the responsible person for your courses</h2>
 		     
 		
 		<form  action="" method="post">
-		<label for="sujet" class="sr-only">sujet</label>
-        <input type="text" id="sujet" class="form-control" name="sujet" placeholder="sujet" required autofocus><br>
-        <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="texte"></textarea><br>
-       		  <span class="help-block">Envoyer un mail à ssimons@isep.fr</span>
+		<label for="sujet" class="sr-only">Subject</label>
+        <input type="text" id="sujet" class="form-control" name="sujet" placeholder="Subject" required autofocus><br>
+        <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="Content"></textarea><br>
+       		  <span class="help-block">Send an email to ssimons@isep.fr</span>
        
-        <button type="button" class="btn btn-primary">Envoyer</button>
+        <button type="button" class="btn btn-primary">Send</button>
         </form>
       </div>
       <br>
 
       <div class="jumbotron" align="center">
-      <h2>Envoyer des informations au service international</h2>
+      <h2>Contact the international service team</h2>
 		
 		<form  action="" method="post">
 		<label for="pays" class="sr-only">Pays</label>
@@ -133,9 +133,9 @@ if(request.getParameter("logout") != null){
         <label for="sujet" class="sr-only">sujet</label>
         <input type="text" id="sujet" class="form-control" name="sujet" placeholder="sujet" required autofocus><br>
         <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="texte"></textarea><br>
-        <span class="help-block">Envoyer un mail au service international</span>
+        <span class="help-block">Send an email to international service</span>
         
-        <button type="button" class="btn btn-primary">Envoyer</button>
+        <button type="button" class="btn btn-primary">Send</button>
         </form>	
       </div>
       
