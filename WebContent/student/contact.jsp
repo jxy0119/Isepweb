@@ -111,11 +111,12 @@ if(request.getParameter("logout") != null){
 		<h2 >Contacter votre responable de parcours</h2>
 		     
 		
-		<p>Envoyer un mail à ssimons@isep.fr</p>
 		<form  action="" method="post">
 		<label for="sujet" class="sr-only">sujet</label>
         <input type="text" id="sujet" class="form-control" name="sujet" placeholder="sujet" required autofocus><br>
         <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="texte"></textarea><br>
+       		  <span class="help-block">Envoyer un mail à ssimons@isep.fr</span>
+       
         <button type="button" class="btn btn-primary">Envoyer</button>
         </form>
       </div>
@@ -123,7 +124,7 @@ if(request.getParameter("logout") != null){
 
       <div class="jumbotron" align="center">
       <h2>Envoyer des informations au service international</h2>
-		<p>Envoyer un mail au service international:</p>
+		
 		<form  action="" method="post">
 		<label for="pays" class="sr-only">Pays</label>
         <input type="text" id="pays" class="form-control" name="pays" placeholder="Pays" required autofocus><br>
@@ -132,6 +133,8 @@ if(request.getParameter("logout") != null){
         <label for="sujet" class="sr-only">sujet</label>
         <input type="text" id="sujet" class="form-control" name="sujet" placeholder="sujet" required autofocus><br>
         <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="texte"></textarea><br>
+        <span class="help-block">Envoyer un mail au service international</span>
+        
         <button type="button" class="btn btn-primary">Envoyer</button>
         </form>	
       </div>
