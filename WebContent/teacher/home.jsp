@@ -19,6 +19,27 @@
 </head>
 
 <body>
+ <%
+String u=(String)session.getAttribute("myName");
+if(u==null){
+  response.sendRedirect("/isepweb/login.jsp?err=1");
+  return ;
+}
+
+if(request.getParameter("logout") != null){
+	session.invalidate();
+	response.sendRedirect("/isepweb/login.jsp?err=1");	
+} 
+%>
+
+<script>
+        
+        function logoutbutton()
+        {
+            document.logoutform.logout.value = "yes";
+            logoutform.submit();
+        } 
+    </script>
 	  <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -39,7 +60,10 @@
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Logout</a></li>
+            <li><FORM NAME="logoutform" METHOD="POST">
+        <INPUT TYPE="HIDDEN" NAME="logout">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+    </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
