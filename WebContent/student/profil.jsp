@@ -73,7 +73,7 @@ if(request.getParameter("logout") != null){
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
-            <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
+            <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
           	<li><a href="/isepweb/student/addApp.jsp">Apply</a></li>
@@ -104,7 +104,7 @@ if(request.getParameter("logout") != null){
 
     <div class="container" >
 
-		<h3 align="center"><strong>My Profile</strong></h3>
+		<h3 align="center"><strong>My Profil</strong></h3>
       <div class="jumbotron container-fluid">
 <%if(id==1||id==2) {%>      
 <%
