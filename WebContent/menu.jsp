@@ -23,7 +23,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="profil.jsp">Profil</a></li>
+            <li><a href="profil.jsp">Profile</a></li>
             <li><a href="contact.jsp">Contact</a></li>
           	<li><a href="ecoles.jsp">Écoles</a></li>
           	
