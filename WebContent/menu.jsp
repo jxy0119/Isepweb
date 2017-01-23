@@ -22,14 +22,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="profil.jsp">Profil</a></li>
+            <li class="active"><a href="accueil.jsp">Home</a></li>
+            <li><a href="profil.jsp">Profile</a></li>
             <li><a href="contact.jsp">Contact</a></li>
-          	<li><a href="ecoles.jsp">Écoles</a></li>
+          	<li><a href="ecoles.jsp">University</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Déconnexion</a></li>
+            <li><a href="">Disconnect</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
