@@ -6,9 +6,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results of Operate</title>
 </head>
 <body>
+
+<div class="container" >
+
+      <div class="jumbotron container-fluid">
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
@@ -22,12 +31,13 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>  
-	<%! @SuppressWarnings("unchecked") %> // for the line below
+	<%! @SuppressWarnings("unchecked") %> 
 	<% String sn="";
 	ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	
-	<table>
-		<tr>
+	<table class="table table-hover">
+	<thead>
+		<tr class="active">
 		    <td>Id</td>
 		    <td>studentID</td>
 		    <td>StudentName</td>
@@ -39,12 +49,13 @@ if(request.getAttribute("al")==null){
 			
 			
 		</tr>
+		</thead>
 			<%for(int i=0;i<aL1.size();i++){	  
 		    ResultBean Rb=(ResultBean)aL1.get(i);
 	   
 	%>
-		
-		<tr>
+		<tbody>
+		<tr class="active">
 		    <td><%=Rb.getId() %></td>
 		    <td><%=Rb.getStudentId() %></td>
 		    <td><%sn=Rb.getStudentName(); %><%=sn %></td>
@@ -55,15 +66,16 @@ if(request.getAttribute("al")==null){
 		    <td><%=Rb.getDate() %></td>
 		    
 		</tr>
-		
+		</tbody>
 	
 		
 	<% }%>
 	</table><br>
-	<a href="HandleFindServlet?flag=3&studentname=<%=sn %>">back to the last page</a>
+	<a href="HandleFindServlet?flag=3&studentname=<%=sn %>" class="btn btn-info">Back to the last page</a>
 
 	<%
 	}%>	
-		
+	</div>
+	</div>	
 </body>
 </html>

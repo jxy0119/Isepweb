@@ -104,7 +104,6 @@ if(request.getParameter("logout") != null){
 
     <div class="container" >
 
-		<h3 align="center"><strong>My Profile</strong></h3>
       <div class="jumbotron container-fluid">
 <%if(id==1||id==2) {%>      
 <%
@@ -138,9 +137,9 @@ if(request.getAttribute("al")==null){
 		    <td><%=Sb.getId() %></td>
 		    <td><%=Sb.getStudentName() %></td>
 		    <td><%=Sb.getSchool() %></td>
-		    <%if(id==2){ %><td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">his application</a></td><td><a href="#">all info </a></td>
+		    <%if(id==2){ %><td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">His application</a></td><td><a href="#">All info </a></td>
 		    <%} %>
-		    <%if(id==1){ %><td><a href="#">add his school</a></td><%} %>
+		    <%if(id==1){ %><td><a href="/isepweb/service/addOffer.jsp?sn=<%=Sb.getStudentName()%>">Add his school</a></td><%} %>
 		</tr>
 		   
 		
@@ -151,11 +150,11 @@ if(request.getAttribute("al")==null){
 	     </tbody>	
 	</table>
 	
-	
+	<div class="form-group">
 	<form action="HandleFindServlet?flag=4" method="post">
-	<label>find student</label><br>
-	<input type="text" name="studentname"><br>
-	<input type="submit" name="submit"><br>
+	<label>Find a student</label><br>
+	<input type="text" name="studentname"  class="form-control" ><br>
+	<input type="submit" name="submit" value="Search" class="btn btn-info" ><br>
 	
 	
 	</form>

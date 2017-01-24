@@ -6,9 +6,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+<title>Comments</title>
+ <style >
+    .jumbotron{
+    font-family:courier, Helvetica, Arial, sans-serif;
+    
+    }</style>
 </head>
 <body>
+
+
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
@@ -22,7 +34,8 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
-	
+		<div class="container">
+      <div class="jumbotron">
 	<%String s=(String)request.getAttribute("s");
 	ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	
@@ -31,9 +44,10 @@ if(request.getAttribute("al")==null){
 	<p><a href="<%=request.getContextPath()%>/ShowSchoolInfoServlet?s=<%=s%>">back to school page</a></p>
 	
 	<%}else { %>
+
+	<table class="table table-hover" style="margin-top:10px">
 	
-	<table>
-		<tr>
+		<tr class="active">
 		    <td>Num</td>
 		    <td>StudentName</td>
 			
@@ -43,12 +57,13 @@ if(request.getAttribute("al")==null){
 			
 			
 		</tr>
+			
+		
 			<%for(int i=0;i<aL1.size();i++){	  
 		    CommentBean Cb=(CommentBean)aL1.get(i);
 	   
 	%>
-		
-		<tr>
+		<tr class="active">
 		    <td><%=i+1 %></td>
 		    
 		    <td><%=Cb.getUserName() %></td>
@@ -58,10 +73,15 @@ if(request.getAttribute("al")==null){
 		    <td><%=Cb.getDate() %></td>
 		    
 		</tr>
+		
 		<% }%>
-		<p><a href="<%=request.getContextPath()%>/ShowSchoolInfoServlet?s=<%=s%>">back to school page</a></p>
+	<a href="<%=request.getContextPath()%>/ShowSchoolInfoServlet?s=<%=s%>"  class="btn btn-info" role="button">Back to school page</a>
 	    <%}
 	}%>
-	</table>	
+	
+	
+	</table>
+	</div>
+	</div>	
 </body>
 </html>

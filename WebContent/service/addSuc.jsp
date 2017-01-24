@@ -6,9 +6,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>add suc</title>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+<title>All Schools info</title>
 </head>
 <body>
+<div class="container" >
+
+      <div class="jumbotron container-fluid">
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
@@ -27,14 +35,14 @@ if(request.getAttribute("al")==null){
 <%if(x.equals("1")) {%>
 <p>add successfully!!</p>
 <%}else if(x.equals("2")){ %>
-<p>RESULT</p>
+<p>All Schools info</p>
 <%}else if(x.equals("3")){ %>
 <p>DELETE successfully!!</p>
 <%}else{ %>
 <p>UPDATE successfully!!</p>
 <%} %>
 <%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	<table>
+	<table class="table table-hover">
 		<tr>
 		    <td>Id</td>
 		    <td>schoolName</td>
@@ -67,6 +75,8 @@ if(request.getAttribute("al")==null){
 		<% }
 			}%>
 	</table>
-<p><a href="/isepweb/service/offer.jsp">back to add page</a></p>
+<p><a href="/isepweb/service/offer.jsp" class="btn btn-info" role="button">Back</a></p>
+</div>
+</div>
 </body>
 </html>

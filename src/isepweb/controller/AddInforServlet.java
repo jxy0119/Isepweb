@@ -69,7 +69,7 @@ public class AddInforServlet extends HttpServlet {
 			    request.setAttribute("x", x);
 			    request.getRequestDispatcher("/service/addSuc.jsp?").forward(request, response);
 			}
-		}else{
+		}else if(f.equals("5")){
 			String id=request.getParameter("id");
 			String x="4";
 			if(ha.UpdateInfo(id,school, country, language, major, webSite, symbol, details)){
@@ -80,6 +80,15 @@ public class AddInforServlet extends HttpServlet {
 		    }else{
 			    request.getRequestDispatcher("/service/addFail.jsp").forward(request, response);
 		  }
+		}else{
+			String sn=request.getParameter("sn");
+			String s=request.getParameter("school");
+			if(ha.AddOfferSchool(s, sn)){
+				request.getRequestDispatcher("/service/addOfferSuc.jsp").forward(request, response);
+			}
+			else{
+				request.getRequestDispatcher("fail.html").forward(request, response);
+			}
 		}
 		
 	}
