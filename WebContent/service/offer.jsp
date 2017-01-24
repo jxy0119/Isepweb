@@ -65,7 +65,7 @@
      <div class="jumbotron container-fluid">
      <h3>Add an offer</h3><br>
      <form class="form-group" action="<%=request.getContextPath()%>/AddInforServlet?flag=1" method="post">
-	 University name<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
+	 Schools name<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
      Country<input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
      Teaching language<input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
     <br>
