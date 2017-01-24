@@ -64,9 +64,9 @@ if(request.getAttribute("al")==null){
 	<%} %>
 	<div class="form-group">
     <label for="comment">Make A Comment</label>
-	<textarea class="form-control" rows="5" id="comment"></textarea>
+	<textarea class="form-control" rows="5" id="comment" style="margin-bottom:10px"></textarea>
 
-	<input type="submit" value="submit">
+	<input type="submit" value="Submit my comment" class="btn btn-info" value="Submit Button">
 	</div>
 	</form>
 

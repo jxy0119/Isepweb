@@ -5,10 +5,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<title>Accept or Refuse?</title>
 </head>
 <body>
+
+<div class="container" >
+
+      <div class="jumbotron container-fluid">
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
@@ -22,13 +30,15 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
-	<%! @SuppressWarnings("unchecked") %> // for the line below
+	<%! @SuppressWarnings("unchecked") %> 
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any waiting applications</p><br>
-	<p><a href="/isepwebproject/HandleFindServlet?flag=2">back to last page</a></p>
+	<p><a href="/isepwebproject/HandleFindServlet?flag=2" class="btn btn-info" role="button">Back to last page</a></p>
 	
 	<%}else { %>
-	<table>
+	<table  class="table table-hover">
+		  <thead>
+	
 		<tr>
 		    <td>Id</td>
 		    <td>studentID</td>
@@ -41,10 +51,13 @@ if(request.getAttribute("al")==null){
 			<td>operate</td>
 			
 		</tr>
+			  </thead>
+		
 			<%for(int i=0;i<aL1.size();i++){	  
 		    ResultBean Rb=(ResultBean)aL1.get(i);
 	   
 	%>
+				  <tbody>
 		
 		<tr>
 		    <td><%=Rb.getId() %></td>
@@ -60,6 +73,10 @@ if(request.getAttribute("al")==null){
 		<% }
 	    }
 	}%>
-	</table>	
+			  </tbody>
+	
+	</table>
+	</div>
+	</div>	
 </body>
 </html>

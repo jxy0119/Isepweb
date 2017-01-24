@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 
-    <title>Ajouter une offre</title>
+    <title>Add an offer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,10 @@
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Déconnexion</a></li>
+           <li><FORM NAME="logoutform" METHOD="POST">
+        <INPUT TYPE="HIDDEN" NAME="logout">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+    </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -75,9 +78,9 @@
 	 website<input class="form-control" type="text" name="website" id="website" placeholder="website"><br>
 	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol"><br>
 	autre<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
-	<input type="submit" class="btn btn-default" value="Valider"></input>
+	<input type="submit" class="btn btn-info" value="Add"></input>
 	</form><br>
-	<a href="<%=request.getContextPath()%>/AddInforServlet?flag=2">result</a>
+	<a href="<%=request.getContextPath()%>/AddInforServlet?flag=2" class="btn btn-primary" role="button">See all the schools</a>
      </div>
     </div> <!-- /container -->
     <footer></footer>
