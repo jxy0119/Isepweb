@@ -49,7 +49,7 @@
             <li class="active"><a href="/isepweb/service/offer.jsp">offer</a></li>
             <li><a href="#">update</a></li>
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">University</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -68,13 +68,8 @@
 	 University name<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
      Country<input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
      Teaching language<input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
-    <label id=langue2></label>
-    <input type=button onclick="document.getElementById('langue2').insertAdjacentHTML('beforeEnd','<input type=text>')" value ="Add another"><br>
-	<br>
+    <br>
 	major<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine"><br>
-	<label id=domaine2></label>
-	<input type=button onclick="document.getElementById('domaine2').insertAdjacentHTML('beforeEnd','<input type=text>')" value ="Add another"><br>
-	<br>
 	 website<input class="form-control" type="text" name="website" id="website" placeholder="website"><br>
 	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol"><br>
 	other<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
