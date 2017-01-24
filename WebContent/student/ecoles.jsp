@@ -149,7 +149,7 @@ if(request.getParameter("logout") != null){
 
            
         	<select name="country" id="select2" class="form-control" >
-        		<option>all</option>
+        	<option>all</option>
         		<%ArrayList<Object> AL3=(ArrayList<Object>)request.getAttribute("al3"); %>
         		<%for(int i=0;i<AL3.size();i++){	  
 		    InformationBean Ib=(InformationBean)AL3.get(i);%>
