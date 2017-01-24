@@ -11,7 +11,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 
-    <title>Profil</title>
+    <title>Profile</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +25,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style >
+    .jumbotron{
+    font-family:courier, Helvetica, Arial, sans-serif;
+    
+    }</style>
   </head>
 
   <body>
@@ -67,39 +72,39 @@ if(request.getParameter("logout") != null){
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
-            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
-            <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
+            <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
-          	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
+          	<li><a href="/isepweb/student/addApp.jsp">Apply</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
           	        	 
              <%}else if(id==2){ %>
-             <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
-             <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
+             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
+             <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">List of students</a></li>
              <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-             <li><a href="HandleFindServlet?m=1&flag=6">Écoles</a></li> 
+             <li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li> 
              <%}else {%>
-            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
-            <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
+            <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
             <li><a href="/isepweb/service/offer.jsp">offer</a></li>
             <li><a href="#">update</a></li>
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li><%} %>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li><%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
         <INPUT TYPE="HIDDEN" NAME="logout">
-        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
     </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" >
 
-		<h3>Votre profil</h3>
+		<h3 align="center"><strong>My Profile</strong></h3>
       <div class="jumbotron container-fluid">
 <%if(id==1||id==2) {%>      
 <%
@@ -110,21 +115,26 @@ if(request.getAttribute("al")==null){
 %>
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	
-	<table>
-		<tr>
+	<table  class="table table-hover">
+	  <thead>
+		<tr  >
 		    <td>ID</td>
 		    <td>StudentName</td>
 			<td>School of offer</td>
 			<td>operate</td>
 			
 		</tr>
+		
+		</thead>
+		  
+		
 		<%for(int i=0;i<aL1.size();i++){	  
 		    StudentBean Sb=(StudentBean)aL1.get(i);
 	  
 	%>
+		  <tbody>
 		
-		
-		<tr>
+		<tr >
 		    <td><%=Sb.getId() %></td>
 		    <td><%=Sb.getStudentName() %></td>
 		    <td><%=Sb.getSchool() %></td>
@@ -132,9 +142,13 @@ if(request.getAttribute("al")==null){
 		    <%} %>
 		    <%if(id==1){ %><td><a href="#">add his school</a></td><%} %>
 		</tr>
+		   
+		
 		<%  }
 	
-	    }%>		
+	    }%>	
+	    
+	     </tbody>	
 	</table>
 	
 	
@@ -155,21 +169,25 @@ if(request.getAttribute("al")==null){
     <p>hello <%=u %></p>
     
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	<table>
-		<tr>
+	<table class="table table-hover">
+		<thead>
+		<tr  class="active">
 		   
-		    <td>studentID</td>
-		    <td>StudentName</td>
-			<td>School of offer</td>
+		    <th>StudentID</th>
+		    <th>StudentName</th>
+			<th>School of offer</th>
 			
 			
 		</tr>
+				</thead>
+		
 			<%for(int i=0;i<aL1.size();i++){	  
 		    StudentBean Sb=(StudentBean)aL1.get(i);
 	   
 	%>
+				<tbody>
 		
-		<tr>
+		<tr  class="active">
 		    
 		    <td><%=Sb.getId() %></td>
 		    <td><%=Sb.getStudentName() %></td>
@@ -179,14 +197,15 @@ if(request.getAttribute("al")==null){
 		</tr>
 		<% }
 			}%>
-	</table><br>
+			</tbody>
+				</table><br>
 	
 	
 	
 	  </div>
     </div> <!-- /container -->
     
-     <jsp:include page="../footer.html"/>
+    <jsp:include page="../footer.html"/> 
 
 
     <!-- Bootstrap core JavaScript

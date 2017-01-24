@@ -25,6 +25,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style >
+    .jumbotron{
+    font-family:courier, Helvetica, Arial, sans-serif;
+    
+    }</style>
   </head>
 
   <body>
@@ -67,23 +72,23 @@ if(request.getParameter("logout") != null){
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><%if(id==3){ %>
-            <li><a href="/isepweb/student/accueil.jsp">Accueil</a></li>
-            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profil</a></li>
+            <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Écoles</a></li>
-          	<li class="active"><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
+          	<li class="active"><a href="/isepweb/student/addApp.jsp">Apply</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Application Result</a></li>
           	<%} %>         	 
              <%if(id==1||id==2){ %>
-             <li><a href="student/accueil.jsp">Accueil</a></li>
+             <li><a href="student/accueil.jsp">Home</a></li>
              <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
              <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-             <li><a href="HandleFindServlet?m=1&flag=6">Écoles</a></li><%} %> 
+             <li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li><%} %> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
         <INPUT TYPE="HIDDEN" NAME="logout">
-        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
     </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -92,24 +97,29 @@ if(request.getParameter("logout") != null){
 
     <div class="container">
 
-		<h3>Make a New App</h3>
+		<h3>Make a new application</h3>
       <div class="jumbotron container-fluid">	
-    <p>hello <%=u %></p>
+    <h2>Hello <%=u %></h2>
 	
 	
-	And next chose ur class plz!
+	<p>And next choose your class please!</p><br>
 	
 
-	<form action="ApplicateServlet?u=<%=u %>" method="post">
+	<form action="<%=request.getContextPath()%>/ApplicateServlet?u=<%=u %>" method="post">
 
+		    <div class="form-group">
+		    <label for="inputlg">ClassName:</label>
+		    <input type="text" name="classname" id="inputlg" class="form-control input-lg" >
+		    </div>
 		
-		ClassName:<input type="text" name="classname"><br>
-		MajorName:<input type="text" name="majorname"><br>  
+		    <div class="form-group">
+	    <label for="inputlg">MajorName:</label><input type="text" name="majorname" id="inputlg"class="form-control input-lg" ><br>  
+				</div>
+		
 		<input type="submit" value="submit">
 
 
 	</form>
-	<a href="/isepweb/student/accueil.jsp">back</a>
 	
 	
 	  </div>

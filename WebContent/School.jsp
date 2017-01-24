@@ -47,11 +47,11 @@ if(request.getAttribute("al")==null){
 			<td><%=Ib.getDescription() %></td>
 			<td><%=Ib.getSymbol() %></td>
 			<td><a href="#"><%=Ib.getWebsite() %></a></td>
-			<td><a href="OperateServlet?f=7">click here to watch comments</a></td>
+			<td><a href="<%=request.getContextPath()%>/OperateServlet?f=7&s=<%=Ib.getSchoolName() %>">See Comments</a></td>
 		</tr>
 
 	</table>
-	<form action="OperateServlet?f=3&u=<%=u %>&s=<%=Ib.getSchoolName() %>" method="post">
+	<form action="<%=request.getContextPath()%>/OperateServlet?f=3&u=<%=u %>&s=<%=Ib.getSchoolName() %>" method="post">
 	<%} %><p>comment here</p>
 	<input type="text" name="comment">
 	<input type="submit" value="submit">

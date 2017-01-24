@@ -23,6 +23,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style >
+    .jumbotron{
+    font-family:courier, Helvetica, Arial, sans-serif;
+    
+    }</style>
   </head>
 
   <body>
@@ -66,28 +71,29 @@
             <li class="active"><a href="/isepweb/student/accueil.jsp">Home</a></li>
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">University</a></li>
-          	<li><a href="/isepweb/student/addApp.jsp">new Application</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Applications</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
+          	<li><a href="/isepweb/student/addApp.jsp">Apply</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Application Result</a></li>
           	         	 
              <%}else if(id==2){ %>
             <li class="active"><a href="/isepweb/student/accueil.jsp">Home</a></li>
-            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
             
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">University</a></li>
             <%}else {%>
             <li class="active"><a href="/isepweb/student/accueil.jsp">Home</a></li>
-            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
             <li><a href="/isepweb/service/offer.jsp">offer</a></li>
             <li><a href="#">update</a></li>
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">University</a></li><%} %>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">University</a></li>
+          	<li><a href="<%=request.getContextPath()%>/OperateServlet?f=4">Comments</a></li><%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
         <INPUT TYPE="HIDDEN" NAME="logout">
-        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
     </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -99,16 +105,15 @@
 	
 
      <div class="jumbotron container-fluid">
-     
-     <h3>Hello, <%=u %>!</h3>
+     <h3 class="text-center">HELLO, <%=u %>!</h3>
      </div>
      
      <div class="jumbotron container-fluid">
-     <h3>State</h3>
+     <h3>Status</h3>
      </div>
      
      <div class="jumbotron container-fluid">
-     <h3>Recent Searches</h3>
+     <h3>Recent Search</h3>
      </div>
     </div> <!-- /container -->
     

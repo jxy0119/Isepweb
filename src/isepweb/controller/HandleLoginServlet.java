@@ -38,8 +38,10 @@ public class HandleLoginServlet extends HttpServlet {
 			    int a=hub.readAuthority(u);
 			    request.getSession().setAttribute("a", a);
 				request.getRequestDispatcher("/student/accueil.jsp").forward(request, response);
-				
-			
+		}
+		else
+		{
+			response.getWriter().print("Authentication Failed. Credentials Invalid. <br><a href=\"" + request.getContextPath() + "/login.jsp\">Retry</a>");
 		}
 	}
 
