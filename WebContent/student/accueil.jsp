@@ -36,7 +36,7 @@
  	String u=(String)session.getAttribute("myName");
     int id=(Integer)session.getAttribute("a");
  	if(u==null){
- 	response.sendRedirect("login.jsp?err=1");
+ 	response.sendRedirect("/isepweb/login.jsp?err=1");
  	}
   if(request.getParameter("logout") != null){
 	session.invalidate();

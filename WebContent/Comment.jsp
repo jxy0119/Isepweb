@@ -24,13 +24,13 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>

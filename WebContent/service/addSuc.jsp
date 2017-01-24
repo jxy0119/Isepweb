@@ -70,7 +70,7 @@ if(request.getAttribute("al")==null){
 		    <td><%=Ib.getWebsite() %></td>
 		    <td><%=Ib.getSymbol() %></td>
 		    <td><%=Ib.getDescription() %></td>
-		    <td><a href="AddInforServlet?flag=3&id=<%=Ib.getId()%>">update</a></td><td><a href="AddInforServlet?flag=4&id=<%=Ib.getId()%>">delete</a></td>
+		    <td><a href="<%=request.getContextPath()%>/AddInforServlet?flag=3&id=<%=Ib.getId()%>">update</a></td><td><a href="<%=request.getContextPath()%>/AddInforServlet?flag=4&id=<%=Ib.getId()%>">delete</a></td>
 		</tr>
 		<% }
 			}%>

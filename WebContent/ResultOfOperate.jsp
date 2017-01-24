@@ -21,13 +21,13 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>  
@@ -71,7 +71,7 @@ if(request.getAttribute("al")==null){
 		
 	<% }%>
 	</table><br>
-	<a href="HandleFindServlet?flag=3&studentname=<%=sn %>" class="btn btn-info">Back to the last page</a>
+	<a href="<%=request.getContextPath()%>/HandleFindServlet?flag=3&studentname=<%=sn %>" class="btn btn-info">Back to the last page</a>
 
 	<%
 	}%>	

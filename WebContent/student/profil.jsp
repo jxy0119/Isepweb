@@ -81,9 +81,9 @@ if(request.getParameter("logout") != null){
           	        	 
              <%}else if(id==2){ %>
              <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
-             <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">List of students</a></li>
+             <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
              <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-             <li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li> 
+             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li> 
              <%}else {%>
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
             <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
@@ -108,7 +108,7 @@ if(request.getParameter("logout") != null){
 <%if(id==1||id==2) {%>      
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>
@@ -137,9 +137,9 @@ if(request.getAttribute("al")==null){
 		    <td><%=Sb.getId() %></td>
 		    <td><%=Sb.getStudentName() %></td>
 		    <td><%=Sb.getSchool() %></td>
-		    <%if(id==2){ %><td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">His application</a></td><td><a href="#">All info </a></td>
+		    <%if(id==2){ %><td><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">His application</a></td><td><a href="#">All info </a></td>
 		    <%} %>
-		    <%if(id==1){ %><td><a href="/isepweb/service/addOffer.jsp?sn=<%=Sb.getStudentName()%>">Add his school</a></td><%} %>
+		    <%if(id==1){ %><td><a href="/isepweb/service/addOffer.jsp?sn=<%=Sb.getStudentName()%>">Edit his/her school</a></td><%} %>
 		</tr>
 		   
 		
@@ -151,7 +151,7 @@ if(request.getAttribute("al")==null){
 	</table>
 	
 	<div class="form-group">
-	<form action="HandleFindServlet?flag=4" method="post">
+	<form action="<%=request.getContextPath()%>/HandleFindServlet?flag=4" method="post">
 	<label>Find a student</label><br>
 	<input type="text" name="studentname"  class="form-control" ><br>
 	<input type="submit" name="submit" value="Search" class="btn btn-info" ><br>
@@ -161,7 +161,7 @@ if(request.getAttribute("al")==null){
 	<%}if(id==3){ %>
 	<%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>

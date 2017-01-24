@@ -17,13 +17,13 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>
@@ -51,7 +51,7 @@ if(request.getAttribute("al")==null){
 		    <td><%=Ib.getLanguage() %></td>
 		    <td><%=Ib.getMajor() %></td>
 		    <td><%=Ib.getSchoolName() %></td>
-		    <td><a href="ShowSchoolInfoServlet?s=<%=Ib.getSchoolName()%>">go</a></td>
+		    <td><a href="<%=request.getContextPath()%>/ShowSchoolInfoServlet?s=<%=Ib.getSchoolName()%>">go</a></td>
 		</tr>
 		<%}
 		}

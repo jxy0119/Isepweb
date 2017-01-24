@@ -33,13 +33,13 @@
   <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>
@@ -80,16 +80,17 @@ if(request.getAttribute("al")==null){
     <div class="container">
      <div class="jumbotron container-fluid">
      <h3>EDIT</h3><br>
-     <form class="form-group" action="/isepweb/AddInforServlet?flag=5&id=<%=Ib.getId() %>" method="post">
+     <form class="form-group" action="<%=request.getContextPath()%>/AddInforServlet?flag=5&id=<%=Ib.getId() %>" method="post">
 	Schools name<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école" value="<%=Ib.getSchoolName() %>"><br>
      Country<input class="form-control" type="text" name="pays" id="pays" placeholder="Pays" value="<%=Ib.getCountry() %>"><br>
      Teaching language<input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement" value="<%=Ib.getLanguage() %>"><br>
 	major<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine" value="<%=Ib.getMajor() %>"><br>
 	website<input class="form-control" type="text" name="website" id="website" placeholder="website" value="<%=Ib.getWebsite() %>"><br>
 	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol" value="<%=Ib.getSymbol() %>"><br>
+	  other<textarea class="form-control" name="autre" id="autre" placeholder="Autre" ><%=Ib.getDescription()%></textarea><br>
 		<input type="submit" class="btn btn-default" value="Valider"></input>
 	</form><br>
-	<a href="/isepweb/AddInforServlet?flag=2">result</a>
+	<a href="<%=request.getContextPath()%>/AddInforServlet?flag=2">result</a>
      </div>
     </div> <!-- /container -->
     <footer></footer>

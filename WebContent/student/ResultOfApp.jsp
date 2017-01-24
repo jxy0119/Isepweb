@@ -65,19 +65,14 @@ if(request.getParameter("logout") != null){
           <a class="navbar-brand" href="#"><img src="<%=request.getContextPath()%>/img/logo.png" height="100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav"><%if(id==3){ %>
+          <ul class="nav navbar-nav">
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-          	<li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
           	<li><a href="/isepweb/student/addApp.jsp">Apply</a></li>
-          	<li class="active"><a href="/isepweb/HandleFindServlet?flag=5&studentname=<%=u%>">Application Result</a></li>
-          	<%} %>         	 
-             <%if(id==1||id==2){ %>
-             <li><a href="student/accueil.jsp">Home</a></li>
-             <li class="active"><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
-             <li><a href="/isepweb/student/contact.jsp">Contact</a></li>
-             <li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li><%} %> 
+          	<li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Application Result</a></li>
+          	
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
@@ -93,51 +88,8 @@ if(request.getParameter("logout") != null){
 
 		<h3>Your Applications</h3>
       <div class="jumbotron container-fluid">
-<%if(id==1||id==2) {%>      
-<%
-if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepweb/login.jsp?err=1");
-	return ;
-}else{
-%>
 
-	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	
-	<table>
-		<tr>
-		    <td>ID</td>
-		    <td>StudentName</td>
-			<td>School of offer</td>
-			<td>operate</td>
-			
-		</tr>
-		<%for(int i=0;i<aL1.size();i++){	  
-		    StudentBean Sb=(StudentBean)aL1.get(i);
-	  
-	%>
-		
-		
-		<tr>
-		    <td><%=Sb.getId() %></td>
-		    <td><%=Sb.getStudentName() %></td>
-		    <td><%=Sb.getSchool() %></td>
-		    <td><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">his application</a></td><td><a href="#">all info </a></td>
-		    
-		</tr>
-		<%  }
-	
-	    }%>		
-	</table>
-	
-	
-	<form action="<%=request.getContextPath()%>/HandleFindServlet?flag=4" method="post">
-	<label>find student</label><br>
-	<input type="text" name="studentname"><br>
-	<input type="submit" name="submit"><br>
-	
-	
-	</form>
-	<%}if(id==3){ %>
+<%if(id==3){ %>
 	<%
 if(request.getAttribute("al")==null){
 	response.sendRedirect("/isepweb/login.jsp?err=1");
