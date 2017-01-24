@@ -6,7 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>List Of Schools</title>
+ <!-- Bootstrap core CSS -->
+    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 <%
@@ -22,42 +28,51 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
-<a href="student/accueil.jsp">back to accueil page</a>
+
+<div class="container">
+      <div class="jumbotron container-fluid">
+
+<a href="student/accueil.jsp" class="btn btn-info" role="button" style="margin-bottom:10px">Back To HomePage</a>
 	
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
-	<table>
-		<tr>
+	<table class="table table-hover">
+		<tr class="active">
 			<td>SchoolName</td>
 			<td>Country</td>
 			<td>Description</td>
 			<td>Symbol</td>
 			<td>WebSite</td>
 			<td>Comment</td>
-		<tr>
-			<%for(int i=0;i<aL1.size();i++){
+		</tr>
+	
+			<% for(int i=-0;i<aL1.size();i++){
 	
 	  
 		  InformationBean Ib=(InformationBean)aL1.get(i);
-	  
+			
 	%>
-		
-		<tr>
+		<tr class="active">
 			<td><%=Ib.getSchoolName() %></td>
 			<td><%=Ib.getCountry() %></td>
 			<td><%=Ib.getDescription() %></td>
 			<td><%=Ib.getSymbol() %></td>
-			<td><a href="#"><%=Ib.getWebsite() %></a></td>
+			<td><a href="http://<%=Ib.getWebsite() %>"><%=Ib.getWebsite() %></a></td>
 			<td><a href="<%=request.getContextPath()%>/OperateServlet?f=7&s=<%=Ib.getSchoolName() %>">See Comments</a></td>
 		</tr>
-
 	</table>
 	<form action="<%=request.getContextPath()%>/OperateServlet?f=3&u=<%=u %>&s=<%=Ib.getSchoolName() %>" method="post">
-	<%} %><p>comment here</p>
-	<input type="text" name="comment">
+	<%} %>
+	<div class="form-group">
+    <label for="comment">Make A Comment</label>
+	<textarea class="form-control" rows="5" id="comment"></textarea>
+
 	<input type="submit" value="submit">
+	</div>
 	</form>
-	
-		 
-   <%} %>	
+
+	</div>
+	</div>
+	<%} %>		 
+   
 </body>
 </html>

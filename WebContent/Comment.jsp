@@ -32,8 +32,10 @@ if(request.getAttribute("al")==null){
 	
 	<%}else { %>
 	
-	<table>
-		<tr>
+	<table class="table table-hover">
+		<thead>
+	
+		<tr class="active">
 		    <td>Num</td>
 		    <td>StudentName</td>
 			
@@ -43,12 +45,14 @@ if(request.getAttribute("al")==null){
 			
 			
 		</tr>
+			</thead>
+		
 			<%for(int i=0;i<aL1.size();i++){	  
 		    CommentBean Cb=(CommentBean)aL1.get(i);
 	   
 	%>
-		
-		<tr>
+		<tbody>
+		<tr class="active">
 		    <td><%=i+1 %></td>
 		    
 		    <td><%=Cb.getUserName() %></td>
@@ -58,10 +62,14 @@ if(request.getAttribute("al")==null){
 		    <td><%=Cb.getDate() %></td>
 		    
 		</tr>
+		
 		<% }%>
 		<p><a href="<%=request.getContextPath()%>/ShowSchoolInfoServlet?s=<%=s%>">back to school page</a></p>
 	    <%}
 	}%>
+	
+				</tbody>
+	
 	</table>	
 </body>
 </html>

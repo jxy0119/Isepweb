@@ -73,8 +73,8 @@ if(request.getParameter("logout") != null){
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=8&name=<%=u%>">Profile</a></li>
             <li class="active"><a href="/isepweb/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
-          	<li><a href="/isepweb/student/addApp.jsp">Make a new App</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Result of Apps</a></li>
+          	<li><a href="/isepweb/student/addApp.jsp">Apply</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=5&studentname=<%=u%>">Application Result</a></li>
           	        	 
              <%}else if(id==2){ %>
              <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
@@ -93,7 +93,7 @@ if(request.getParameter("logout") != null){
           <ul class="nav navbar-nav navbar-right">
             <li><FORM NAME="logoutform" METHOD="POST">
         <INPUT TYPE="HIDDEN" NAME="logout">
-        <INPUT TYPE="BUTTON" VALUE="Déconnexion" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
     </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -108,22 +108,22 @@ if(request.getParameter("logout") != null){
 <hr style="margin-top:-30px">
 
      
-		<h2 >Contacter votre responable de parcours</h2>
+		<h2>Contact the responsible person for your courses</h2>
 		     
 		
 		<form  action="" method="post">
-		<label for="sujet" class="sr-only">sujet</label>
-        <input type="text" id="sujet" class="form-control" name="sujet" placeholder="sujet" required autofocus><br>
-        <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="texte"></textarea><br>
-       		  <span class="help-block">Envoyer un mail à ssimons@isep.fr</span>
+		<label for="sujet" class="sr-only">Subject</label>
+        <input type="text" id="sujet" class="form-control" name="sujet" placeholder="Subject" required autofocus><br>
+        <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="Content"></textarea><br>
+       		  <span class="help-block">Send an email to ssimons@isep.fr</span>
        
-        <button type="button" class="btn btn-primary">Envoyer</button>
+        <button type="button" class="btn btn-primary">Send</button>
         </form>
       </div>
       <br>
 
       <div class="jumbotron" align="center">
-      <h2>Envoyer des informations au service international</h2>
+      <h2>Contact the international service team</h2>
 		
 		<form  action="" method="post">
 		<label for="pays" class="sr-only">Pays</label>
@@ -133,9 +133,9 @@ if(request.getParameter("logout") != null){
         <label for="sujet" class="sr-only">sujet</label>
         <input type="text" id="sujet" class="form-control" name="sujet" placeholder="sujet" required autofocus><br>
         <textarea class="form-control" rows="5" id="texte" name="texte" placeholder="texte"></textarea><br>
-        <span class="help-block">Envoyer un mail au service international</span>
+        <span class="help-block">Send an email to international service</span>
         
-        <button type="button" class="btn btn-primary">Envoyer</button>
+        <button type="button" class="btn btn-primary">Send</button>
         </form>	
       </div>
       

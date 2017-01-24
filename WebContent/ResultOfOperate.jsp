@@ -26,8 +26,9 @@ if(request.getAttribute("al")==null){
 	<% String sn="";
 	ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	
-	<table>
-		<tr>
+	<table class="table table-hover">
+	<thead>
+		<tr class="active">
 		    <td>Id</td>
 		    <td>studentID</td>
 		    <td>StudentName</td>
@@ -39,12 +40,13 @@ if(request.getAttribute("al")==null){
 			
 			
 		</tr>
+		</thead>
 			<%for(int i=0;i<aL1.size();i++){	  
 		    ResultBean Rb=(ResultBean)aL1.get(i);
 	   
 	%>
-		
-		<tr>
+		<tbody>
+		<tr class="active">
 		    <td><%=Rb.getId() %></td>
 		    <td><%=Rb.getStudentId() %></td>
 		    <td><%sn=Rb.getStudentName(); %><%=sn %></td>
@@ -55,7 +57,7 @@ if(request.getAttribute("al")==null){
 		    <td><%=Rb.getDate() %></td>
 		    
 		</tr>
-		
+		</tbody>
 	
 		
 	<% }%>
