@@ -205,7 +205,7 @@ if(request.getAttribute("al")==null){
 	  </div>
     </div> <!-- /container -->
     
-     <jsp:include page="../footer.html"/>
+    <jsp:include page="../footer.html"/> 
 
 
     <!-- Bootstrap core JavaScript
