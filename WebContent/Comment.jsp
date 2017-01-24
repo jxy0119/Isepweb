@@ -45,7 +45,7 @@ if(request.getAttribute("al")==null){
 	
 	<%}else { %>
 
-	<table class="table table-hover" style="margin-top:10px;>
+	<table class="table table-hover" style="margin-top:10px">
 	
 		<tr class="active">
 		    <td>Num</td>
