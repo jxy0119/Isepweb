@@ -114,6 +114,24 @@ public ArrayList<Object> InfoResultById(String id){
     	}
     	return aL1;
     }
+public boolean AddOfferSchool(String s,String sn){
+	boolean b=false;
+	try{
+		ct=new ConnDB().getConn();
+		sm=ct.createStatement();
+		int a=sm.executeUpdate("update students set school='"+s+"' where name='"+sn+"'");
+		if(a==1){
+			b=true;
+		}    		
+		
+		
+	}catch(Exception e){
+		e.printStackTrace();
+	}finally{
+		this.close();
+	}
+	return b;
+}
     public void close(){
     	try{
     		if(rs!=null){

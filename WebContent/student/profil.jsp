@@ -139,7 +139,7 @@ if(request.getAttribute("al")==null){
 		    <td><%=Sb.getSchool() %></td>
 		    <%if(id==2){ %><td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">His application</a></td><td><a href="#">All info </a></td>
 		    <%} %>
-		    <%if(id==1){ %><td><a href="#">Add his school</a></td><%} %>
+		    <%if(id==1){ %><td><a href="/isepweb/service/addOffer.jsp?sn=<%=Sb.getStudentName()%>">Add his school</a></td><%} %>
 		</tr>
 		   
 		

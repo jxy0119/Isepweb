@@ -20,20 +20,20 @@
 <%
 String u=(String)session.getAttribute("myName");
 if(u==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }
 %>
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>
 	<%! @SuppressWarnings("unchecked") %> 
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any waiting applications</p><br>
-	<p><a href="/isepwebproject/HandleFindServlet?flag=2" class="btn btn-info" role="button">Back to last page</a></p>
+	<p><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2" class="btn btn-info" role="button">Back to last page</a></p>
 	
 	<%}else { %>
 	<table  class="table table-hover">
