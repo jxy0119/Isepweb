@@ -78,13 +78,13 @@ if(request.getParameter("logout") != null){
           	        	 
              <%}else if(id==2){ %>
              <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
-             <li><a href="/isepweb/HandleFindServlet?flag=2">list of students</a></li>
+             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
              <li class="active"><a href="/isepweb/student/contact.jsp">Contact</a></li>
-             <li><a href="HandleFindServlet?m=1&flag=6">Schools</a></li> 
+             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li> 
              <%}else {%>
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
-            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
-            <li><a href="/isepweb/service/offer.jsp">offer</a></li>
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
+            <li><a href="/isepweb/service/offer.jsp">Offer</a></li>
             <li class="active"><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
           	<li><a href="<%=request.getContextPath()%>/OperateServlet?f=4">Comments</a></li><%} %>
@@ -147,6 +147,6 @@ if(request.getParameter("logout") != null){
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

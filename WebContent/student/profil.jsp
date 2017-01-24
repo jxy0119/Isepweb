@@ -87,7 +87,7 @@ if(request.getParameter("logout") != null){
              <%}else {%>
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
             <li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
-            <li><a href="/isepweb/service/offer.jsp">offer</a></li>
+            <li><a href="/isepweb/service/offer.jsp">Offer</a></li>
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
           	<li><a href="<%=request.getContextPath()%>/OperateServlet?f=4">Comments</a></li><%} %>

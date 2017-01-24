@@ -45,12 +45,11 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
-            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
-            <li class="active"><a href="/isepweb/service/offer.jsp">offer</a></li>
-           
+            <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
+            <li class="active"><a href="/isepweb/service/offer.jsp">Offer</a></li>           
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
-          	
+          	<li><a href="<%=request.getContextPath()%>/OperateServlet?f=4">Comments</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
            <li><FORM NAME="logoutform" METHOD="POST">
@@ -68,7 +67,6 @@
 	 Schools name<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
      Country<input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
      Teaching language<input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
-    <br>
 	major<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine"><br>
 	 website<input class="form-control" type="text" name="website" id="website" placeholder="website"><br>
 	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol"><br>
