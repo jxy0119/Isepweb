@@ -68,7 +68,7 @@ if(request.getAttribute("al")==null){
 		    <td><%=Rb.getMajor() %></td>
 		    <td><%=Rb.getState() %></td>
 		    <td><%=Rb.getDate() %></td>
-		    <td><a href="OperateServlet?f=1&id=<%=Rb.getId() %>&sn=<%=Rb.getStudentName() %>">accept</a></td><td><a href="OperateServlet?f=2&id=<%=Rb.getId() %>&sn=<%=Rb.getStudentName() %>">refuse</a></td>
+		    <td><a href="<%=request.getContextPath()%>/OperateServlet?f=1&id=<%=Rb.getId() %>&sn=<%=Rb.getStudentName() %>">accept</a></td><td><a href="OperateServlet?f=2&id=<%=Rb.getId() %>&sn=<%=Rb.getStudentName() %>">refuse</a></td>
 		</tr>
 		<% }
 	    }

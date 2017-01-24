@@ -47,9 +47,9 @@
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
             <li class="active"><a href="/isepweb/service/offer.jsp">offer</a></li>
-            <li><a href="#">update</a></li>
+           
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">University</a></li>
+          	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
           	
           </ul>
           <ul class="nav navbar-nav navbar-right">

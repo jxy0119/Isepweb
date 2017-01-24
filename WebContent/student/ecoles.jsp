@@ -93,9 +93,9 @@ if(request.getParameter("logout") != null){
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">list of students</a></li>
             <li><a href="/isepweb/service/offer.jsp">offer</a></li>
-            <li><a href="#">update</a></li>
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
-          	<li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li><%} %>
+          	<li class="active"><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
+          	<li><a href="<%=request.getContextPath()%>/OperateServlet?f=4">Comments</a></li><%} %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><form NAME="logoutform" METHOD="POST">
@@ -187,7 +187,7 @@ if(request.getParameter("logout") != null){
      <% if(request.getAttribute("al")!=null){%>
 
 
-	<%! @SuppressWarnings("unchecked") %> 
+	 
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 	<%if(aL1.size()==0){ %><p>not found any information what u what</p><br>
 	<p><a href="HandleFindServlet?m=1&flag=6">back to find page and chose again</a></p>

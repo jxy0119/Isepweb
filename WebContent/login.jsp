@@ -23,7 +23,7 @@
 
     <div class="container" >
 	
-      <form class="form-signin" action="HandleLoginServlet" method="post">
+      <form class="form-signin" action="<%=request.getContextPath()%>/HandleLoginServlet" method="post">
         <div class="form-signin-heading"><img src="img/logo.png" style="width:80%"></div>
              
               <div class="input-group">

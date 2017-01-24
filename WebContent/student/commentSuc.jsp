@@ -9,6 +9,6 @@
 <body>
 <%String s=(String)request.getAttribute("school"); %>
 <p>comment Suc! waiting for confirmming</p>
-<a href="ShowSchoolInfoServlet?s=<%=s%>">back to school information page</a>
+<a href="<%=request.getContextPath()%>/ShowSchoolInfoServlet?s=<%=s%>">back to school information page</a>
 </body>
 </html>

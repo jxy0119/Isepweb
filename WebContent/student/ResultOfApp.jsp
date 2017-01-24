@@ -96,7 +96,7 @@ if(request.getParameter("logout") != null){
 <%if(id==1||id==2) {%>      
 <%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>
@@ -121,7 +121,7 @@ if(request.getAttribute("al")==null){
 		    <td><%=Sb.getId() %></td>
 		    <td><%=Sb.getStudentName() %></td>
 		    <td><%=Sb.getSchool() %></td>
-		    <td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">his application</a></td><td><a href="#">all info </a></td>
+		    <td><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">his application</a></td><td><a href="#">all info </a></td>
 		    
 		</tr>
 		<%  }
@@ -130,7 +130,7 @@ if(request.getAttribute("al")==null){
 	</table>
 	
 	
-	<form action="HandleFindServlet?flag=4" method="post">
+	<form action="<%=request.getContextPath()%>/HandleFindServlet?flag=4" method="post">
 	<label>find student</label><br>
 	<input type="text" name="studentname"><br>
 	<input type="submit" name="submit"><br>
@@ -140,13 +140,17 @@ if(request.getAttribute("al")==null){
 	<%}if(id==3){ %>
 	<%
 if(request.getAttribute("al")==null){
-	response.sendRedirect("/isepwebproject/login.jsp?err=1");
+	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
 }else{
 %>
     <p>Hello <%=u %></p>
 
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
+	<%if(aL1.size()==0){ %><p>not found any results ,plz make a new application first!</p><br>
+	
+	
+	<%}else { %>
 	<table class="table table-hover">
 		  <thead>
 	
@@ -187,7 +191,7 @@ if(request.getAttribute("al")==null){
 				     </tbody>	
 			
 	</table><br>
-	<%} %>
+	<%} }%>
 	  </div>
     </div> <!-- /container -->
     

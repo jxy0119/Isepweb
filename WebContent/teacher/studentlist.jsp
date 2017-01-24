@@ -94,11 +94,11 @@ if(request.getAttribute("al")==null){
 	return ;
 }else{
 %>
-	<%! @SuppressWarnings("unchecked") %> // for the line below
+	
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>
 <div class="jumbotron container-fluid">
     
-	<form action="HandleFindServlet?flag=4" method="post">
+	<form action="<%=request.getContextPath()%>/HandleFindServlet?flag=4" method="post">
 	<label>find student</label><br>
 	<input type="text" name="studentname"><br>
 	<input type="submit" name="submit" value="valider"><br>
@@ -121,7 +121,7 @@ if(request.getAttribute("al")==null){
 		    <td><%=Sb.getId() %></td>
 		    <td><%=Sb.getStudentName() %></td>
 		    <td><%=Sb.getSchool() %></td>
-		    <td><a href="HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">Modules demandés</a></td><td><a href="#">détail </a></td>
+		    <td><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">Modules demandés</a></td><td><a href="#">détail </a></td>
 		    
 		</tr>
 		<%  }
