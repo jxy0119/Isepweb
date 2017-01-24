@@ -27,6 +27,7 @@
     <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
     </script>
+   
   </head>
 
   <body>
@@ -35,6 +36,10 @@ String u=(String)session.getAttribute("myName");
 if(u==null){
 	response.sendRedirect("/isepweb/login.jsp?err=1");
 	return ;
+}
+if(request.getParameter("logout") != null){
+	session.invalidate();
+	response.sendRedirect("/isepweb/login.jsp?err=1");	
 }
 %>
 <%
@@ -48,7 +53,15 @@ if(request.getAttribute("al")==null){
 		    InformationBean Ib=(InformationBean)aL1.get(i);
 	   
 	%>
-
+	
+ <script>
+        
+        function logoutbutton()
+        {
+            document.logoutform.logout.value = "yes";
+            logoutform.submit();
+        } 
+    </script>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -65,14 +78,17 @@ if(request.getAttribute("al")==null){
           <ul class="nav navbar-nav">
             <li><a href="/isepweb/student/accueil.jsp">Home</a></li>
             <li><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=2">List of students</a></li>
-            <li><a href="/isepweb/service/offer.jsp">Offer</a></li>
+            <li class="active"><a>Update</a></li>
             
             <li><a href="<%=request.getContextPath()%>/student/contact.jsp">Contact</a></li>
           	<li><a href="<%=request.getContextPath()%>/HandleFindServlet?m=1&flag=6">Schools</a></li>
-          	
+          	<li><a href="<%=request.getContextPath()%>/OperateServlet?f=4">Comments</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Logout</a></li>
+           <li><FORM NAME="logoutform" METHOD="POST">
+        <INPUT TYPE="HIDDEN" NAME="logout">
+        <INPUT TYPE="BUTTON" VALUE="Logout" class="btn btn-danger" ONCLICK="logoutbutton()" style="margin-top:8px">
+    </FORM></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -88,9 +104,9 @@ if(request.getAttribute("al")==null){
 	website<input class="form-control" type="text" name="website" id="website" placeholder="website" value="<%=Ib.getWebsite() %>"><br>
 	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol" value="<%=Ib.getSymbol() %>"><br>
 	  other<textarea class="form-control" name="autre" id="autre" placeholder="Autre" ><%=Ib.getDescription()%></textarea><br>
-		<input type="submit" class="btn btn-default" value="Valider"></input>
+		<input type="submit" class="btn btn-info" value="Update"></input>
 	</form><br>
-	<a href="<%=request.getContextPath()%>/AddInforServlet?flag=2">result</a>
+	<a href="<%=request.getContextPath()%>/AddInforServlet?flag=2" class="btn btn-primary" role="button">See all the schools</a>
      </div>
     </div> <!-- /container -->
     <footer></footer>

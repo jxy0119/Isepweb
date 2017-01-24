@@ -28,8 +28,27 @@
   </head>
 
   <body>
-  <header></header>
+ <%
+String u=(String)session.getAttribute("myName");
+int id=(Integer)session.getAttribute("a");
+if(u==null){
+  response.sendRedirect("/isepweb/login.jsp?err=1");
+  return ;
+}
 
+if(request.getParameter("logout") != null){
+	session.invalidate();
+	response.sendRedirect("/isepweb/login.jsp?err=1");	
+} 
+%> 
+<script>
+        
+        function logoutbutton()
+        {
+            document.logoutform.logout.value = "yes";
+            logoutform.submit();
+        } 
+    </script>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
