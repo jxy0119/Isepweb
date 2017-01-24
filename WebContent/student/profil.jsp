@@ -137,9 +137,12 @@ if(request.getAttribute("al")==null){
 		    <td><%=Sb.getId() %></td>
 		    <td><%=Sb.getStudentName() %></td>
 		    <td><%=Sb.getSchool() %></td>
-		    <%if(id==2){ %><td><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">His application</a></td><td><a href="#">All info </a></td>
-		    <%} %>
+		    <%if(id==2){ %><td><a href="<%=request.getContextPath()%>/HandleFindServlet?flag=3&studentname=<%=Sb.getStudentName()%>">His/Her application</a></td><td><a href="#">All info </a></td>
+
+<%} %>
+
 		    <%if(id==1){ %><td><a href="/isepweb/service/addOffer.jsp?sn=<%=Sb.getStudentName()%>">Edit his/her school</a></td><%} %>
+
 		</tr>
 		   
 		
