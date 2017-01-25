@@ -89,7 +89,7 @@ if(request.getParameter("logout") != null){
 	major<input class="form-control" type="text" name="domaine" id="domaine" placeholder="major"><br>
 	 website<input class="form-control" type="text" name="website" id="website" placeholder="website"><br>
 	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol"><br>
-	other<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
+	other<textarea class="form-control" name="autre" id="autre" placeholder="other"></textarea><br>
 	<input type="submit" class="btn btn-info" value="Add"></input>
 	</form><br>
 	<a href="<%=request.getContextPath()%>/AddInforServlet?flag=2" class="btn btn-primary" role="button">See all the schools</a>
