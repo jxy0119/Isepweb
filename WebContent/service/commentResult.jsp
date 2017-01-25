@@ -96,8 +96,8 @@ if(request.getAttribute("al")==null){
 	
 	<%ArrayList<Object> aL1=(ArrayList<Object>)request.getAttribute("al"); %>	
 	
-	<table>
-		<tr>
+	<table class="table table-hover">
+		<tr class="active">
 		    <td>Id</td>
 		    <td>StudentName</td>
 			<td>School name</td>
@@ -112,7 +112,7 @@ if(request.getAttribute("al")==null){
 	   
 	%>
 		
-		<tr>
+		<tr class="active">
 		    <td><%=Cb.getId() %></td>
 		    <td><%=Cb.getUserName() %></td>
 		    <td><%=Cb.getSchool() %></td>

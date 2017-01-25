@@ -99,15 +99,15 @@ if(request.getAttribute("al")==null){
 	
 	
 	<%}else { %>
-	<table>
-		<tr>
+	<table class="table table-hover">
+		<tr class="active">
 		    <td>Id</td>
 		    <td>StudentName</td>
 			<td>School name</td>
 			<td>Details</td>
 			<td>State</td>
 		    <td>Date</td>
-			<td>operate</td>
+			<td>operate</td><td></td>
 			
 		</tr>
 			<%for(int i=0;i<aL1.size();i++){	  
@@ -115,7 +115,7 @@ if(request.getAttribute("al")==null){
 	   
 	%>
 		
-		<tr>
+		<tr class="active">
 		    <td><%=Cb.getId() %></td>
 		    <td><%=Cb.getUserName() %></td>
 		    <td><%=Cb.getSchool() %></td>
