@@ -83,10 +83,10 @@ if(request.getParameter("logout") != null){
      <div class="jumbotron container-fluid">
      <h3>Add an offer</h3><br>
      <form class="form-group" action="<%=request.getContextPath()%>/AddInforServlet?flag=1" method="post">
-	 Schools name<input class="form-control" type="text" name="nom" id="nom" placeholder="Nom d'école"><br>
-     Country<input class="form-control" type="text" name="pays" id="pays" placeholder="Pays"><br>
-     Teaching language<input class="form-control" type="text" name="langue" id="langue" placeholder="Langue d'enseignement"><br>
-	major<input class="form-control" type="text" name="domaine" id="domaine" placeholder="Domaine"><br>
+	 School's name<input class="form-control" type="text" name="nom" id="nom" placeholder="school's name"><br>
+     Country<input class="form-control" type="text" name="pays" id="pays" placeholder="country"><br>
+     Teaching language<input class="form-control" type="text" name="langue" id="langue" placeholder="Teaching language"><br>
+	major<input class="form-control" type="text" name="domaine" id="domaine" placeholder="major"><br>
 	 website<input class="form-control" type="text" name="website" id="website" placeholder="website"><br>
 	  symbol<input class="form-control" type="text" name="symbol" id="symbol" placeholder="symbol"><br>
 	other<textarea class="form-control" name="autre" id="autre" placeholder="Autre"></textarea><br>
